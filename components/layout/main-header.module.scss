@@ -1,0 +1,41 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 0.5rem;
+  height: 5rem;
+  background-color: #202020;
+}
+
+.logo {
+  font-size: 1.5rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo a {
+  padding-top: 0.2rem;
+  width: 10rem;
+}
+
+.navigation a {
+
+    text-decoration: none;
+    color: rgb(221, 221, 221);
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+}
+
+.navigation ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation li {
+  list-style: none;
+  padding: 0 1rem;
+}

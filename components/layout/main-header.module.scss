@@ -30,6 +30,10 @@
     font-weight: 700;
 }
 
+.navigation a.active {
+  color: blue;
+}
+
 .navigation ul {
   display: flex;
   justify-content: space-between;

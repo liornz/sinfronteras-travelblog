@@ -2,10 +2,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './main-header.module.scss';
 
+import { useRouter } from 'next/router';
+
 interface Props {}
 
 const MainHeader: React.FC<Props> = (props) => {
   const {} = props;
+  const router = useRouter();
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -23,13 +26,41 @@ const MainHeader: React.FC<Props> = (props) => {
       <nav className={styles.navigation}>
         <ul>
           <li>
-            <Link href="/destinations">ALL DESTINATIONS</Link>
+            <Link href="/destinations">
+              <a
+                style={{
+                  color:
+                    router.pathname === '/destinations'
+                      ? 'rgb(240,150,37)'
+                      : '',
+                }}
+              >
+                ALL DESTINATIONS
+              </a>
+            </Link>
           </li>
           <li>
-            <Link href="/shop">SHOP</Link>
+            <Link href="/shop">
+              <a
+                style={{
+                  color: router.pathname === '/shop' ? 'rgb(240,150,37)' : '',
+                }}
+              >
+                SHOP
+              </a>
+            </Link>
           </li>
           <li>
-            <Link href="/contact">CONTACT</Link>
+            <Link href="/contact">
+              <a
+                style={{
+                  color:
+                    router.pathname === '/contact' ? 'rgb(240,150,37)' : '',
+                }}
+              >
+                CONTACT
+              </a>
+            </Link>
           </li>
         </ul>
       </nav>

@@ -1,69 +1,32 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import { useState } from 'react';
+import Logo from './logo';
+import Navbar from './navbar';
 import styles from './main-header.module.scss';
-
-import { useRouter } from 'next/router';
+import MenuToggler from './menuToggler';
 
 interface Props {}
 
 const MainHeader: React.FC<Props> = (props) => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const {} = props;
-  const router = useRouter();
+
+  function toggleMobileMenu() {
+    setShowMobileMenu(prevState => !prevState);
+  }
+
   return (
-    <header className={styles.header}>
-      <div className={styles.logo}>
-        <Link href="/">
-          <a>
-            <Image
-              src={'/images/logo/logo_sinfronteras-417x150.png'}
-              alt="Sin Fronteras Logo"
-              width={600}
-              height={200}
-            />
-          </a>
-        </Link>
+    <header>
+      <div className={styles.header_desktop}>
+        <Logo />
+        <Navbar show />
       </div>
-      <nav className={styles.navigation}>
-        <ul>
-          <li>
-            <Link href="/destinations">
-              <a
-                style={{
-                  color:
-                    router.pathname === '/destinations'
-                      ? 'rgb(240,150,37)'
-                      : '',
-                }}
-              >
-                ALL DESTINATIONS
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/shop">
-              <a
-                style={{
-                  color: router.pathname === '/shop' ? 'rgb(240,150,37)' : '',
-                }}
-              >
-                SHOP
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <a
-                style={{
-                  color:
-                    router.pathname === '/contact' ? 'rgb(240,150,37)' : '',
-                }}
-              >
-                CONTACT
-              </a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <div className={styles.mobile}>
+        <div className={styles.header_mobile}>
+          <Logo />
+          <MenuToggler show={showMobileMenu} toggle={toggleMobileMenu} />
+        </div>
+        <Navbar show={showMobileMenu} />
+      </div>
     </header>
   );
 };

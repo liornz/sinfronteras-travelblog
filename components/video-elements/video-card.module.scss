@@ -1,0 +1,75 @@
+.VideoCard {
+  background-color: rgba(128, 128, 128, 0.4);
+  transition: all ease-out 0.5s;
+  &:hover {
+    transform: scale(0.97);
+  }
+}
+
+.CardContainer {
+  position: relative;
+}
+
+.Overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  cursor: pointer;
+  transition: all ease-out 0.5s;
+  &:hover {
+    background-color: rgba(128, 128, 128, 0.4);
+  }
+}
+
+.Text {
+  color: white;
+}
+
+.title {
+  padding-bottom: 0.5rem;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid white;
+  h4 {
+    padding: 0 0.5rem;
+    text-align: center;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    @media (max-width: 330px) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.subtitle {
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    text-align: center;
+    padding: 0 0.5rem;
+    margin: 0;
+    font-weight: 300;
+    font-size: 1.3rem;
+    @media (max-width: 330px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.imgTest {
+  height: 100%;
+  width: 100%;
+}
+
+

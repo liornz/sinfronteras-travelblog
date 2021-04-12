@@ -1,3 +1,5 @@
+@use './variables';
+
 html,
 body {
   padding: 0;
@@ -13,4 +15,17 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.header {
+  color: #505962;
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+.header-underline {
+  width: 4rem;
+  height: 5px;
+  background-color: variables.$color-sinfronteras;
+  margin: 1rem auto 1rem auto;
 }

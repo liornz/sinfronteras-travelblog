@@ -1,0 +1,37 @@
+.About {
+  background-color: #e9ecef;
+}
+
+.AboutContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: top;
+  margin: 2rem 3rem;
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
+}
+
+.AboutText {
+  padding: 0 2rem;
+  flex: 1;
+  text-align: justify;
+  font-size: large;
+}
+
+.AboutVideo {
+  padding: 1rem 2rem;
+  flex: 1;
+  cursor: pointer;
+  @media (min-width: 992px) {
+    max-width: 50%;
+  }
+}
+
+.lead {
+  line-height: 1.5;
+  font-size: 1.25rem;
+  color: rgba(0, 0, 0, 0.6);
+}

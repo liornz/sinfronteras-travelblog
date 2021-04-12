@@ -22,10 +22,10 @@ const MainHeader: React.FC<Props> = (props) => {
       </div>
       <div className={styles.mobile}>
         <div className={styles.header_mobile}>
-          <Logo />
+          <Logo toggle={toggleMobileMenu} />
           <MenuToggler show={showMobileMenu} toggle={toggleMobileMenu} />
         </div>
-        <Navbar show={showMobileMenu} />
+        <Navbar show={showMobileMenu} toggle={toggleMobileMenu} />
       </div>
     </header>
   );

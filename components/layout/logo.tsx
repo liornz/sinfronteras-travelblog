@@ -3,10 +3,14 @@ import Image from 'next/image';
 
 import styles from './logo.module.scss';
 
-const Logo: React.FC = () => {
+interface Props {
+  toggle?: () => void
+}
 
+const Logo: React.FC<Props> = (props) => {
+  const { toggle } = props;
   return (
-    <div className={styles.logo}>
+    <div className={styles.logo} onClick={toggle}>
       <Link href="/">
         <a>
           <Image

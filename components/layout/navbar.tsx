@@ -3,13 +3,14 @@ import { useRouter } from 'next/router';
 import styles from './navbar.module.scss';
 
 interface Props {
-  show: boolean
+  show: boolean,
+  toggle?: () => void
 }
 
 const Navbar: React.FC<Props> = (props) => {
   const router = useRouter();
 
-  const { show } = props;
+  const { show, toggle } = props;
 
   const navClass = [styles.navigation];
   show ? navClass.push(styles.nav_opened) : navClass.push(styles.nav_closed);
@@ -18,7 +19,7 @@ const Navbar: React.FC<Props> = (props) => {
   return (
     <nav className={navClassString}>
       <ul>
-        <li>
+        <li onClick={toggle}>
           <Link href="/destinations">
             <a
               style={{
@@ -30,7 +31,7 @@ const Navbar: React.FC<Props> = (props) => {
             </a>
           </Link>
         </li>
-        <li>
+        <li onClick={toggle}>
           <Link href="/shop">
             <a
               style={{
@@ -41,7 +42,7 @@ const Navbar: React.FC<Props> = (props) => {
             </a>
           </Link>
         </li>
-        <li>
+        <li onClick={toggle}>
           <Link href="/contact">
             <a
               style={{

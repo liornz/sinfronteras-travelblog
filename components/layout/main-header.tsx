@@ -20,8 +20,8 @@ const MainHeader: React.FC<Props> = (props) => {
         <Logo />
         <Navbar show />
       </div>
-      <div className={styles.mobile}>
-        <div className={styles.header_mobile}>
+      <div className={styles.header_mobile}>
+        <div className={styles.toolbar_mobile}>
           <Logo toggle={showMobileMenu ? toggleMobileMenu : undefined} />
           <MenuToggler show={showMobileMenu} toggle={toggleMobileMenu} />
         </div>

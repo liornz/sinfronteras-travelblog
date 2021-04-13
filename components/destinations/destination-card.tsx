@@ -1,0 +1,37 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './destination-card.module.scss';
+
+interface Props {
+  slug: string;
+  title: string;
+  subtitle: string;
+  image: string;
+}
+
+const DestinationCard: React.FC<Props> = (props) => {
+  const { slug, title, subtitle, image } = props;
+  const imagePath = `/images/posters/${image}`;
+
+  return (
+    <Link href={`/destinations/${slug}`}>
+      <a>
+        <div className={styles.card}>
+          <div className={styles.image}>
+            <Image src={imagePath} alt={title} width={600} height={350} layout='responsive' />
+          </div>
+          <div className={styles.text}>
+            <div className={styles.title}>
+              <h4>{title}</h4>
+            </div>
+            <div className={styles.subtitle}>
+              <p>{subtitle}</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </Link>
+  );
+};
+
+export default DestinationCard;

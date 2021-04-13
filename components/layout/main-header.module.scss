@@ -1,23 +1,11 @@
 @use '../../styles/variables';
 
-.header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0rem 0.5rem;
-  height: 5rem;
-  background-color: #202020;
-  z-index: 100;
-  @media (min-width: variables.$mobile-nav-size) {
-    flex-direction: row;
-  }
-}
-
 .header_desktop {
   display: none;
   @media (min-width: variables.$mobile-nav-size) {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -25,18 +13,23 @@
     align-items: center;
     padding: 0rem 0.5rem;
     height: 5rem;
-    background-color: #202020;
+    background-color: black;
+    z-index: 10;
   }
 }
 
-.mobile {
+.header_mobile {
   display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   @media (min-width: variables.$mobile-nav-size) {
     display: none;
   }
 }
 
-.header_mobile {
+.toolbar_mobile {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -44,5 +37,5 @@
   align-items: center;
   padding: 0rem 0.5rem;
   height: 5rem;
-  background-color: #202020;
+  background-color: black;
 }

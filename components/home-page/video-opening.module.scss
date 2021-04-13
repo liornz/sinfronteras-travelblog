@@ -1,7 +1,10 @@
+.video_container {
+  padding-top: 5rem;
+  background-color: black;
+}
+
 .video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  text-align: center;
+  @media (min-width: 1200px) {
+    height: 90vh;
+  }
 }

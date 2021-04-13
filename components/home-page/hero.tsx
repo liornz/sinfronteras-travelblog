@@ -33,7 +33,7 @@ const Hero: React.FC<Props> = (props) => {
         <div className={styles.AboutVideo}>
           <VideoCard
             youtubeId="m17_nb2weMU"
-            imagePath="/images/portada/portada-la-vida-es-un-viaje.jpg"
+            imagePath="/images/posters/portada-la-vida-es-un-viaje.jpg"
             imgAlt="Youtube Slide Opener - La vida es un viaje"
           />
         </div>

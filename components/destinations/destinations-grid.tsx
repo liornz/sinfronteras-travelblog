@@ -1,13 +1,9 @@
 import DestinationCard from './destination-card';
 import styles from './destinations-grid.module.scss';
+import { post } from '../../lib/types';
 
 interface Props {
-  destinations: {
-    slug: string;
-    title: string;
-    subtitle: string;
-    image: string;
-  }[];
+  destinations: post[];
 }
 
 const DestinationsGrid: React.FC<Props> = (props) => {
@@ -18,10 +14,7 @@ const DestinationsGrid: React.FC<Props> = (props) => {
         {destinations.map((item) => (
           <DestinationCard
             key={item.slug}
-            slug={item.slug}
-            title={item.title}
-            subtitle={item.subtitle}
-            image={item.image}
+            post={item}
           />
         ))}
       </div>

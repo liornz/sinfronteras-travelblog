@@ -1,20 +1,17 @@
 import DestinationsGrid from '../destinations/destinations-grid';
 import styles from 'featured-destinations.module.scss';
+import { post } from '../../lib/types';
 
 interface Props {
-  destinations: {
-    slug: string;
-    title: string;
-    subtitle: string;
-    image: string;
-  }[];
+  destinations: post[];
 }
 
 const FeaturedDestinations: React.FC<Props> = (props) => {
 const { destinations } = props;
   return (
     <div>
-      <h1 style={{ textAlign: 'center' }}>Featured destinations</h1>
+      <h1 className="header">FEATURED DESTINATIONS</h1>
+      <div className="header-underline"></div>
       <DestinationsGrid destinations={destinations} />
     </div>
   );

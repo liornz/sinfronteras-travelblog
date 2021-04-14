@@ -1,16 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './destination-card.module.scss';
+import { post } from '../../lib/types';
 
 interface Props {
-  slug: string;
-  title: string;
-  subtitle: string;
-  image: string;
-}
+  post: post
+} 
+  
 
 const DestinationCard: React.FC<Props> = (props) => {
-  const { slug, title, subtitle, image } = props;
+  const { slug, title, subtitle, image } = props.post;
   const imagePath = `/images/posters/${image}`;
 
   return (

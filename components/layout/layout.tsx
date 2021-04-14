@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import MainHeader from './main-header';
+import styles from './layout.module.scss';
 
 interface Props {
 
@@ -10,7 +11,7 @@ const {  } = props;
   return (
     <Fragment>
       <MainHeader />
-      <main>{props.children}</main>
+      <main className={styles.main}>{props.children}</main>
     </Fragment>
   );
 };

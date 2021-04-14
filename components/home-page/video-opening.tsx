@@ -10,7 +10,7 @@ const VideoOpening: React.FC<Props> = (props) => {
         autoPlay
         loop
         muted
-        poster="/images/portada/portada-enp.jpg"
+        poster="/images/posters/portada-enp.jpg"
         className={styles.video}
           width="100%"
       >

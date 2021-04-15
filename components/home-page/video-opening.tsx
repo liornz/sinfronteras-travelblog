@@ -14,8 +14,8 @@ const VideoOpening: React.FC<Props> = (props) => {
         className={styles.video}
           width="100%"
       >
-        <source src="/videos/sinfronteras-intro.webm" type="video/webm" />
-        <source src="/videos/sinfronteras-intro.mp4" type="video/mp4" />
+        <source src="/videos/sinfronteras-intro-hd.webm" type="video/webm" />
+        <source src="/videos/sinfronteras-intro-hd.mp4" type="video/mp4" />
         Sorry, your browser doesn't support embedded videos.
       </video>
     </div>

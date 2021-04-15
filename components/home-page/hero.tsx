@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import VideoCard from '../video-elements/video-card'; 
+import VideoCard from '../video-elements/video-card';
 import styles from './hero.module.scss';
 
 interface Props {}
@@ -48,7 +48,9 @@ const Hero: React.FC<Props> = (props) => {
 
   return (
     <div className={styles.About}>
-      <h3 className="header">ABOUT ME</h3>
+      <h3 className="header">
+        {router.locale === 'en-US' ? 'ABOUT ME' : 'SOBRE MI'}
+      </h3>
       <div className="header-underline"></div>
       <div className={styles.AboutContainer}>
         <div className={styles.AboutText}>{aboutText}</div>

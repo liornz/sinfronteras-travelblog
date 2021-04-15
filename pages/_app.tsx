@@ -36,10 +36,8 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactNode {
       />
       <meta name="og:title" content={siteTitle} />
       <meta name="twitter:card" content="summary_large_image" />
-      <link
-        href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
-        rel="stylesheet"
-      />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" />
     </Head>
   );
 

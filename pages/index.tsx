@@ -5,15 +5,10 @@ import VideoOpening from '../components/home-page/video-opening';
 import Hero from '../components/home-page/hero';
 import FeaturedDestinations from '../components/destinations/featured-destinations';
 import { getFeaturedPosts } from '../lib/data-utils';
+import { post } from '../lib/types';
 
 interface Props {
-  featuredPosts: {
-    slug: string;
-    title: string;
-    subtitle: string;
-    image: string;
-    content: string
-  }[];
+  featuredPosts: post[];
 }
 
 const HomePage: React.FC<Props> = (props) => {

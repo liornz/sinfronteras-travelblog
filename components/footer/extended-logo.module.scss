@@ -1,0 +1,31 @@
+@use '../../styles/variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  @media (min-width: 1000px) {
+    align-items: flex-start;
+  }
+  h4 {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0 0 0.5rem 0;
+    color: variables.$color-sinfronteras;
+  }
+  h5 {
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+  }
+  p {
+    color: #6B7576;
+    font-size: 0.8rem;
+    margin: 0;
+  }
+}
+
+.image {
+  margin-left: -1rem;
+  width: 12rem;
+}

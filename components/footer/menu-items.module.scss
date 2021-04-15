@@ -1,0 +1,13 @@
+.container {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  @media (min-width: 1000px) {
+    align-items: flex-start;
+  }
+  a {
+    margin: 0.5rem;
+  }
+}

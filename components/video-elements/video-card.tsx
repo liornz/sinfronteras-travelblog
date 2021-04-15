@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import VideoDisplay from './video-display';
 import styles from './video-card.module.scss';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { FaPlay } from 'react-icons/fa';
 
 interface Props {
   youtubeId: string;
@@ -39,7 +38,7 @@ const VideoCard: React.FC<Props> = (props) => {
         <div className={styles.CardContainer}>
           <Image src={imagePath} alt={imgAlt} width={1644} height={925} />
           <div onClick={videoDisplayHandler} className={styles.Overlay}>
-            {/* <FontAwesomeIcon icon={faPlay} size="4x" color="white" /> */}
+            <FaPlay color='white' size='3rem' />
           </div>
         </div>
         {textSection}

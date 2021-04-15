@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import LangToggler from './langToggler';
 import styles from './navbar.module.scss';
 
 interface Props {
@@ -27,7 +28,7 @@ const Navbar: React.FC<Props> = (props) => {
                   router.pathname === '/destinations' ? 'rgb(240,150,37)' : '',
               }}
             >
-              ALL DESTINATIONS
+              {router.locale === 'en-US' ? 'DESTINATIONS' : 'DESTINOS'}
             </a>
           </Link>
         </li>
@@ -38,7 +39,7 @@ const Navbar: React.FC<Props> = (props) => {
                 color: router.pathname === '/shop' ? 'rgb(240,150,37)' : '',
               }}
             >
-              SHOP
+              {router.locale === 'en-US' ? 'SHOP' : 'TIENDA'}
             </a>
           </Link>
         </li>
@@ -49,10 +50,11 @@ const Navbar: React.FC<Props> = (props) => {
                 color: router.pathname === '/contact' ? 'rgb(240,150,37)' : '',
               }}
             >
-              CONTACT
+              { router.locale === 'en-US' ? 'CONTACT' : 'CONTACTO'}
             </a>
           </Link>
         </li>
+        <LangToggler />
       </ul>
     </nav>
   );

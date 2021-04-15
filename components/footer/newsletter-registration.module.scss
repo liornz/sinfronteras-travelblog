@@ -1,0 +1,40 @@
+@use '../../styles/variables';
+
+.container {
+  margin-top: 0.5rem;
+  color: white;
+  text-align: center;
+  @media (min-width: 1000px) {
+    text-align: left;
+  }
+  p {
+    color: #6b7576;
+  }
+  input {
+    height: 2.5rem;
+    padding: 0 0.5rem;
+    background-color: #181c1e;
+    color: #6b7576;
+    border: none;
+    border-radius: 5px;
+    @media (max-width: 510px) {
+      width: 100%;
+    }
+  }
+  button {
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 0.7rem 1rem;
+    background-color: variables.$color-sinfronteras;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    @media (max-width: 510px) {
+      width: 100%;
+      margin: 0;
+    }
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}

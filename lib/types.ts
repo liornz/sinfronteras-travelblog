@@ -3,5 +3,6 @@ export type post = {
   title: string;
   subtitle: string;
   image: string;
+  youtubeId: string;
   content: string;
 };

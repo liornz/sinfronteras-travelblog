@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaPlay } from 'react-icons/fa';
+
 import styles from './destination-card.module.scss';
 import { post } from '../../lib/types';
 
@@ -17,7 +19,16 @@ const DestinationCard: React.FC<Props> = (props) => {
       <a>
         <div className={styles.card}>
           <div className={styles.image}>
-            <Image src={imagePath} alt={title} width={600} height={350} layout='responsive' />
+            <Image
+              src={imagePath}
+              alt={title}
+              width={600}
+              height={350}
+              layout="responsive"
+            />
+            <div className={styles.overlay}>
+              <FaPlay color="white" size="3rem" />
+            </div>
           </div>
           <div className={styles.text}>
             <div className={styles.title}>

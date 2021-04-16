@@ -6,6 +6,7 @@ type data = {
   title: string;
   subtitle: string;
   image: string;
+  youtubeId: string;
   isFeatured: boolean;
 }
 

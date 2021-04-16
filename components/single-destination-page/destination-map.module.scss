@@ -1,0 +1,13 @@
+.map {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ccc;
+  min-height: 20vw;
+  background-color: white;
+  @media (min-width: 600px) {
+    margin-left: 1rem;  
+  }
+}

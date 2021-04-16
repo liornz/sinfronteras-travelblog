@@ -1,0 +1,23 @@
+.container {
+  background-color: #F9F9F9;
+}
+
+.video {
+  width: 90vw;
+  max-width: 50rem;
+  margin: auto;
+}
+
+.youtube {
+  width: 100%;
+  height: calc(50rem * 9/16);
+  @media (max-width: 728px) {
+    height: calc(90vw * 9/16);
+  }
+}
+
+.title {
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+}

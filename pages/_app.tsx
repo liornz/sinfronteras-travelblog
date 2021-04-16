@@ -2,10 +2,10 @@ import React from 'react';
 import Head from 'next/head';
 import { AppProps } from 'next/app';
 import Layout from '../components/layout/layout';
+import { NotificationContextProvider } from '../context/notification-context';
 import '../styles/globals.scss';
 
 export const siteTitle = 'Sin Fronteras - Video Travel Blog';
-
 
 function MyApp({ Component, pageProps }: AppProps): React.ReactNode {
   const generalHead = (
@@ -37,15 +37,20 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactNode {
       <meta name="og:title" content={siteTitle} />
       <meta name="twitter:card" content="summary_large_image" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap"
+      />
     </Head>
   );
 
   return (
-    <Layout>
-      {generalHead}
-      <Component {...pageProps} />
-    </Layout>
+    <NotificationContextProvider>
+      <Layout>
+        {generalHead}
+        <Component {...pageProps} />
+      </Layout>
+    </NotificationContextProvider>
   );
 }
 

@@ -4,21 +4,12 @@ import { getDataFileNames, getFileData } from '../../lib/data-utils';
 import React, { Fragment } from 'react';
 import SelectedVideo from '../../components/single-destination-page/selected-video';
 import SiteInfo from '../../components/single-destination-page/site-info';
-
-type data = {
-  slug: string;
-  title: string;
-  subtitle: string;
-  image: string;
-  youtubeId: string;
-  isFeatured: boolean;
-  content: string;
-};
+import { post } from '../../lib/types';
 
 interface Props {
   fileData: {
-    en: data;
-    es: data;
+    en: post;
+    es: post;
   };
 }
 
@@ -33,7 +24,7 @@ const SingleDestinationPage: React.FC<Props> = (props) => {
   switch (locale) {
     case 'en-US':
       text = fileData.en.content;
-      title = fileData.en.title
+      title = fileData.en.title;
       break;
     case 'es-AR':
       text = fileData.es.content;
@@ -46,11 +37,12 @@ const SingleDestinationPage: React.FC<Props> = (props) => {
 
   return (
     <Fragment>
-      <SelectedVideo
-        youtubeId={fileData.en.youtubeId}
-        title={title} 
+      <SelectedVideo youtubeId={fileData.en.youtubeId} title={title} />
+      <SiteInfo
+        text={text}
+        location={fileData.en.location}
+        zoom={fileData.en.zoom}
       />
-      <SiteInfo text={text} />
     </Fragment>
   );
 };

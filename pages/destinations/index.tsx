@@ -1,15 +1,10 @@
 import { GetStaticProps } from 'next';
 import AllDestinations from '../../components/destinations/all-destinations';
 import { getAllPosts } from '../../lib/data-utils';
+import { post } from '../../lib/types';
 
 interface Props {
-  allPosts: {
-    slug: string;
-    title: string;
-    subtitle: string;
-    image: string;
-    content: string;
-  }[];
+  allPosts: post[];
 }
 
 const AllDestinationsPage: React.FC<Props> = (props) => {

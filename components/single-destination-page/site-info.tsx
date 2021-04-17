@@ -1,17 +1,21 @@
 import DestinationText from './destination-text';
 import DestinationMap from './destination-map';
+import { location } from '../../lib/types';
+
 import styles from './site-info.module.scss';
 
 interface Props {
-  text: string
+  text: string,
+  location: location,
+  zoom: number,
 }
 
 const SiteInfo: React.FC<Props> = (props) => {
-const { text } = props;
+const { text, location, zoom } = props;
   return (
     <div className={styles.info}>
       <DestinationText text={text} />
-      <DestinationMap />
+      <DestinationMap location={location} zoom={zoom} />
     </div>
   );
 };

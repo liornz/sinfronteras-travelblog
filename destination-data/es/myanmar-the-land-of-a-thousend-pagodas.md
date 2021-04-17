@@ -5,3 +5,4 @@ image: 'portada-myanmar.jpg'
 youtubeId: 'xVDOKC-luF4'
 isFeatured: true
 ---
+En este video presento lo más destacado de mi visita a Myanmar.

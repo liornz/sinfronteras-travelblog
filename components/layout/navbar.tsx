@@ -1,15 +1,17 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import LangToggler from './langToggler';
 import styles from './navbar.module.scss';
 
 interface Props {
-  show: boolean,
-  toggle?: () => void
+  show: boolean;
+  toggle?: () => void;
 }
 
 const Navbar: React.FC<Props> = (props) => {
   const router = useRouter();
+  const locale = router.locale;
+  const currPath = router.pathname;
+  const slug = router.query.slug;
 
   const { show, toggle } = props;
 
@@ -28,7 +30,7 @@ const Navbar: React.FC<Props> = (props) => {
                   router.pathname === '/destinations' ? 'rgb(240,150,37)' : '',
               }}
             >
-              {router.locale === 'en-US' ? 'DESTINATIONS' : 'DESTINOS'}
+              {locale === 'en-US' ? 'DESTINATIONS' : 'DESTINOS'}
             </a>
           </Link>
         </li>
@@ -39,7 +41,7 @@ const Navbar: React.FC<Props> = (props) => {
                 color: router.pathname === '/shop' ? 'rgb(240,150,37)' : '',
               }}
             >
-              {router.locale === 'en-US' ? 'SHOP' : 'TIENDA'}
+              {locale === 'en-US' ? 'SHOP' : 'TIENDA'}
             </a>
           </Link>
         </li>
@@ -50,11 +52,21 @@ const Navbar: React.FC<Props> = (props) => {
                 color: router.pathname === '/contact' ? 'rgb(240,150,37)' : '',
               }}
             >
-              { router.locale === 'en-US' ? 'CONTACT' : 'CONTACTO'}
+              {locale === 'en-US' ? 'CONTACT' : 'CONTACTO'}
             </a>
           </Link>
         </li>
-        <LangToggler />
+        <li>
+          <Link
+            href={{
+              pathname: currPath,
+              query: { slug: slug },
+            }}
+            locale={locale === 'en-US' ? 'es-AR' : 'en-US'}
+          >
+            {locale === 'en-US' ? 'ESP' : 'ENG'}
+          </Link>
+        </li>
       </ul>
     </nav>
   );

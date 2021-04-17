@@ -5,9 +5,10 @@
   align-items: center;
   text-align: center;
   border: 1px solid #ccc;
-  min-height: 20vw;
+  box-shadow: 2px 2px 3px 3px #ccc;
+
   background-color: white;
   @media (min-width: 600px) {
-    margin-left: 1rem;  
+    margin-left: 1rem;
   }
 }

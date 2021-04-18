@@ -4,6 +4,7 @@ import { getDataFileNames, getFileData } from '../../lib/data-utils';
 import React, { Fragment } from 'react';
 import SelectedVideo from '../../components/single-destination-page/selected-video';
 import SiteInfo from '../../components/single-destination-page/site-info';
+import Comments from '../../components/comments/comments';
 import { post } from '../../lib/types';
 
 interface Props {
@@ -17,6 +18,7 @@ const SingleDestinationPage: React.FC<Props> = (props) => {
   const { fileData } = props;
   const router = useRouter();
   const locale = router.locale;
+  const slug = router.query.slug;
 
   let text: string;
   let title: string;
@@ -43,6 +45,7 @@ const SingleDestinationPage: React.FC<Props> = (props) => {
         location={fileData.en.location}
         zoom={fileData.en.zoom}
       />
+      <Comments destinationSlug={slug as string} />
     </Fragment>
   );
 };

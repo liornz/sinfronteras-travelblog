@@ -1,0 +1,60 @@
+@use '../../styles/variables';
+
+.form {
+  margin: 2rem auto;
+  width: 100%;
+  border-radius: 6px;
+  background-color: rgb(233, 233, 233);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.control {
+  margin-bottom: 0.5rem;
+  flex: 1;
+  min-width: 10rem;
+}
+
+.control label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: rgb(114, 114, 114);
+  text-align: left;
+}
+
+.control input,
+.control textarea {
+  font: inherit;
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+  background-color: variables.$color-sinfronteras1;
+}
+
+.form .button {
+  font: inherit;
+  background-color: rgb(190, 190, 190);
+  font-weight: bold;
+  border-radius: 5px;
+  color: rgb(114, 114, 114);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgb(88, 88, 88);
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(180, 180, 180);
+  }
+  
+}
+
+.form p {
+  margin: 0.2rem;
+}

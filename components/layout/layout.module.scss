@@ -1,3 +1,6 @@
+@use '../../styles/variables';
+
 .main {
   padding-top: 5rem;
+  background-color: variables.$color-sinfronteras1;
 }

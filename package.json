@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@types/googlemaps": "^3.43.3",
+    "@types/mongodb": "^3.6.12",
     "gray-matter": "^4.0.2",
     "mongodb": "^3.6.6",
     "next": "10.1.3",

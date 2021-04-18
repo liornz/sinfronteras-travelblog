@@ -14,3 +14,16 @@ export type post = {
   zoom: number;
   content: string;
 };
+
+export type commentData = {
+  _id: string;
+  email: string;
+  name: string;
+  text: string;
+};
+
+export type enteredCommentData = {
+  email: string;
+  name: string;
+  text: string;
+};

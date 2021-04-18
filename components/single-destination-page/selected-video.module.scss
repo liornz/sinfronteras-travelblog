@@ -1,5 +1,7 @@
+@use '../../styles/variables';
+
 .container {
-  background-color: #F9F9F9;
+  background-color: variables.$color-sinfronteras1;
 }
 
 .video {
@@ -11,6 +13,8 @@
 .youtube {
   width: 100%;
   height: calc(60rem * 9/16);
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px 5px #ccc; 
   @media (max-width: 728px) {
     height: calc(90vw * 9/16);
   }
@@ -20,4 +24,6 @@
   text-align: center;
   margin: 0;
   padding: 1rem;
+  font-style: oblique;
+  color: rgb(128, 128, 128);
 }

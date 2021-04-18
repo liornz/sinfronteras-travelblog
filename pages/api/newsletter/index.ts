@@ -4,6 +4,7 @@ import { connectDatabase, insertDucument } from '../../../lib/mongodb-utils';
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== 'POST') {
     res.status(501).json({ message: 'Please send a POST request' });
+    return;
   }
   const enteredEmail = req.body.email;
   const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;

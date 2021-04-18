@@ -1,4 +1,4 @@
-import React, { useRef, useState, useContext } from 'react';
+import React, { useRef, useState, useContext, useEffect } from 'react';
 import NotificationContext from '../../context/notification-context';
 import styles from './newsletter-registration.module.scss';
 import { useRouter } from 'next/router';
@@ -10,6 +10,14 @@ const Newsletter: React.FC = () => {
   const locale = router.locale;
   const emailInputRef = useRef<HTMLInputElement>();
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setEmailIsValid(true);
+    }, 3000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [emailIsValid]);
 
   function registrationHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -20,9 +28,10 @@ const Newsletter: React.FC = () => {
     const isValidEmail = pattern.test(enteredEmail);
     if (!isValidEmail) {
       setEmailIsValid(false);
+      emailInputRef.current!.value = '';
       return;
     }
-  
+
     const sendEmailtoAPI = async () => {
       try {
         const response = await fetch('/api/newsletter', {

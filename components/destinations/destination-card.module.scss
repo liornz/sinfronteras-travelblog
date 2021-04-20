@@ -45,8 +45,6 @@
 .card {
   margin: 0;
   padding: 0;
-  // box-shadow: 5px 5px 5px rgb(68, 67, 67);
-  // border-radius: 10px;
   transition: all 0.5s ease-out;
   &:hover {
     transform: scale(0.97);
@@ -72,6 +70,7 @@
   align-items: center;
   z-index: 5;
   cursor: pointer;
+  border-radius: 10px;
   transition: all ease-out 0.5s;
   &:hover {
     background-color: rgba(128, 128, 128, 0.5);

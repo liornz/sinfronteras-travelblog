@@ -38,7 +38,7 @@ const SingleDestinationPage: React.FC<Props> = (props) => {
   }
 
   return (
-    <Fragment>
+    <div style={{ backgroundColor: '#E9ECEF' }}>
       <SelectedVideo youtubeId={fileData.en.youtubeId} title={title} />
       <SiteInfo
         text={text}
@@ -46,7 +46,7 @@ const SingleDestinationPage: React.FC<Props> = (props) => {
         zoom={fileData.en.zoom}
       />
       <Comments destinationSlug={slug as string} />
-    </Fragment>
+    </div>
   );
 };
 

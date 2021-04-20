@@ -22,7 +22,7 @@ const VideoCard: React.FC<Props> = (props) => {
   };
 
   const textSection = text ? (
-    <div className={styles.Text}>
+    <div className={styles.text}>
       <div className={styles.title}>
         <h4>{text?.title}</h4>
       </div>
@@ -36,7 +36,7 @@ const VideoCard: React.FC<Props> = (props) => {
     <>
       <div className={styles.VideoCard}>
         <div className={styles.CardContainer}>
-          <Image src={imagePath} alt={imgAlt} width={1644} height={925} />
+          <Image src={imagePath} alt={imgAlt} width={1644} height={925} layout='responsive' />
           <div onClick={videoDisplayHandler} className={styles.Overlay}>
             <FaPlay color='white' size='3rem' />
           </div>

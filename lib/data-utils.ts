@@ -1,14 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { postMetaData } from './types';
 
-type data = {
-  title: string;
-  subtitle: string;
-  image: string;
-  youtubeId: string;
-  isFeatured: boolean;
-}
+type data = postMetaData;
 
 const enDataDirectory = path.join(process.cwd(), 'destination-data', 'en');
 const esDataDirectory = path.join(process.cwd(), 'destination-data', 'es');
@@ -28,17 +23,36 @@ export const getDataFileNames = (locale: string) => {
   }
 };
 
+// export function getCountryDirs(locale: string) {
+//   let countryDirs;
+//   switch (locale) {
+//     case 'en-US':
+//       countryDirs = fs.readdirSync(enDataDirectory);
+//       break;
+//     case 'es-AR':
+//       countryDirs = fs.readdirSync(esDataDirectory);
+//       break;
+//     default:
+//       countryDirs = fs.readdirSync(enDataDirectory);
+//   }
+//   let dataFiles = [];
+//   for (const dir of countryDirs) {
+//     const countryPath = ;
+//     const postsPerCountry = fs.readdirSync();
+//   }
+// }
+
 export function getFileData(fileIdentifier: string, locale: string) {
   const postSlug = fileIdentifier.replace(/\.md$/, '');
   let filePath;
   switch (locale) {
-    case 'es-US': 
+    case 'es-US':
       filePath = path.join(enDataDirectory, `${postSlug}.md`);
       break;
     case 'es-AR':
       filePath = path.join(esDataDirectory, `${postSlug}.md`);
       break;
-    default: 
+    default:
       filePath = path.join(enDataDirectory, `${postSlug}.md`);
   }
   const fileContent = fs.readFileSync(filePath, 'utf-8');
@@ -46,7 +60,7 @@ export function getFileData(fileIdentifier: string, locale: string) {
 
   const postData = {
     slug: postSlug,
-    ...data as data,
+    ...(data as data),
     content,
   };
   return postData;
@@ -69,4 +83,10 @@ export function getFeaturedPosts(locale: string) {
   const allPosts = getAllPosts(locale);
   const featutredPosts = allPosts.filter((post) => post.isFeatured);
   return featutredPosts;
+}
+
+export function getPostsPerCountry(country: string, locale: string) {
+  const allPosts = getAllPosts(locale);
+  const postsPerCountry = allPosts.filter((post) => post.country === country);
+  return postsPerCountry;
 }

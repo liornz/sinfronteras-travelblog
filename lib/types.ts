@@ -7,12 +7,26 @@ export type post = {
   slug: string;
   title: string;
   subtitle: string;
+  country: string;
+  region: string;
   image: string;
   youtubeId: string;
   isFeatured: boolean;
   location: location;
   zoom: number;
   content: string;
+};
+
+export type postMetaData = {
+  title: string;
+  subtitle: string;
+  country: string;
+  region: string;
+  image: string;
+  youtubeId: string;
+  isFeatured: boolean;
+  location: location;
+  zoom: number;
 };
 
 export type commentData = {

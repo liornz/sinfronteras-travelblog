@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { enteredCommentData } from '../../lib/types';
 import styles from './new-comment.module.scss';
 
@@ -9,6 +10,8 @@ interface Props {
 const NewComment: React.FC<Props> = (props) => {
   const { onAddComment } = props;
   const [isInvalid, setIsInvalid] = useState(false);
+  const router = useRouter();
+  const locale = router.locale;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -56,7 +59,9 @@ const NewComment: React.FC<Props> = (props) => {
     <form className={styles.form} onSubmit={submitCommentHandler}>
       <div className={styles.row}>
         <div className={styles.control}>
-          <label htmlFor="email">Your Email</label>
+          <label htmlFor="email">
+            {locale === 'en-US' ? 'Your Email' : 'Tu Correo Electronico'}
+          </label>
           <input
             type="email"
             id="email"
@@ -64,7 +69,9 @@ const NewComment: React.FC<Props> = (props) => {
           />
         </div>
         <div className={styles.control}>
-          <label htmlFor="name">Your Name</label>
+          <label htmlFor="name">
+            {locale === 'en-US' ? 'Your Name' : 'Tu Nombre'}
+          </label>
           <input
             type="text"
             id="name"
@@ -73,7 +80,9 @@ const NewComment: React.FC<Props> = (props) => {
         </div>
       </div>
       <div className={styles.control}>
-        <label htmlFor="message">Your Message</label>
+        <label htmlFor="message">
+          {locale === 'en-US' ? 'Your Message' : 'Tu Mensaje'}
+        </label>
         <textarea
           name="message"
           id="message"
@@ -86,7 +95,9 @@ const NewComment: React.FC<Props> = (props) => {
       ) : (
         <p style={{ color: '#9c9c9c' }}>.</p>
       )}
-      <button className={styles.button}>Submit</button>
+      <button className={styles.button}>
+        {locale === 'en-US' ? 'Submit' : 'Enviar'}
+      </button>
     </form>
   );
 };

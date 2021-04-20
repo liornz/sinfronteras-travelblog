@@ -10,7 +10,7 @@ location: {
   lng: 98.8584
 }
 zoom: 8
-isFeatured: false
+isFeatured: true
 ---
 
 My Visit to the Elephant Nature Park in Chiang Mai, Thailand.

@@ -13,7 +13,7 @@ interface Props {
   zoom: number;
 }
 
-const GOOGLE_API_KEY = 'AIzaSyD0BwYtSo0miWFoPsLHhcbuRK-Mnz91mRU';
+const GOOGLE_API_KEY = '';
 
 const Map: React.FC<Props> = ({ location, width, height, zoom }) => {
   useEffect(() => {

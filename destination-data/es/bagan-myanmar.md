@@ -10,7 +10,7 @@ location: {
   lng: 94.85011
 }
 zoom: 8
-isFeatured: false
+isFeatured: true
 ---
 
 Mi visita a Bagan, Myanmar

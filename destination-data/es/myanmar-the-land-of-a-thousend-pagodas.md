@@ -10,6 +10,6 @@ location: {
   lng: 96.1
 }
 zoom: 4
-isFeatured: true
+isFeatured: false
 ---
 En este video presento lo más destacado de mi visita a Myanmar.

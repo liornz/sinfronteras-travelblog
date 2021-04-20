@@ -10,7 +10,7 @@ location: {
   lng: 103.866667
 }
 zoom: 8
-isFeatured: false
+isFeatured: true
 ---
 
 Mi visita a los templos de Angkor, Cambodia

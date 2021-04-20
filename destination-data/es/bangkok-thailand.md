@@ -1,5 +1,5 @@
 ---
-title: 'Bangkok - Thailand'
+title: 'Bangkok - Thailandia'
 subtitle: 'Discubriendo Bangkok y sus tesoros culturales'
 country: 'Thailand'
 region: 'Asia'

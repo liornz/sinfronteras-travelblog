@@ -1,5 +1,5 @@
 ---
-title: 'Ayutthaya - Thailand'
+title: 'Ayutthaya - Thailandia'
 subtitle: 'El antiguo reino de Siam'
 country: 'Thailand'
 region: 'Asia'
@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-My Visit to the temples of Angkor, Cambodia
+Mi visita a las ruinas de Ayutthaya Thailandia.

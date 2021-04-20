@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-My Visit to the temples of Angkor, Cambodia
+My Visit to the temple ruins of Ayutthaya, Thailand

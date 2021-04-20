@@ -22,24 +22,32 @@ const SingleDestinationPage: React.FC<Props> = (props) => {
 
   let text: string;
   let title: string;
+  let subtitle: string;
 
   switch (locale) {
     case 'en-US':
       text = fileData.en.content;
       title = fileData.en.title;
+      subtitle = fileData.en.subtitle;
       break;
     case 'es-AR':
       text = fileData.es.content;
       title = fileData.es.title;
+      subtitle = fileData.es.subtitle;
       break;
     default:
       text = fileData.en.content;
       title = fileData.en.title;
+      subtitle = fileData.en.subtitle;
   }
 
   return (
     <div style={{ backgroundColor: '#E9ECEF' }}>
-      <SelectedVideo youtubeId={fileData.en.youtubeId} title={title} />
+      <SelectedVideo
+        youtubeId={fileData.en.youtubeId}
+        title={title}
+        subtitle={subtitle}
+      />
       <SiteInfo
         text={text}
         location={fileData.en.location}

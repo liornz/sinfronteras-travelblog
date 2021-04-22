@@ -5,6 +5,7 @@ export type location = {
 
 export type post = {
   slug: string;
+  countrySlug: string;
   title: string;
   subtitle: string;
   country: string;

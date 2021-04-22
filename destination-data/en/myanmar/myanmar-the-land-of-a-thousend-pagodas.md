@@ -10,7 +10,7 @@ location: {
   lng: 96.1
 }
 zoom: 4
-isFeatured: true
+isFeatured: false
 ---
 
 

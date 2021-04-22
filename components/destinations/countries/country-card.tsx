@@ -24,15 +24,15 @@ const CountryCard: React.FC<Props> = (props) => {
               layout="responsive"
             />
             <div className={styles.overlay}></div>
-          </div>
-          <div className={styles.flag}>
-            <Image
-              src={flagPath}
-              alt={`flag of ${name}`}
-              width={600}
-              height={350}
-              layout="responsive"
-            />
+            <div className={styles.flag}>
+              <Image
+                src={flagPath}
+                alt={`flag of ${name}`}
+                width={200}
+                height={100}
+                layout="responsive"
+              />
+            </div>
           </div>
           <div className={styles.title}>
             <h4>{name}</h4>

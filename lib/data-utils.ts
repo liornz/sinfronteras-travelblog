@@ -150,6 +150,7 @@ export function getFileData(
 
   const postData = {
     slug: fileSlug,
+    countrySlug: country,
     ...(data as postMetaData),
     content,
   };

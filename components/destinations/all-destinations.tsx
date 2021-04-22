@@ -16,13 +16,13 @@ const AllDestinations: React.FC<Props> = (props) => {
       <div className={styles.container}>
         <h1 className="header">
           {router.locale === 'en-US'
-            ? `DESTINATIONS IN ${country.name}`
-            : `DESTINOS EN ${country.name}`}
+            ? `DESTINATIONS IN ${country.name.toUpperCase()}`
+            : `DESTINOS EN ${country.name.toUpperCase()}`}
         </h1>
         <div className="header-underline"></div>
         <div className={styles.divider}></div>
       </div>
-      <DestinationsGrid destinations={destinations} country={country} />
+      <DestinationsGrid destinations={destinations} />
     </>
   );
 };

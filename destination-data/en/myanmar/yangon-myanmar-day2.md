@@ -10,7 +10,7 @@ location: {
   lng: 96.1833333
 }
 zoom: 8
-isFeatured: true
+isFeatured: false
 ---
 
 This is a video about my visit to Yangon - Part 2

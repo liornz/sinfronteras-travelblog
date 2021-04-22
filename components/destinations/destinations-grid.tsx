@@ -4,11 +4,10 @@ import { post, country } from '../../lib/types';
 
 interface Props {
   destinations: post[];
-  country: country
 }
 
 const DestinationsGrid: React.FC<Props> = (props) => {
-  const { destinations, country } = props;
+  const { destinations } = props;
   return (
     <div className={styles.fixedContainer}>
       <div className={styles.dark}>
@@ -16,7 +15,6 @@ const DestinationsGrid: React.FC<Props> = (props) => {
           <DestinationCard
             key={item.slug}
             post={item}
-            country={country}
           />
         ))}
       </div>

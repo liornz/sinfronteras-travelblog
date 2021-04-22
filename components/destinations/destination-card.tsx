@@ -7,17 +7,15 @@ import { post, country } from '../../lib/types';
 
 interface Props {
   post: post;
-  country: country
 } 
   
 
 const DestinationCard: React.FC<Props> = (props) => {
-  const { slug, title, subtitle, image } = props.post;
-  const { country } = props;
+  const { countrySlug, slug, title, subtitle, image } = props.post;
   const imagePath = `/images/posters/${image}`;
 
   return (
-    <Link href={`/destinations/${country.slug}/${slug}`}>
+    <Link href={`/destinations/${countrySlug}/${slug}`}>
       <a>
         <div className={styles.card}>
           <div className={styles.image}>

@@ -42,7 +42,7 @@ const SingleDestinationPage: React.FC<Props> = (props) => {
   }
 
   return (
-    <div style={{ backgroundColor: '#E9ECEF' }}>
+    <Fragment>
       <SelectedVideo
         youtubeId={fileData.en.youtubeId}
         title={title}
@@ -54,14 +54,14 @@ const SingleDestinationPage: React.FC<Props> = (props) => {
         zoom={fileData.en.zoom}
       />
       <Comments destinationSlug={slug as string} />
-    </div>
+    </Fragment>
   );
 };
 
 export default SingleDestinationPage;
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const slug = context.params?.slug;
+  const slug = context.params!.slug;
 
   const dataEn = getFileData(slug as string, 'en-US');
   const dataEs = getFileData(slug as string, 'es-AR');

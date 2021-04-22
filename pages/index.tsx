@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next';
 import VideoOpening from '../components/home-page/video-opening';
 import Hero from '../components/home-page/hero';
 import FeaturedDestinations from '../components/destinations/featured-destinations';
-import { getFeaturedPosts } from '../lib/data-utils';
+import { getFeaturedDestinations } from '../lib/data-utils';
 import { post } from '../lib/types';
 
 interface Props {
@@ -34,7 +34,7 @@ export default HomePage;
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const locale = context.locale;
-  const featuredPosts = getFeaturedPosts(locale || 'en-US');
+  const featuredPosts = getFeaturedDestinations(locale || 'en-US');
 
   return {
     props: {

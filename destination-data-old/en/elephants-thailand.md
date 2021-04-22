@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: true
 ---
 
-My Visit to the Elephant Nature Park in Chiang Mai, Thailand.
+My Visit to Elephant Nature Park in Chiang Mai, Thailand.

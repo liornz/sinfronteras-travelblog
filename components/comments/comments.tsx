@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import NewComment from './new-comment';
 import CommentList from './comments-list';
 import NotificationContext from '../../context/notification-context';
@@ -14,6 +15,7 @@ const Comments: React.FC<Props> = (props) => {
   const [comments, setComments] = useState<commentData[]>([]);
   const [isLoadingComments, setIsLoadingComments] = useState(false);
   const notificationCtx = useContext(NotificationContext);
+  const locale = useRouter().locale;
 
   useEffect(() => {
     getComments();
@@ -42,7 +44,6 @@ const Comments: React.FC<Props> = (props) => {
   };
 
   function addCommentHandler(commentData: enteredCommentData) {
-    // send data to API
     const sendCommentDataToAPI = async () => {
       try {
         const response = await fetch('/api/comments/' + destinationSlug, {
@@ -80,11 +81,17 @@ const Comments: React.FC<Props> = (props) => {
     getComments();
   }
 
-
   return (
-    <div className={styles.comments}>
-      <NewComment onAddComment={addCommentHandler} />
-      <CommentList comments={comments} isLoading={isLoadingComments} />
+    <div className={styles.container}>
+      <div className={styles.comments}>
+        <h3 className={styles.title}>
+          {locale === 'en-US'
+            ? 'Share Your Opinion and Thoughts'
+            : 'Comparte tu opinión y pensamientos'}
+        </h3>
+        <NewComment onAddComment={addCommentHandler} />
+        <CommentList comments={comments} isLoading={isLoadingComments} />
+      </div>
     </div>
   );
 };

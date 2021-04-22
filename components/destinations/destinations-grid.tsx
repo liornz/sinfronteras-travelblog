@@ -1,13 +1,14 @@
 import DestinationCard from './destination-card';
 import styles from './destinations-grid.module.scss';
-import { post } from '../../lib/types';
+import { post, country } from '../../lib/types';
 
 interface Props {
   destinations: post[];
+  country: country
 }
 
 const DestinationsGrid: React.FC<Props> = (props) => {
-  const { destinations } = props;
+  const { destinations, country } = props;
   return (
     <div className={styles.fixedContainer}>
       <div className={styles.dark}>
@@ -15,6 +16,7 @@ const DestinationsGrid: React.FC<Props> = (props) => {
           <DestinationCard
             key={item.slug}
             post={item}
+            country={country}
           />
         ))}
       </div>

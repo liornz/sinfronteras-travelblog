@@ -41,3 +41,16 @@ export type enteredCommentData = {
   name: string;
   text: string;
 };
+
+export type countryMetaData = {
+  name: string;
+  flag: string;
+  image: string;
+}
+
+export type country = {
+  slug: string;
+  name: string;
+  flag: string;
+  image: string;
+};

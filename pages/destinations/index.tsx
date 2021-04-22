@@ -1,29 +1,37 @@
 import { GetStaticProps } from 'next';
-import AllDestinations from '../../components/destinations/all-destinations';
-import { getAllPosts } from '../../lib/data-utils';
-import { post } from '../../lib/types';
+import { useRouter } from 'next/router';
+import AllCountries from '../../components/destinations/countries/all-countries';
+import { country } from '../../lib/types';
+import { getAllCountriesData } from '../../lib/data-utils';
 
 interface Props {
-  allPosts: post[];
+  countries: {
+    en: country[];
+    es: country[];
+  };
 }
 
-const AllDestinationsPage: React.FC<Props> = (props) => {
-  const { allPosts } = props;
+const AllCountriesPage: React.FC<Props> = (props) => {
+const { countries } = props;
+const locale = useRouter().locale;
+const countriesList = locale === 'en-US' ? countries.en : countries.es;
   return (
- 
-    <AllDestinations destinations={allPosts} />
+    <AllCountries countries={countriesList} />
   );
 };
 
-export default AllDestinationsPage;
+export default AllCountriesPage;
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const locale = context.locale;
-  const allPosts = getAllPosts(locale || 'en-US');
-
+export const getStaticProps: GetStaticProps = async () => {
+  const countriesEn = getAllCountriesData('en-US');
+  const countriesEs = getAllCountriesData('es-AR');
+  const countriesData = {
+    en: countriesEn,
+    es: countriesEs
+  }
   return {
     props: {
-      allPosts: allPosts,
-    },
-  };
-};
+      countries: countriesData
+    }
+  }
+}

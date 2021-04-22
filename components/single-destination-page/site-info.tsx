@@ -5,17 +5,19 @@ import { location } from '../../lib/types';
 import styles from './site-info.module.scss';
 
 interface Props {
-  text: string,
-  location: location,
-  zoom: number,
+  text: string;
+  location: location;
+  zoom: number;
 }
 
 const SiteInfo: React.FC<Props> = (props) => {
-const { text, location, zoom } = props;
+  const { text, location, zoom } = props;
   return (
-    <div className={styles.info}>
-      <DestinationText text={text} />
-      <DestinationMap location={location} zoom={zoom} />
+    <div className={styles.container}>
+      <div className={styles.info}>
+        <DestinationText text={text} />
+        <DestinationMap location={location} zoom={zoom} />
+      </div>
     </div>
   );
 };

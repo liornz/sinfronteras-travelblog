@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaPlay } from 'react-icons/fa';
 
 import styles from './destination-card.module.scss';
-import { post, country } from '../../lib/types';
+import { post } from '../../lib/types';
 
 interface Props {
   post: post;
@@ -27,7 +26,6 @@ const DestinationCard: React.FC<Props> = (props) => {
               layout="responsive"
             />
             <div className={styles.overlay}>
-              <FaPlay color="white" size="3rem" />
             </div>
           </div>
           <div className={styles.text}>

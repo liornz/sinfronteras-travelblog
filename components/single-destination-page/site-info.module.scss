@@ -1,13 +1,20 @@
 @use '../../styles/variables';
 
+.container {
+  background-color: variables.$color-background;
+}
+
 .info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   // padding: 2rem 5rem;
-  background-color: variables.$color-background;
   @media (min-width: 600px) {
-    padding: 3rem 3rem;
+    width: 90vw;
+    max-width: 80rem;
+    margin: auto;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
     flex-direction: row;
     justify-content: center;
   }

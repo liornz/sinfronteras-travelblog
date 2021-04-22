@@ -10,8 +10,6 @@ interface Props {
 const Navbar: React.FC<Props> = (props) => {
   const router = useRouter();
   const locale = router.locale;
-  const currPath = router.pathname;
-  const slug = router.query.slug;
 
   const { show, toggle } = props;
 
@@ -59,8 +57,8 @@ const Navbar: React.FC<Props> = (props) => {
         <li>
           <Link
             href={{
-              pathname: currPath,
-              query: { slug: slug },
+              pathname: router.pathname,
+              query: router.query,
             }}
             locale={locale === 'en-US' ? 'es-AR' : 'en-US'}
           >

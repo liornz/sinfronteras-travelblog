@@ -7,13 +7,14 @@
 }
 
 .title {
+  position: relative;
   padding-bottom: 0.5rem;
   color: white;
   background-color: rgba(128, 128, 128, 0.4);
   border-radius: 0 0 10px 10px;
   height: 75px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   // border-bottom: 2px solid white;
   h4 {
@@ -84,5 +85,5 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 30%;
+  width: 20%;
 }

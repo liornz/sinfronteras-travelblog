@@ -24,6 +24,9 @@ const CountryCard: React.FC<Props> = (props) => {
               layout="responsive"
             />
             <div className={styles.overlay}></div>
+          </div>
+          <div className={styles.title}>
+            <h4>{name}</h4>
             <div className={styles.flag}>
               <Image
                 src={flagPath}
@@ -33,9 +36,6 @@ const CountryCard: React.FC<Props> = (props) => {
                 layout="responsive"
               />
             </div>
-          </div>
-          <div className={styles.title}>
-            <h4>{name}</h4>
           </div>
         </div>
       </a>

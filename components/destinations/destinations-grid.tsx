@@ -4,10 +4,13 @@ import { post, country } from '../../lib/types';
 
 interface Props {
   destinations: post[];
+  image?: string;
+  slug?: string;
 }
 
 const DestinationsGrid: React.FC<Props> = (props) => {
-  const { destinations } = props;
+  const { destinations, image, slug } = props;
+  console.log(`/images/countries/${slug}/${image}`);
   return (
     <div className={styles.fixedContainer}>
       <div className={styles.dark}>
@@ -19,7 +22,7 @@ const DestinationsGrid: React.FC<Props> = (props) => {
         ))}
       </div>
       <div className={styles.fixedWrap}>
-        <div className={styles.fixedInner}></div>
+        <div className={styles.fixedInner} style={image ? {backgroundImage: `url('/images/countries/${slug}/${image}')`} : undefined}></div>
       </div>
     </div>
   );

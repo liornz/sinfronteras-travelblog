@@ -22,7 +22,11 @@ const AllDestinations: React.FC<Props> = (props) => {
         <div className="header-underline"></div>
         <div className={styles.divider}></div>
       </div>
-      <DestinationsGrid destinations={destinations} />
+      <DestinationsGrid
+        destinations={destinations}
+        image={country.image}
+        slug={country.slug}
+      />
     </>
   );
 };

@@ -8,10 +8,11 @@ import { commentData, enteredCommentData } from '../../lib/types';
 
 interface Props {
   destinationSlug: string;
+  countrySlug: string;
 }
 
 const Comments: React.FC<Props> = (props) => {
-  const { destinationSlug } = props;
+  const { destinationSlug, countrySlug } = props;
   const [comments, setComments] = useState<commentData[]>([]);
   const [isLoadingComments, setIsLoadingComments] = useState(false);
   const notificationCtx = useContext(NotificationContext);

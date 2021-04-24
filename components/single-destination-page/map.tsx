@@ -10,12 +10,15 @@ interface Props {
     | undefined;
   width: number | string;
   height: number | string;
+  minWidth?: number | string;
+  minHeight?: number | string;
   zoom: number;
 }
 
-const GOOGLE_API_KEY = '';
+const GOOGLE_API_KEY = 'AIzaSyCvZ7AUUIuMZMFGsM4YCs8i3QQIhr1gjO8';
 
-const Map: React.FC<Props> = ({ location, width, height, zoom }) => {
+const Map: React.FC<Props> = (props) => {
+const { location, width, height, zoom, minWidth, minHeight } = props;
   useEffect(() => {
     if (window.google === undefined) {
       const s = document.createElement('script');
@@ -60,6 +63,8 @@ const Map: React.FC<Props> = ({ location, width, height, zoom }) => {
       style={{
         width: width,
         height: height,
+        minWidth: minWidth,
+        minHeight: minHeight
       }}
       className={styles.map_area}
       id="map"

@@ -16,14 +16,14 @@ const CommentsList: React.FC<Props> = (props) => {
       return null;
     }
     if (isLoading) {
-      <p>{locale === 'en-US' ? 'Loading Comments' : 'carga de comentarios'}</p>;
+      return <p>{locale === 'en-US' ? 'Loading Comments' : 'carga de comentarios'}</p>;
     } else return <p>{locale === 'en-US' ? 'Comments' : 'Commentarios'}</p>
   }
   return (
     <Fragment>
-      <p className={styles.title}>
+      <div className={styles.title}>
         {title()}
-      </p>
+      </div>
       <ul className={styles.comments}>
         {comments.map((comment) => (
           <li key={comment._id} className={styles.comment}>

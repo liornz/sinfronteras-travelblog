@@ -11,7 +11,7 @@ const DestinationMap: React.FC<Props> = (props) => {
   const { location, zoom } = props;
   return (
     <div className={styles.map}>
-      <Map location={location} width={'100%'} height={'30vw'} zoom={zoom} />
+      <Map location={location} width={'100%'} height={'30vw'} minHeight={'200px'} zoom={zoom} />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 ---
-title: 'Ayutthaya - Thailand'
+title: 'Ayutthaya - Tailandia'
 subtitle: 'El antiguo reino de Siam'
-country: 'Thailand'
+country: 'Tailandia'
 region: 'Asia'
 image: 'portada-ayutthaya.jpg'
 youtubeId: 'fJa5yhFTWmY'
@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-My Visit to the temples of Angkor, Cambodia
+Mi visita a Ayutthaya, Tailandia.

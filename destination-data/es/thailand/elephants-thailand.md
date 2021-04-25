@@ -1,7 +1,7 @@
 ---
-title: 'Elefantes en Thailandia'
+title: 'Elefantes en Tailandia'
 subtitle: 'Una historia diferente'
-country: 'Thailand'
+country: 'Tailandia'
 region: 'Asia'
 image: 'portada-enp.jpg'
 youtubeId: 'hmvSukajIes'
@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: true
 ---
 
-My visita a Elephant Nature Park en Chiang Mai, Thailandia.
+Mi visita a Elephant Nature Park en Chiang Mai, Thailandia.

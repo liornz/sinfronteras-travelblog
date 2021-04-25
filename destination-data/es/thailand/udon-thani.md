@@ -1,7 +1,7 @@
 ---
-title: 'Udon Thani - Thailandia'
+title: 'Udon Thani - Tailandia'
 subtitle: 'El lago de lotos rosados'
-country: 'Thailand'
+country: 'Tailandia'
 region: 'Asia'
 image: 'portada-udon-thani.jpg'
 youtubeId: 'qAqDTBgtfks'
@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-Mi visita al logo de lotos rosados en Udon Thani, Thailandia.
+Mi visita al logo de lotos rosados en Udon Thani, Tailandia.

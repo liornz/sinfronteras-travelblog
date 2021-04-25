@@ -1,7 +1,7 @@
 ---
-title: 'Bangkok - Thailand'
+title: 'Bangkok - Tailandia'
 subtitle: 'Discubriendo Bangkok y sus tesoros culturales'
-country: 'Thailand'
+country: 'Tailandia'
 region: 'Asia'
 image: 'portada-bangkok.jpg'
 youtubeId: 'nWSQX3Gk7eQ'
@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-Mi visita a Bangkok, Thailandia
+Mi visita a Bangkok, Tailandia

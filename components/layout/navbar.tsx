@@ -54,7 +54,7 @@ const Navbar: React.FC<Props> = (props) => {
             </a>
           </Link>
         </li>
-        <li>
+        <li onClick={toggle}>
           <Link
             href={{
               pathname: router.pathname,

@@ -25,7 +25,7 @@ const Comments: React.FC<Props> = (props) => {
   const getComments = async () => {
     setIsLoadingComments(true);
     try {
-      const response = await fetch(`/api/comments/${destinationSlug}`);
+      const response = await fetch(`/api/comments/${countrySlug}/${destinationSlug}`);
       if (response.ok) {
         const data = await response.json();
         setComments(data.comments);
@@ -47,7 +47,7 @@ const Comments: React.FC<Props> = (props) => {
   function addCommentHandler(commentData: enteredCommentData) {
     const sendCommentDataToAPI = async () => {
       try {
-        const response = await fetch('/api/comments/' + destinationSlug, {
+        const response = await fetch('/api/comments/' + countrySlug + '/' + destinationSlug, {
           method: 'POST',
           body: JSON.stringify(commentData),
           headers: {

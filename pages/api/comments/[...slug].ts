@@ -2,7 +2,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { connectDatabase, getAllDocuments, insertDucument } from '../../../lib/mongodb-utils';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const destinationSlug = req.query.destinationSlug;
+  const countrySlug = req.query.slug[0];
+  const destinationSlug = req.query.slug[1];
   let client;
   try {
     client = await connectDatabase();
@@ -30,6 +31,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
     // save the comment in the DB, per destination name/slug 
     const newComment = {
+      countrySlug,
       destinationSlug,
       email,
       name,
@@ -57,7 +59,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
          client,
          'comments',
          {
-           destinationSlug: destinationSlug,
+          countrySlug: countrySlug, 
+          destinationSlug: destinationSlug,
          },
          { _id: -1 }
        );

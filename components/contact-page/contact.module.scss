@@ -1,8 +1,16 @@
 @use '../../styles/variables';
 
+.container {
+  h1 {
+    text-align: center;
+    color: rgb(110, 110, 110);
+  }
+}
+
 .form {
   margin: 2rem auto;
-  // width: 100%;
+  width: 50%;
+  min-width: 18rem;
   border-radius: 6px;
   background-color: rgb(202, 202, 202);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -41,6 +49,8 @@
 
 .form .button {
   font: inherit;
+  display: block;
+  margin: 0 auto;
   background-color: rgb(190, 190, 190);
   font-weight: bold;
   border-radius: 5px;
@@ -52,9 +62,13 @@
   &:hover {
     background-color: rgb(180, 180, 180);
   }
-  
 }
 
 .form p {
   margin: 0.2rem;
+}
+
+.error {
+  text-align: center;
+  color: rgb(154, 44, 44);
 }

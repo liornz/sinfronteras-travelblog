@@ -55,3 +55,9 @@ export type country = {
   flag: string;
   image: string;
 };
+
+export type enteredMessageData = {
+  email: string;
+  name: string;
+  message: string;
+};

@@ -1,5 +1,4 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { useRouter } from 'next/router';
 import AllDestinations from '../../components/destinations/all-destinations';
 import {
   getCountryFileData,

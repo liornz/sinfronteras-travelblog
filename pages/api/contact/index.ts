@@ -5,17 +5,6 @@ import {
 } from '../../../lib/mongodb-utils';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-
-  let client;
-  try {
-    client = await connectDatabase();
-  } catch (error) {
-    res
-      .status(500)
-      .json({ message: error.message || 'Connection to the database failed!' });
-    return;
-  }
-
   if (req.method == 'POST') {
     const { email, name, message } = req.body;
     const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
@@ -28,10 +17,17 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       message.trim() === ''
     ) {
       res.status(422).json({ message: 'Invalid input!' });
-      client.close();
       return;
     }
-    // save the comment in the DB, per destination name/slug
+    let client;
+    try {
+      client = await connectDatabase();
+    } catch (error) {
+      res.status(500).json({
+        message: error.message || 'Connection to the database failed!',
+      });
+      return;
+    }
     const newMessage = {
       email,
       name,

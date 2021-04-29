@@ -1,6 +1,6 @@
 import DestinationCard from './destination-card';
 import styles from './destinations-grid.module.scss';
-import { post, country } from '../../lib/types';
+import { post } from '../../lib/types';
 
 interface Props {
   destinations: post[];
@@ -10,7 +10,6 @@ interface Props {
 
 const DestinationsGrid: React.FC<Props> = (props) => {
   const { destinations, image, slug } = props;
-  console.log(`/images/countries/${slug}/${image}`);
   return (
     <div className={styles.fixedContainer}>
       <div className={styles.dark}>

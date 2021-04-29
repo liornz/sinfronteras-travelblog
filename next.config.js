@@ -3,7 +3,4 @@ module.exports = {
     locales: ['en-US', 'es-AR'],
     defaultLocale: 'es-AR',
   },
-  future: {
-    webpack5: true,
-  },
 };

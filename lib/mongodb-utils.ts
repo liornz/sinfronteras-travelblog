@@ -7,13 +7,22 @@ export const connectDatabase = async () => {
   );
   return client;
 };
-export const insertDucument = async (client, collection, document) => {
+export const insertDucument = async (
+  client: MongoClient,
+  collection: string,
+  document: {}
+) => {
   const db = client.db();
   const result = await db.collection(collection).insertOne(document);
   return result;
 };
 
-export const getAllDocuments = async (client, collection, filter, sort) => {
+export const getAllDocuments = async (
+  client: MongoClient,
+  collection: string,
+  filter: {},
+  sort: {}
+) => {
   const db = client.db();
   const documents = await db
     .collection(collection)

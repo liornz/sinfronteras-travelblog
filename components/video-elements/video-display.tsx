@@ -22,7 +22,6 @@ const VideoDisplay: React.FC<Props> = (props) => {
   };
 
   const _onReady = (event: { target: { playVideo: () => void} }) => {
-    console.log(event.target);
     // access to player in all event handlers via event.target
     event.target.playVideo();
   };

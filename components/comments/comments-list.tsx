@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { useRouter } from 'next/router';
+import Spinner from '../../components/ui/spinner';
 import { commentData } from '../../lib/types';
 import styles from './comments-list.module.scss';
 
@@ -16,7 +17,7 @@ const CommentsList: React.FC<Props> = (props) => {
       return null;
     }
     if (isLoading) {
-      return <p>{locale === 'en-US' ? 'Loading Comments' : 'carga de comentarios'}</p>;
+      return <Spinner />;
     } else return <p>{locale === 'en-US' ? 'Comments' : 'Commentarios'}</p>
   }
   return (

@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-My Visit to the famous Golden-Rock in Kyaiktiyo, Mayanmar.
+Located 200 km from Yangon at 100 meters above sea level, on the edge of a cliff is the Kyaiktiyo Pagoda, popularly known as the Golden Rock. Kyaiktiyo's golden rock blends green landscapes, privileged views of southern Myanmar, mysticism and religion engulfed by the nines and one and an Ancient Legend.

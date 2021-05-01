@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-Mi visita a Ayutthaya, Tailandia.
+Ayutthaya y sus ruinas es una de las visitas obligadas para aquellos que quieran viajar a Tailandia y conocer, admirar la historia del país y disfrutar con sus yacimientos arqueológicos. Situada a poco más de 70 km de Bangkok es una visita ideal para hacerla en un solo día o como parada en tu ruta hacia el norte de Tailandia.

@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-This is a video about my visit to Yangon - Part 3
+Yangon is the largest and oldest city and capital of Myanmar (Burma) and the one with the most colonial buildings in all of Southeast Asia. Its historical importance as a port of commerce for centuries, made it home to a melting pot of ethnicities and religions so today, in its streets, tradition, culture and modernity are breathed. In this episode we will learn a little more about the harsh history of this country as we will also get on and walk on a train around the city of Yangon.

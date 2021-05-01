@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-Mi visita a las ruinas en Sukhothai, Tailandia.
+Sukhothai es una joya de la arquitectura que fue declarada Patrimonio de la Humanidad por la UNESCO en 1991 y hace que cada año, sean miles los turistas que vayan a admirar sus ruinas y a conocer parte de la historia del país. 

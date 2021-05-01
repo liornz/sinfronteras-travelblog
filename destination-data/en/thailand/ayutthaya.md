@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-My Visit to the temples of Angkor, Cambodia
+Ayutthaya and its ruins is one of the must-see for those who want to travel to Thailand and get to know, admire the history of the country and enjoy with its archaeological sites. Located just over 70 km from Bangkok is an ideal visit to make it in a single day or as a stop on your route to northern Thailand.

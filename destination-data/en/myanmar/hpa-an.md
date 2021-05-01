@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-My Visit to Hpa An, Myanmar
+Since long before I arrived in this country many people had mentioned to me a small village on the banks of the Salween River. A place which is wrapped by infinite rice paddy mountains and temples within natural caves. A place so pure that it would steal my heart just by setting foot in that place. That place is Hpa-An.

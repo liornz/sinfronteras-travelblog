@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-Mi visita a la ciudad de Hpa An, Myanmar. 
+Desde mucho antes de llegar a este país mucha gente me había mencionado un pequeño pueblo a las orillas del río Salween, un lugar el cual esta envuelto por montañas arrozales infinitos y templos dentro de cuevas naturales. Un lugar tan puro que no savia que robaría mi Corazón tan solo con poner un pie en el ese lugar ese lugar es conocido como Hpa-An.

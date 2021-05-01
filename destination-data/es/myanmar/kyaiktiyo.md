@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-Mi Visita a la famosa Piedra-Dorade de Kyaiktiyo, Myanmar.
+ Localizada a 200 km de Yangon a 100 metros de altura sobre el nivel del mar, al borde de un precipicio se encuentra la Pagoda Kyaiktiyo, popularmente conocida con el nombre de la roca dorada (Golden Rock en inglés). La roca dorada de Kyaiktiyo mezcla verdes paisajes, vistas privilegiadas del sur de Myanmar, misticismo y religión envueltas por las nueves y una y una Antigua leyenda.

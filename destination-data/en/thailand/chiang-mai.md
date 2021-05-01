@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-My Visit to Chiang Mai, Thailand.
+Chiang Mai, located about 700km north of Bangkok, is one of Thailand's most visited cities. Nature, fauna, Buddhist temples, street food, flea markets and a relaxed and pleasant atmosphere for tourists are some of its main attractions offered by this fascinating and magical city.

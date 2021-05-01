@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-Mi visita a Yangon - Tercer Parte
+Yangón es la ciudad más grande y antigua y capital de Myanmar ( Birmania) y la que más edificios coloniales alberga de todo el Sudeste Asiático. Su importancia histórica como puerto de comercio durante siglos, hizo de ella el hogar de un crisol de etnias y religiones por lo que hoy, en sus calles, se respira la tradición, la cultura y la modernidad. En este episodio conoceremos un poco mas la dura historia de este país como también nos subiremos y pasearemos en un tren a los alrededores de la ciudad de Yangon.

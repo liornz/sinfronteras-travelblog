@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-My Visit to the temple ruins in Sukhothai, Thailand.
+Sukhothai is a jewel of architecture that was declared a World Heritage Site by UNESCO in 1991 and makes every year thousands of tourists who will admire its ruins and get to know part of the country's history.

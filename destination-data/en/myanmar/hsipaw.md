@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-My Visit to Hsipaw, Myanmar
+Located 200 km from Mandalay in the heart of Shan State, is the small town of Hsipaw. Surrounded by mountains and small villages, Hsipaw is famous among the traveling community that visits Myanmar for being an alternative place for hiking and for its simplicity its nature and unique authenticity in Myanmar.

@@ -33,6 +33,7 @@
   z-index: 1000;
   display: grid;
   gap: 2rem;
+  justify-content: center;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   @media (min-width: 400px) {
     padding: 2rem;

@@ -15,8 +15,8 @@ const FeaturedDestinations: React.FC<Props> = (props) => {
     <div className={styles.container}>
       <h1 className="header">
         {router.locale === 'en-US'
-          ? 'FEATURED DESTINATIONS'
-          : 'DESTINOS DESTACADOS'}
+          ? 'FEATURED CHAPTERS'
+          : 'KAPITULOS DESTACADOS'}
       </h1>
       <div className="header-underline"></div>
       <div className={styles.divider}></div>

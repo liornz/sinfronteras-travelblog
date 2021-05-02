@@ -30,18 +30,19 @@
 .dark {
   background-color: rgba(0, 0, 0, 0.7);
   padding: .2rem;
+  margin: auto;
   z-index: 1000;
   display: grid;
   gap: 2rem;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   @media (min-width: 400px) {
     padding: 2rem;
   }
   @media (min-width: 630px) {
-  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   }
   @media (min-width: 1000px) {
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
 }

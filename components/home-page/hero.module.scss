@@ -12,6 +12,9 @@
   @media (min-width: 992px) {
     flex-direction: row;
   }
+  @media (min-width: 2000px) {
+    flex-direction: column;
+  }
 }
 
 .AboutText {

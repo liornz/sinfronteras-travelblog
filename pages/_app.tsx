@@ -17,10 +17,10 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactNode {
         content="width=device-width, minimum-scale=1.0, viewport-fit=cover"
       />
       <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-      {/* <meta
+      <meta
           name="google-site-verification"
           content="l0w2h2JQOHdnGVdvB0UqUOHAon8XxS24IlkTFJOqXN0"
-        /> */}
+        />
       <title>{siteTitle}</title>
       <meta
         name="description"

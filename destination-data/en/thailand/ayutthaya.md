@@ -13,4 +13,4 @@ zoom: 8
 isFeatured: false
 ---
 
-Ayutthaya and its ruins is one of the must-see for those who want to travel to Thailand and get to know, admire the history of the country and enjoy with its archaeological sites. Located just over 70 km from Bangkok is an ideal visit to make it in a single day or as a stop on your route to northern Thailand.
+Ayutthaya and its ruins is one of the must-see for those who want to travel to Thailand, get to know the history of the country and explore its archaeological sites. Located just over 70 km from Bangkok, Ayutthaya is an ideal visit whether on a single day from Bangkok or as a stop on your route to northern Thailand.

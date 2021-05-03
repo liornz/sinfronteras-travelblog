@@ -1,4 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
+import Head from 'next/head';
+import React from 'react';
 import AllDestinations from '../../components/destinations/all-destinations';
 import {
   getCountryFileData,
@@ -9,13 +11,24 @@ import { post, country } from '../../lib/types';
 
 interface Props {
   destinations: post[];
-  country: country
+  country: country;
 }
 
 const DestinationsPerCountry: React.FC<Props> = (props) => {
   const { destinations, country } = props;
 
-  return <AllDestinations destinations={destinations} country={country} />;
+  return (
+    <React.Fragment>
+      <Head>
+        <title>{`Sinfronteras - Destinations in ${country.name}`}</title>
+        <meta
+          name="description"
+          content={`Sinfronteras Travel Blog - Destinations in ${country.name}`}
+        />
+      </Head>
+      <AllDestinations destinations={destinations} country={country} />
+    </React.Fragment>
+  );
 };
 
 export default DestinationsPerCountry;
@@ -35,7 +48,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       destinations: destinations,
-      country: countryFileData
+      country: countryFileData,
     },
   };
 };

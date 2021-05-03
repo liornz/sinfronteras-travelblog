@@ -79,7 +79,7 @@ const Newsletter: React.FC = () => {
       <p>
         {locale === 'en-US'
           ? 'Join our community to receive useful information and tips'
-          : 'Únase a nuestra comunidad para recibir información y consejos útiles'}
+          : 'Unete a esta comunidad para recibir información y consejos útiles'}
       </p>
       <form onSubmit={registrationHandler}>
         <input

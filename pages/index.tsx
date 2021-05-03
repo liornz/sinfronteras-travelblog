@@ -1,5 +1,4 @@
 import { Fragment } from 'react';
-import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import VideoOpening from '../components/home-page/video-opening';
 import Hero from '../components/home-page/hero';
@@ -18,13 +17,6 @@ const HomePage: React.FC<Props> = (props) => {
 
   return (
     <Fragment>
-      <Head>
-        <title>Travelblog Sinfronteras</title>
-        <meta
-          name="description"
-          content="Homepage - Sinfronteras Travel Blog - Your place for informative cool videos about exciting destinations"
-        />
-      </Head>
       <VideoOpening />
       <Hero />
       <AllCountries countries={countries} />

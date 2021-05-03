@@ -6,6 +6,7 @@ import SelectedVideo from '../../components/single-destination-page/selected-vid
 import SiteInfo from '../../components/single-destination-page/site-info';
 import Comments from '../../components/comments/comments';
 import { post } from '../../lib/types';
+import Head from 'next/head';
 
 interface Props {
   fileData: post;
@@ -21,6 +22,13 @@ const SingleDestinationPage: React.FC<Props> = (props) => {
 
   return (
     <Fragment>
+      <Head>
+        <title>{`${fileData.title}`}</title>
+        <meta
+          name="description"
+          content={`Sinfronteras Travel Blog - ${fileData.title}`}
+        />
+      </Head>
       <SelectedVideo
         youtubeId={fileData.youtubeId}
         title={fileData.title}

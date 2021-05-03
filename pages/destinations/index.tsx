@@ -2,6 +2,8 @@ import { GetStaticProps } from 'next';
 import AllCountries from '../../components/destinations/countries/all-countries';
 import { country } from '../../lib/types';
 import { getAllCountriesData } from '../../lib/data-utils';
+import React from 'react';
+import Head from 'next/head';
 
 interface Props {
   countries: country[]
@@ -10,7 +12,16 @@ interface Props {
 const AllCountriesPage: React.FC<Props> = (props) => {
 const { countries } = props;
   return (
-    <AllCountries countries={countries} />
+    <React.Fragment>
+      <Head>
+        <title>Travelblog Sinfronteras - Destinations Page</title>
+        <meta
+          name="description"
+          content="Destinations - Sinfronteras Travel Blog - Choose country"
+        />
+      </Head>
+      <AllCountries countries={countries} />
+    </React.Fragment>
   );
 };
 

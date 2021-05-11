@@ -1,8 +1,16 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import {
-  connectDatabase,
-  insertDucument,
-} from '../../../lib/mongodb-utils';
+import { connectDatabase, insertDucument } from '../../../lib/mongodb-utils';
+import nodemailer from 'nodemailer';
+//@ts-ignore
+import sendgridTransport from 'nodemailer-sendgrid-transport';
+
+const transporter = nodemailer.createTransport(
+  sendgridTransport({
+    auth: {
+      api_key: process.env.SENDGRID_API_KEY,
+    },
+  })
+);
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method == 'POST') {
@@ -19,6 +27,23 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       res.status(422).json({ message: 'Invalid input!' });
       return;
     }
+
+    await transporter.sendMail(
+      {
+        to: 'travelblogsinfronteras@gmail.com',
+        from: 'info@sinfronteras-travelblog.com',
+        subject: 'Sin-Fronteras - Contact Form',
+        html: `<h2>New Message from ${name} - ${email}</h2><hr><p>${message}</p>`,
+      },
+      (error, info) => {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log(info);
+        }
+      }
+    );
+
     let client;
     try {
       client = await connectDatabase();

@@ -1,21 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { connectDatabase, insertDucument } from '../../../lib/mongodb-utils';
-import nodemailer from 'nodemailer';
-//@ts-ignore
-import sendgridTransport from 'nodemailer-sendgrid-transport';
-
-const transporter = nodemailer.createTransport(
-  sendgridTransport({
-    auth: {
-      api_key: process.env.SENDGRID_API_KEY,
-    },
-  })
-);
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method == 'POST') {
     const { email, name, message } = req.body;
-    const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    const pattern =
+      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     const emailIsValid = pattern.test(email);
     if (
       !emailIsValid ||
@@ -28,21 +20,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       return;
     }
 
-    await transporter.sendMail(
-      {
-        to: 'travelblogsinfronteras@gmail.com',
-        from: 'info@sinfronteras-travelblog.com',
-        subject: 'Sin-Fronteras - Contact Form',
-        html: `<h2>New Message from ${name} - ${email}</h2><hr><p>${message}</p>`,
-      },
-      (error, info) => {
-        if (error) {
-          console.log(error);
-        } else {
-          console.log(info);
-        }
-      }
-    );
+    const msg = {
+      to: 'travelblogsinfronteras@gmail.com',
+      from: 'info@sinfronteras-travelblog.com',
+      subject: 'Sin-Fronteras - Contact Form',
+      html: `<h2>New Message from ${name} - ${email}</h2><hr><p>${message}</p>`,
+    };
 
     let client;
     try {
@@ -60,6 +43,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     };
     let result;
     try {
+      await sgMail.send(msg);
       result = await insertDucument(client, 'messages', newMessage);
       const returnMessage = {
         _id: result.insertedId,

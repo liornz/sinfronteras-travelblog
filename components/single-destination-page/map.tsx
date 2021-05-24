@@ -13,17 +13,16 @@ interface Props {
   minWidth?: number | string;
   minHeight?: number | string;
   zoom: number;
+  google_api: string;
 }
 
-const GOOGLE_API_KEY = 'AIzaSyCvZ7AUUIuMZMFGsM4YCs8i3QQIhr1gjO8';
-
 const Map: React.FC<Props> = (props) => {
-const { location, width, height, zoom, minWidth, minHeight } = props;
+const { location, width, height, zoom, minWidth, minHeight, google_api } = props;
   useEffect(() => {
     if (window.google === undefined) {
       const s = document.createElement('script');
       s.type = 'text/javascript';
-      s.src = `https://maps.google.com/maps/api/js?key=${GOOGLE_API_KEY}`;
+      s.src = `https://maps.google.com/maps/api/js?key=${google_api}`;
       const x = document.getElementsByTagName('script')[0];
       x.parentNode?.insertBefore(s, x);
       s.addEventListener('load', () => {

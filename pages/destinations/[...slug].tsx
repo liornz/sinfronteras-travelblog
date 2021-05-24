@@ -18,7 +18,7 @@ const SingleDestinationPage: React.FC<Props> = (props) => {
   const slug = useRouter().query.slug as string[];
   const country = slug[0];
   const fileName = slug[1];
-  // console.log(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
+  console.log(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
 
   return (
     <Fragment>
@@ -38,6 +38,7 @@ const SingleDestinationPage: React.FC<Props> = (props) => {
         text={fileData.content}
         location={fileData.location}
         zoom={fileData.zoom}
+        google_api={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string}
       />
       <Comments destinationSlug={fileName} countrySlug={country} />
     </Fragment>

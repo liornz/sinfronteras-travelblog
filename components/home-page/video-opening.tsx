@@ -16,7 +16,7 @@ const VideoOpening: React.FC<Props> = (props) => {
       >
         <source src="/videos/sinfronteras-intro-hd.webm" type="video/webm" />
         <source src="/videos/sinfronteras-intro-hd.mp4" type="video/mp4" />
-        Sorry, your browser doesn't support embedded videos.
+        Sorry, your browser does not support embedded videos.
       </video>
     </div>
   );

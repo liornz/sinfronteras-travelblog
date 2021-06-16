@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './selected-video.module.scss';
 
 interface Props {
@@ -6,7 +7,8 @@ interface Props {
   youtubeId: string;
 }
 
-const SelectedVideo: React.FC<Props> = (props) => {
+// eslint-disable-next-line react/display-name
+const SelectedVideo: React.FC<Props> = React.memo((props) => {
   const { youtubeId, title, subtitle } = props;
 
   return (
@@ -22,6 +24,6 @@ const SelectedVideo: React.FC<Props> = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default SelectedVideo;

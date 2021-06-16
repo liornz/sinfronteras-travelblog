@@ -1,5 +1,5 @@
-import { useState, useContext, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useState, useContext, useEffect, useCallback } from 'react';
+import { useRouter }  from 'next/router';
 import NewComment from './new-comment';
 import CommentList from './comments-list';
 import NotificationContext from '../../context/notification-context';
@@ -18,11 +18,7 @@ const Comments: React.FC<Props> = (props) => {
   const notificationCtx = useContext(NotificationContext);
   const locale = useRouter().locale;
 
-  useEffect(() => {
-    getComments();
-  }, []);
-
-  const getComments = async () => {
+  const getComments = useCallback(async () => {
     setIsLoadingComments(true);
     try {
       const response = await fetch(`/api/comments/${countrySlug}/${destinationSlug}`);
@@ -42,7 +38,11 @@ const Comments: React.FC<Props> = (props) => {
         status: 'error',
       });
     }
-  };
+  }, [countrySlug, destinationSlug, notificationCtx]);
+  
+    useEffect(() => {
+      getComments();
+    }, [getComments]);
 
   function addCommentHandler(commentData: enteredCommentData) {
     const sendCommentDataToAPI = async () => {

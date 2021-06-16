@@ -55,7 +55,7 @@ const { location, width, height, zoom, minWidth, minHeight, google_api } = props
         });
       }
     }
-  }, [location]);
+  }, [google_api, location, zoom]);
 
   return (
     <div

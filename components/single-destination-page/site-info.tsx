@@ -3,6 +3,7 @@ import DestinationMap from './destination-map';
 import { location } from '../../lib/types';
 
 import styles from './site-info.module.scss';
+import React from 'react';
 
 interface Props {
   text: string;
@@ -11,7 +12,8 @@ interface Props {
   google_api: string;
 }
 
-const SiteInfo: React.FC<Props> = (props) => {
+// eslint-disable-next-line react/display-name
+const SiteInfo: React.FC<Props> = React.memo((props) => {
   const { text, location, zoom, google_api } = props;
   return (
     <div className={styles.container}>
@@ -21,6 +23,6 @@ const SiteInfo: React.FC<Props> = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default SiteInfo;

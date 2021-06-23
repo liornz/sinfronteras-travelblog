@@ -24,9 +24,10 @@ const DestinationCard: React.FC<Props> = (props) => {
               width={600}
               height={350}
               layout="responsive"
+              placeholder="blur"
+              blurDataURL="L%Ey[Noft7WW_4j]j]WVx^WBNGaz"
             />
-            <div className={styles.overlay}>
-            </div>
+            <div className={styles.overlay}></div>
           </div>
           <div className={styles.text}>
             <div className={styles.title}>

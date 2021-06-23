@@ -17,6 +17,7 @@ const Logo: React.FC<Props> = (props) => {
           <Image
             src={logo}
             alt="Sin Fronteras Logo"
+            placeholder="blur"
           />
         </a>
       </Link>

@@ -7,9 +7,20 @@ interface Props {
   onAddComment: (comment: enteredCommentData) => void;
 }
 
+type userInput = {
+  enteredEmail: string;
+  enteredName: string;
+  enteredComment: string;
+};
+
 const NewComment: React.FC<Props> = (props) => {
-  const { onAddComment } = props;
   const [isInvalid, setIsInvalid] = useState(false);
+  const emailInputRef = useRef<HTMLInputElement>();
+  const nameInputRef = useRef<HTMLInputElement>();
+  const commentInputRef = useRef<HTMLTextAreaElement>();
+
+  const { onAddComment } = props;
+  
   const router = useRouter();
   const locale = router.locale;
 
@@ -22,17 +33,10 @@ const NewComment: React.FC<Props> = (props) => {
     };
   }, [isInvalid]);
 
-  const emailInputRef = useRef<HTMLInputElement>();
-  const nameInputRef = useRef<HTMLInputElement>();
-  const commentInputRef = useRef<HTMLTextAreaElement>();
-
-  function submitCommentHandler(event: React.FormEvent) {
-    event.preventDefault();
-    const enteredEmail = emailInputRef.current!.value;
-    const enteredName = nameInputRef.current!.value;
-    const enteredComment = commentInputRef.current!.value;
-
-    const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+  const validateInput = (userInput: userInput) => {
+    const { enteredEmail, enteredName, enteredComment } = userInput;
+    const pattern =
+      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     const isValidEmail = pattern.test(enteredEmail);
 
     if (
@@ -43,8 +47,28 @@ const NewComment: React.FC<Props> = (props) => {
       enteredComment.trim() === ''
     ) {
       setIsInvalid(true);
+      throw new Error('Invalid Input!');
+    }
+  };
+
+  function submitCommentHandler(event: React.FormEvent) {
+    event.preventDefault();
+
+    const enteredEmail = emailInputRef.current!.value;
+    const enteredName = nameInputRef.current!.value;
+    const enteredComment = commentInputRef.current!.value;
+    const userInput = {
+      enteredEmail,
+      enteredName,
+      enteredComment,
+    };
+
+    try {
+      validateInput(userInput);
+    } catch (error) {
       return;
     }
+
     onAddComment({
       email: enteredEmail,
       name: enteredName,

@@ -6,9 +6,7 @@ interface Props {
   show: boolean;
 }
 
-const MenuToggler: React.FC<Props> = (props) => {
-  const { toggle, show } = props;
-  
+const getStyles = (show: boolean) => {
   const classes1 = [styles.first_line];
   show
     ? classes1.push(styles.firstline_open)
@@ -22,14 +20,23 @@ const MenuToggler: React.FC<Props> = (props) => {
   const classes3Str = classes3.join(' ');
 
   const style2: React.CSSProperties = {
-    opacity: show ? '0' : '1'
+    opacity: show ? '0' : '1',
   };
+  return {
+    classes1: classes1Str,
+    classes3: classes3Str,
+    style2
+  }
+};
 
+const MenuToggler: React.FC<Props> = (props) => {
+  const { toggle, show } = props;
+  const { classes1, classes3, style2 } = getStyles(show);
   return (
     <div className={styles.menu_toggler} onClick={toggle}>
-      <div className={classes1Str}></div>
-      <div className={styles.second_line} style={style2} ></div>
-      <div className={classes3Str}></div>
+      <div className={classes1}></div>
+      <div className={styles.second_line} style={style2}></div>
+      <div className={classes3}></div>
     </div>
   );
 };

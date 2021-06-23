@@ -19,20 +19,30 @@ const Newsletter: React.FC = () => {
     };
   }, [emailIsValid]);
 
-  function registrationHandler(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
+  const validateEmail = () => {
     const enteredEmail = emailInputRef.current!.value;
-
-    const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    const pattern =
+      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     const isValidEmail = pattern.test(enteredEmail);
     if (!isValidEmail) {
       setEmailIsValid(false);
       emailInputRef.current!.value = '';
+      throw new Error('Invalid Email Input!');
+    }
+  };
+
+  function registrationHandler(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    try {
+      validateEmail();
+    } catch (error) {
       return;
     }
+ 
 
     const sendEmailtoAPI = async () => {
+      const enteredEmail = emailInputRef.current!.value;
       try {
         const response = await fetch('/api/newsletter', {
           method: 'POST',

@@ -6,9 +6,21 @@ import { enteredMessageData } from '../../lib/types';
 
 interface Props {}
 
+type userInput = {
+  enteredEmail: string;
+  enteredName: string;
+  enteredMessage: string;
+};
+
 const Contact: React.FC<Props> = (props) => {
-  const {} = props;
   const [isInvalid, setIsInvalid] = useState(false);
+
+  const emailInputRef = useRef<HTMLInputElement>();
+  const nameInputRef = useRef<HTMLInputElement>();
+  const messageInputRef = useRef<HTMLTextAreaElement>();
+
+  const {} = props;
+
   const router = useRouter();
   const locale = router.locale;
   const notificationCtx = useContext(NotificationContext);
@@ -21,10 +33,6 @@ const Contact: React.FC<Props> = (props) => {
       clearTimeout(timer);
     };
   }, [isInvalid]);
-
-  const emailInputRef = useRef<HTMLInputElement>();
-  const nameInputRef = useRef<HTMLInputElement>();
-  const messageInputRef = useRef<HTMLTextAreaElement>();
 
   const sendUserMessageToAPI = async (messageData: enteredMessageData) => {
     try {
@@ -55,13 +63,10 @@ const Contact: React.FC<Props> = (props) => {
     }
   };
 
-  function submitMessageHandler(event: React.FormEvent) {
-    event.preventDefault();
-    const enteredEmail = emailInputRef.current!.value;
-    const enteredName = nameInputRef.current!.value;
-    const enteredMessage = messageInputRef.current!.value;
-
-    const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+  const validateUserInput = (userInput: userInput) => {
+    const { enteredEmail, enteredName, enteredMessage } = userInput;
+    const pattern =
+      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     const isValidEmail = pattern.test(enteredEmail);
 
     if (
@@ -72,8 +77,27 @@ const Contact: React.FC<Props> = (props) => {
       enteredMessage.trim() === ''
     ) {
       setIsInvalid(true);
+      throw new Error('Invalid User Input!');
+    }
+  }
+
+  function submitMessageHandler(event: React.FormEvent) {
+    event.preventDefault();
+    const enteredEmail = emailInputRef.current!.value;
+    const enteredName = nameInputRef.current!.value;
+    const enteredMessage = messageInputRef.current!.value;
+    const userInput = {
+      enteredEmail,
+      enteredName,
+      enteredMessage
+    }
+
+    try {
+      validateUserInput(userInput);
+    } catch (error) {
       return;
     }
+    
     sendUserMessageToAPI({
       email: enteredEmail,
       name: enteredName,

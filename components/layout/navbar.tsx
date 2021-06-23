@@ -7,18 +7,22 @@ interface Props {
   toggle?: () => void;
 }
 
+const getStyles = (show: boolean) => {
+  const navClass = [styles.navigation];
+  show ? navClass.push(styles.nav_opened) : navClass.push(styles.nav_closed);
+  const navClassString = navClass.join(' ');
+  return { navClass: navClassString };
+};
+
 const Navbar: React.FC<Props> = (props) => {
   const router = useRouter();
   const locale = router.locale;
 
   const { show, toggle } = props;
-
-  const navClass = [styles.navigation];
-  show ? navClass.push(styles.nav_opened) : navClass.push(styles.nav_closed);
-  const navClassString = navClass.join(' ');
+  const { navClass } = getStyles(show);
 
   return (
-    <nav className={navClassString}>
+    <nav className={navClass}>
       <ul>
         <li onClick={toggle}>
           <Link href="/destinations">

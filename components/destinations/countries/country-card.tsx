@@ -22,6 +22,8 @@ const CountryCard: React.FC<Props> = (props) => {
               width={600}
               height={350}
               layout="responsive"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAAE0lEQVR42mOUylpez4AEGAkKAACbuAUCutfcHQAAAABJRU5ErkJggg=="
             />
             <div className={styles.overlay}></div>
           </div>

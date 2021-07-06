@@ -10,7 +10,7 @@ interface Props {
   
 
 const DestinationCard: React.FC<Props> = (props) => {
-  const { countrySlug, slug, title, subtitle, image, blurHash } = props.post;
+  const { countrySlug, slug, title, subtitle, image } = props.post;
   const imagePath = `/images/posters/${image}`;
 
   return (

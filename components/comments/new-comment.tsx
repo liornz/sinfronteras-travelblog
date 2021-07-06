@@ -33,6 +33,11 @@ const NewComment: React.FC<Props> = (props) => {
     };
   }, [isInvalid]);
 
+  const invalidInputMsg =
+    locale === 'en-US'
+      ? 'Please enter valid inputs!'
+      : '¡Ingrese entradas válidas!';
+
   const validateInput = (userInput: userInput) => {
     const { enteredEmail, enteredName, enteredComment } = userInput;
     const pattern =
@@ -115,7 +120,7 @@ const NewComment: React.FC<Props> = (props) => {
         ></textarea>
       </div>
       {isInvalid ? (
-        <p>Please enter a valid email address, name and comment!</p>
+        <p className={styles.err}>{invalidInputMsg}</p>
       ) : (
         <p style={{ color: '#9c9c9c' }}>.</p>
       )}

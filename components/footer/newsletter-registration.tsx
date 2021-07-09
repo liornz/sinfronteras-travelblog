@@ -79,6 +79,10 @@ const Newsletter: React.FC = () => {
     emailInputRef.current!.value = '';
   }
 
+    const emailInvalidMsg = locale === 'en-US'
+      ? 'Please Fill in a Valid Email!'
+      : '¡Por favor, complete un correo electrónico válido!';
+
   return (
     <div className={styles.container}>
       <h3>
@@ -102,7 +106,7 @@ const Newsletter: React.FC = () => {
         />
         <button>{locale === 'en-US' ? 'JOIN' : 'JUNTAR'}</button>
       </form>
-      {!emailIsValid && <p>Please Fill in a Valid Email!</p>}
+      {!emailIsValid && <p>{emailInvalidMsg}</p>}
     </div>
   );
 };

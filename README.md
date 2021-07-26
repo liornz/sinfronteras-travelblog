@@ -4,7 +4,7 @@ This is a website for the `Sin Fronteras YouTube Travel Blog`.
 
 Chapters are divided by country. 
 
-It is Built under [Next.js](https://nextjs.org/).
+This project is Built under [Next.js](https://nextjs.org/).
 
 
 ## Getting Started

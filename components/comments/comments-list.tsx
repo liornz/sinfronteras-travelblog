@@ -13,18 +13,16 @@ const CommentsList: React.FC<Props> = (props) => {
   const { comments, isLoading } = props;
   const locale = useRouter().locale;
   function title() {
-    if (comments.length === 0) {
-      return null;
-    }
     if (isLoading) {
       return <Spinner />;
-    } else return <p>{locale === 'en-US' ? 'Comments' : 'Commentarios'}</p>
+    }
+    if (comments.length === 0) {
+      return null;
+    } else return <p>{locale === 'en-US' ? 'Comments' : 'Commentarios'}</p>;
   }
   return (
     <Fragment>
-      <div className={styles.title}>
-        {title()}
-      </div>
+      <div className={styles.title}>{title()}</div>
       <ul className={styles.comments}>
         {comments.map((comment) => (
           <li key={comment._id} className={styles.comment}>

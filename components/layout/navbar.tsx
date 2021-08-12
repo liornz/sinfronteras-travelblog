@@ -33,6 +33,7 @@ const Navbar: React.FC<Props> = (props) => {
               }}
             >
               {locale === 'en-US' ? 'DESTINATIONS' : 'DESTINOS'}
+              <div className={styles.underline}></div>
             </a>
           </Link>
         </li>
@@ -44,6 +45,7 @@ const Navbar: React.FC<Props> = (props) => {
               }}
             >
               {locale === 'en-US' ? 'SHOP' : 'TIENDA'}
+              <div className={styles.underline}></div>
             </a>
           </Link>
         </li>
@@ -55,6 +57,7 @@ const Navbar: React.FC<Props> = (props) => {
               }}
             >
               {locale === 'en-US' ? 'CONTACT' : 'CONTACTO'}
+              <div className={styles.underline}></div>
             </a>
           </Link>
         </li>

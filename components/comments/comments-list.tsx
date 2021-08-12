@@ -18,24 +18,37 @@ const CommentsList: React.FC<Props> = (props) => {
     }
     if (comments.length === 0) {
       return null;
-    } else return <p>{locale === 'en-US' ? 'Comments' : 'Commentarios'}</p>;
+    } else return (
+      <p className={styles.title}>
+        {locale === 'en-US' ? 'Comments' : 'Commentarios'}
+      </p>
+    );
   }
+  function commentsList() {
+    if (isLoading || comments.length === 0) {
+      return null;
+    } else
+      return (
+        <ul className={styles.comments}>
+          {comments.map((comment) => (
+            <li key={comment._id} className={styles.comment}>
+              <div>
+                <p className={styles.name}>
+                  <strong>{comment.name}</strong>
+                </p>
+                <p className={styles.email}>{comment.email}</p>
+              </div>
+              <p className={styles.text}>{comment.text}</p>
+            </li>
+          ))}
+        </ul>
+      );
+  }
+
   return (
     <Fragment>
-      <div className={styles.title}>{title()}</div>
-      <ul className={styles.comments}>
-        {comments.map((comment) => (
-          <li key={comment._id} className={styles.comment}>
-            <div>
-              <p className={styles.name}>
-                <strong>{comment.name}</strong>
-              </p>
-              <p className={styles.email}>{comment.email}</p>
-            </div>
-            <p className={styles.text}>{comment.text}</p>
-          </li>
-        ))}
-      </ul>
+      {title()}
+      {commentsList()}
     </Fragment>
   );
 };

@@ -1,25 +1,16 @@
 import React, { useRef, useState, useEffect, useContext } from 'react';
 import { useRouter } from 'next/router';
 import NotificationContext from '../../context/notification-context';
+import validateUserInput from '../../lib/validate-user-input';
 import styles from './contact.module.scss';
 import { enteredMessageData } from '../../lib/types';
 
-interface Props {}
-
-type userInput = {
-  enteredEmail: string;
-  enteredName: string;
-  enteredMessage: string;
-};
-
-const Contact: React.FC<Props> = (props) => {
+const Contact: React.FC = () => {
   const [isInvalid, setIsInvalid] = useState(false);
 
   const emailInputRef = useRef<HTMLInputElement>();
   const nameInputRef = useRef<HTMLInputElement>();
   const messageInputRef = useRef<HTMLTextAreaElement>();
-
-  const {} = props;
 
   const router = useRouter();
   const locale = router.locale;
@@ -63,24 +54,6 @@ const Contact: React.FC<Props> = (props) => {
     }
   };
 
-  const validateUserInput = (userInput: userInput) => {
-    const { enteredEmail, enteredName, enteredMessage } = userInput;
-    const pattern =
-      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-    const isValidEmail = pattern.test(enteredEmail);
-
-    if (
-      !isValidEmail ||
-      !enteredName ||
-      enteredName.trim() === '' ||
-      !enteredMessage ||
-      enteredMessage.trim() === ''
-    ) {
-      setIsInvalid(true);
-      throw new Error('Invalid User Input!');
-    }
-  }
-
   function submitMessageHandler(event: React.FormEvent) {
     event.preventDefault();
     const enteredEmail = emailInputRef.current!.value;
@@ -92,11 +65,11 @@ const Contact: React.FC<Props> = (props) => {
       enteredMessage
     }
 
-    try {
-      validateUserInput(userInput);
-    } catch (error) {
+    const inputIsValid = validateUserInput(userInput);
+    if (!inputIsValid) {
+      setIsInvalid(true);
       return;
-    }
+    };
     
     sendUserMessageToAPI({
       email: enteredEmail,

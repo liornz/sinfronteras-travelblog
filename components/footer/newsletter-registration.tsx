@@ -98,7 +98,7 @@ const Newsletter: React.FC = () => {
       <form onSubmit={registrationHandler}>
         <input
           type="email"
-          id="email"
+          id="user-email"
           ref={emailInputRef as React.LegacyRef<HTMLInputElement>}
           placeholder={
             locale === 'en-US' ? 'Email Address' : 'Correo Electrónico'

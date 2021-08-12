@@ -58,3 +58,17 @@
   font-weight: 700;
 }
 
+.underline {
+  height: 4px;
+  width: 0%;
+  margin: 0 auto;
+  background-color: transparent;
+  transition: width 0.3s ease-out;
+}
+
+a:hover .underline {
+  height: 4px;
+  background-color: variables.$color-sinfronteras;
+  width: 100%;
+}
+

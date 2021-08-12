@@ -1,17 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { enteredCommentData } from '../../lib/types';
+import validateUserInput from '../../lib/validate-user-input';
 import styles from './new-comment.module.scss';
 
 interface Props {
   onAddComment: (comment: enteredCommentData) => void;
 }
-
-type userInput = {
-  enteredEmail: string;
-  enteredName: string;
-  enteredComment: string;
-};
 
 const NewComment: React.FC<Props> = (props) => {
   const [isInvalid, setIsInvalid] = useState(false);
@@ -38,23 +33,6 @@ const NewComment: React.FC<Props> = (props) => {
       ? 'Please enter valid inputs!'
       : '¡Ingrese entradas válidas!';
 
-  const validateInput = (userInput: userInput) => {
-    const { enteredEmail, enteredName, enteredComment } = userInput;
-    const pattern =
-      /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-    const isValidEmail = pattern.test(enteredEmail);
-
-    if (
-      !isValidEmail ||
-      !enteredName ||
-      enteredName.trim() === '' ||
-      !enteredComment ||
-      enteredComment.trim() === ''
-    ) {
-      setIsInvalid(true);
-      throw new Error('Invalid Input!');
-    }
-  };
 
   function submitCommentHandler(event: React.FormEvent) {
     event.preventDefault();
@@ -65,12 +43,12 @@ const NewComment: React.FC<Props> = (props) => {
     const userInput = {
       enteredEmail,
       enteredName,
-      enteredComment,
+      enteredMessage: enteredComment,
     };
 
-    try {
-      validateInput(userInput);
-    } catch (error) {
+    const inputIsValid = validateUserInput(userInput);
+    if (!inputIsValid) {
+      setIsInvalid(true);
       return;
     }
 

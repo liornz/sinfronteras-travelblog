@@ -16,7 +16,7 @@ const SelectedVideo: React.FC<Props> = React.memo((props) => {
       <h1 className={styles.title}>{title}</h1>
       <h2 className={styles.subtitle}>{subtitle}</h2>
       <div className={styles.video}>
-        <iframe
+        <iframe title={title}
           className={styles.youtube}
           src={`https://www.youtube.com/embed/${youtubeId}`}
           allowFullScreen

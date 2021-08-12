@@ -3,7 +3,7 @@
   color: white;
   margin-top: 1rem;
   @media (min-width: 1000px) {
-    flex-direction: column; 
+    flex-direction: column;
   }
 }
 
@@ -13,8 +13,10 @@
   margin: 0.5rem 0;
   p {
     margin: 0 1rem;
+    text-decoration: underline solid transparent;
+    transition: text-decoration 0.3s ease-out;
     &:hover {
-      text-decoration: underline;
+      text-decoration: underline solid white;
     }
   }
 }

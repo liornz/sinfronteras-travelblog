@@ -1,3 +1,5 @@
+@use '../../styles/variables';
+
 .container {
   margin-top: 1rem;
   display: flex;
@@ -9,5 +11,10 @@
   }
   a {
     margin: 0.5rem;
+    text-decoration: underline solid transparent;
+    transition: text-decoration 0.3s ease-out;
+    &:hover {
+      text-decoration: underline solid variables.$color-sinfronteras;
+    }
   }
 }

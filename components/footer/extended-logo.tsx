@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import logo from '../../public/images/logo/logo_sinfronteras-417x150.png';
 import { useRouter } from 'next/router';
 import styles from './extended-logo.module.scss';
@@ -9,10 +10,11 @@ const ExtendedLogo: React.FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.image}>
-        <Image
-          src={logo}
-          alt="Sin Fronteras Logo"
-        />
+        <Link href="/">
+          <a>
+            <Image src={logo} alt="Sin Fronteras Logo" />
+          </a>
+        </Link>
       </div>
       <h4>
         {locale === 'en-US' ? 'Your Travel Channel' : 'Tu Canal de Viajes'}

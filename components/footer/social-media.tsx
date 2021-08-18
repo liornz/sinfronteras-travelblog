@@ -6,11 +6,12 @@ import styles from './social-media.module.scss';
 const SocialMedia: React.FC = () => {
   return (
     <div className={styles.container}>
-      <a className={styles.item} href="https://www.facebook.com/victor.alaluf">
+      <a id="facebook" className={styles.item} href="https://www.facebook.com/victor.alaluf">
         <FaFacebookSquare color="#4267B2" size="1.5rem" />
         <p className={styles.social_text}>FACEBOOK</p>
       </a>
       <a
+        id="instagram"
         className={styles.item}
         href="https://www.instagram.com/alalufvictor.sinfronteras/"
       >
@@ -18,6 +19,7 @@ const SocialMedia: React.FC = () => {
         <p className={styles.social_text}>INSTAGRAM</p>
       </a>
       <a
+        id="youtube"
         className={styles.item}
         href="https://www.youtube.com/channel/UCWeBug5IyKmZq81ulHUKwkg"
       >

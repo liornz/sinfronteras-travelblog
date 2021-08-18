@@ -9,20 +9,20 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap"
           />
-          <meta name="application-name" content="PWA App" />
+          <meta name="application-name" content="Sin Fronteras" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
             content="default"
           />
-          <meta name="apple-mobile-web-app-title" content="PWA App" />
-          <meta name="description" content="Best PWA App in the world" />
+          <meta name="apple-mobile-web-app-title" content="Sin Fronteras" />
+          <meta name="description" content="Sin Fronteras Travel Blog" />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
-          <meta
+          {/* <meta
             name="msapplication-config"
             content="images/icons/browserconfig.xml"
-          />
+          /> */}
           <meta name="msapplication-TileColor" content="#2B5797" />
           <meta name="msapplication-tap-highlight" content="no" />
           <meta name="theme-color" content="#000000" />
@@ -57,11 +57,11 @@ class MyDocument extends Document {
             href="images/icons/favicon-16x16.png"
           />
           <link rel="manifest" href="/manifest.json" />
-          <link
+          {/* <link
             rel="mask-icon"
             href="/images/icons/safari-pinned-tab.svg"
             color="#5bbad5"
-          />
+          /> */}
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="twitter:card" content="summary" />
           <meta

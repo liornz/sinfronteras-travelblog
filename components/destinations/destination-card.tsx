@@ -31,7 +31,7 @@ const DestinationCard: React.FC<Props> = (props) => {
           </div>
           <div className={styles.text}>
             <div className={styles.title}>
-              <h4>{title}</h4>
+              <h1>{title}</h1>
             </div>
             <div className={styles.subtitle}>
               <p>{subtitle}</p>

@@ -28,7 +28,7 @@ const CountryCard: React.FC<Props> = (props) => {
             <div className={styles.overlay}></div>
           </div>
           <div className={styles.title}>
-            <h4>{name}</h4>
+            <h1>{name}</h1>
             <div className={styles.flag}>
               <Image
                 src={flagPath}

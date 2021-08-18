@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactNode {
       <meta charSet="UTF-8" />
       <meta
         name="viewport"
-        content="width=device-width, minimum-scale=1.0, viewport-fit=cover"
+        content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
       />
       <meta charSet="utf-8"></meta>
       <meta

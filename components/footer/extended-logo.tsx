@@ -16,9 +16,9 @@ const ExtendedLogo: React.FC = () => {
           </a>
         </Link>
       </div>
-      <h4>
+      <h1>
         {locale === 'en-US' ? 'Your Travel Channel' : 'Tu Canal de Viajes'}
-      </h4>
+      </h1>
       <a href="mailto:info@sinfronteras-travelblog.com">
         <h5>info@sinfronteras-travelblog.com</h5>
       </a>

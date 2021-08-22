@@ -20,7 +20,7 @@ const ExtendedLogo: React.FC = () => {
         {locale === 'en-US' ? 'Your Travel Channel' : 'Tu Canal de Viajes'}
       </h1>
       <a href="mailto:info@sinfronteras-travelblog.com">
-        <h5>info@sinfronteras-travelblog.com</h5>
+        <p className={styles.email}>info@sinfronteras-travelblog.com</p>
       </a>
       <p>©2021 SINFRONTERAS</p>
       <p>

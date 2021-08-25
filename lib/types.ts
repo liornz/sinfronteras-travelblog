@@ -11,6 +11,7 @@ export type post = {
   country: string;
   region: string;
   image: string;
+  blurDataURL: string;
   youtubeId: string;
   isFeatured: boolean;
   location: location;
@@ -24,6 +25,7 @@ export type postMetaData = {
   country: string;
   region: string;
   image: string;
+  blurDataURL: string;
   youtubeId: string;
   isFeatured: boolean;
   location: location;
@@ -46,14 +48,18 @@ export type enteredCommentData = {
 export type countryMetaData = {
   name: string;
   flag: string;
+  flagBlurDataURL: string;
   image: string;
+  blurDataURL: string;
 }
 
 export type country = {
   slug: string;
   name: string;
   flag: string;
+  flagBlurDataURL: string;
   image: string;
+  blurDataURL: string;
 };
 
 export type enteredMessageData = {

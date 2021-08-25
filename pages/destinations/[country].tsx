@@ -40,6 +40,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
     countrySlug as string,
     locale as string
   );
+  const extDestinations = destinations.map(destination => ({
+    ...destination,
+    
+  }));
   const countryFileData = getCountryFileData(
     countrySlug as string,
     locale as string

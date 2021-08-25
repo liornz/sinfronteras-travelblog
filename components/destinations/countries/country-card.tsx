@@ -8,7 +8,7 @@ interface Props {
 }
 
 const CountryCard: React.FC<Props> = (props) => {
-  const { slug, name, flag, image } = props.country;
+  const { slug, name, flag, image, flagBlurDataURL, blurDataURL } = props.country;
   const imagePath = `/images/countries/${slug}/${image}`;
   const flagPath = `/images/countries/${slug}/${flag}`;
   return (
@@ -23,7 +23,7 @@ const CountryCard: React.FC<Props> = (props) => {
               height={350}
               layout="responsive"
               placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAAE0lEQVR42mOUylpez4AEGAkKAACbuAUCutfcHQAAAABJRU5ErkJggg=="
+              blurDataURL={blurDataURL}
             />
             <div className={styles.overlay}></div>
           </div>
@@ -36,6 +36,8 @@ const CountryCard: React.FC<Props> = (props) => {
                 width={200}
                 height={100}
                 layout="responsive"
+                placeholder="blur"
+                blurDataURL={flagBlurDataURL}
               />
             </div>
           </div>

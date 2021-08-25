@@ -93,7 +93,7 @@ module.exports = [
     },
   },
   {
-    urlPattern: /\.(?:css|less)$/i,
+    urlPattern: /\.(?:css|less|scss)$/i,
     handler: 'StaleWhileRevalidate',
     options: {
       cacheName: 'static-style-assets',

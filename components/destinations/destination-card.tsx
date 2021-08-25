@@ -10,7 +10,7 @@ interface Props {
   
 
 const DestinationCard: React.FC<Props> = (props) => {
-  const { countrySlug, slug, title, subtitle, image } = props.post;
+  const { countrySlug, slug, title, subtitle, image, blurDataURL } = props.post;
   const imagePath = `/images/posters/${image}`;
 
   return (
@@ -25,7 +25,7 @@ const DestinationCard: React.FC<Props> = (props) => {
               height={350}
               layout="responsive"
               placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADCAYAAAC09K7GAAAAE0lEQVR42mOUylpez4AEGAkKAACbuAUCutfcHQAAAABJRU5ErkJggg=="
+              blurDataURL={blurDataURL}
             />
             <div className={styles.overlay}></div>
           </div>
@@ -42,5 +42,6 @@ const DestinationCard: React.FC<Props> = (props) => {
     </Link>
   );
 };
+
 
 export default DestinationCard;

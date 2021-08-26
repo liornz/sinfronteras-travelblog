@@ -7,6 +7,7 @@ import { FaPlay } from 'react-icons/fa';
 interface Props {
   youtubeId: string;
   imagePath: string;
+  imageBlur: string;
   imgAlt: string;
   text?: {
     title: string;
@@ -15,7 +16,7 @@ interface Props {
 }
 
 const VideoCard: React.FC<Props> = (props) => {
-  const { youtubeId, imagePath, imgAlt, text } = props;
+  const { youtubeId, imagePath, imgAlt, text, imageBlur } = props;
   const [videoDisplayOn, setVideoDisplayOn] = useState(false);
   const videoDisplayHandler = () => {
     setVideoDisplayOn((currState) => !currState);
@@ -36,7 +37,15 @@ const VideoCard: React.FC<Props> = (props) => {
     <>
       <div className={styles.VideoCard}>
         <div className={styles.CardContainer}>
-          <Image src={imagePath} alt={imgAlt} width={1644} height={925} layout='responsive' />
+          <Image 
+            src={imagePath} 
+            alt={imgAlt} 
+            width={1644} 
+            height={925} 
+            layout='responsive' 
+            placeholder="blur"
+            blurDataURL={imageBlur}
+          />
           <div onClick={videoDisplayHandler} className={styles.Overlay}>
             <FaPlay color='white' size='3rem' />
           </div>

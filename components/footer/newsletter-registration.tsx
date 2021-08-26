@@ -39,7 +39,6 @@ const Newsletter: React.FC = () => {
     } catch (error) {
       return;
     }
- 
 
     const sendEmailtoAPI = async () => {
       const enteredEmail = emailInputRef.current!.value;
@@ -79,17 +78,20 @@ const Newsletter: React.FC = () => {
     emailInputRef.current!.value = '';
   }
 
-    const emailInvalidMsg = locale === 'en-US'
+  const emailInvalidMsg =
+    locale === 'en-US'
       ? 'Please Fill in a Valid Email!'
       : '¡Por favor, complete un correo electrónico válido!';
 
   return (
     <div className={styles.container}>
-      <h3>
-        {locale === 'en-US'
-          ? 'SUBSCRIBE TO THE NEWSLETTER'
-          : 'SUSCRÍBETE AL BOLETÍN INFORMATIVO'}
-      </h3>
+      <p>
+        <strong>
+          {locale === 'en-US'
+            ? 'SUBSCRIBE TO THE NEWSLETTER'
+            : 'SUSCRÍBETE AL BOLETÍN INFORMATIVO'}
+        </strong>
+      </p>
       <p>
         {locale === 'en-US'
           ? 'Join our community to receive useful information and tips'

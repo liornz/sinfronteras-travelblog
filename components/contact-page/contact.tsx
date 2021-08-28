@@ -46,11 +46,13 @@ const Contact: React.FC = () => {
         throw new Error(data.message || 'Something went wrong!');
       }
     } catch (error) {
-      notificationCtx.showNotification({
-        title: 'Error!',
-        message: error.message || 'Error saving comment',
-        status: 'error',
-      });
+      if (error instanceof Error) {
+        notificationCtx.showNotification({
+          title: 'Error!',
+          message: error.message || 'Error saving comment',
+          status: 'error',
+        });
+      }
     }
   };
 
@@ -62,15 +64,15 @@ const Contact: React.FC = () => {
     const userInput = {
       enteredEmail,
       enteredName,
-      enteredMessage
-    }
+      enteredMessage,
+    };
 
     const inputIsValid = validateUserInput(userInput);
     if (!inputIsValid) {
       setIsInvalid(true);
       return;
-    };
-    
+    }
+
     sendUserMessageToAPI({
       email: enteredEmail,
       name: enteredName,

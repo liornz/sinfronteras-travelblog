@@ -31,9 +31,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
       client = await connectDatabase();
     } catch (error) {
-      res.status(500).json({
-        message: error.message || 'Connection to the database failed!',
-      });
+      if (error instanceof Error) {
+        res.status(500).json({
+          message: error.message || 'Connection to the database failed!',
+        });
+      }
       return;
     }
     const newMessage = {

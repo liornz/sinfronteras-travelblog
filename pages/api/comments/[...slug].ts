@@ -8,9 +8,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     client = await connectDatabase();
   } catch (error) {
-    res
+    if (error instanceof Error) {
+          res
       .status(500)
       .json({ message: error.message || 'Connection to the database failed!' });
+    }
     return;
   }
 
@@ -26,7 +28,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       text.trim() === ''
     ) {
       res.status(422).json({ message: 'Invalid input!' });
-      client.close();
+      client?.close();
       return;
     }
     // save the comment in the DB, per destination name/slug 
@@ -50,7 +52,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     } catch (error) {
       res.status(500).json({ message: 'Inserting comment failed!' });
     }
-    client.close();
+    client?.close();
   }
   if (req.method == 'GET') {
      let documents;

@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect, useCallback } from 'react';
-import { useRouter }  from 'next/router';
+import { useRouter } from 'next/router';
 import NewComment from './new-comment';
 import CommentList from './comments-list';
 import NotificationContext from '../../context/notification-context';
@@ -21,7 +21,9 @@ const Comments: React.FC<Props> = (props) => {
   const getComments = useCallback(async () => {
     setIsLoadingComments(true);
     try {
-      const response = await fetch(`/api/comments/${countrySlug}/${destinationSlug}`);
+      const response = await fetch(
+        `/api/comments/${countrySlug}/${destinationSlug}`
+      );
       if (response.ok) {
         const data = await response.json();
         setComments(data.comments);
@@ -32,28 +34,33 @@ const Comments: React.FC<Props> = (props) => {
       }
     } catch (error) {
       setIsLoadingComments(false);
-      notificationCtx.showNotification({
-        title: 'Error!',
-        message: error.message || 'Error loading comments',
-        status: 'error',
-      });
+      if (error instanceof Error) {
+        notificationCtx.showNotification({
+          title: 'Error!',
+          message: error.message || 'Error loading comments',
+          status: 'error',
+        });
+      }
     }
   }, [countrySlug, destinationSlug, notificationCtx]);
-  
-    useEffect(() => {
-      getComments();
-    }, [getComments]);
+
+  useEffect(() => {
+    getComments();
+  }, [getComments]);
 
   function addCommentHandler(commentData: enteredCommentData) {
     const sendCommentDataToAPI = async () => {
       try {
-        const response = await fetch('/api/comments/' + countrySlug + '/' + destinationSlug, {
-          method: 'POST',
-          body: JSON.stringify(commentData),
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
+        const response = await fetch(
+          '/api/comments/' + countrySlug + '/' + destinationSlug,
+          {
+            method: 'POST',
+            body: JSON.stringify(commentData),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        );
         if (response.ok) {
           const data = await response.json();
           notificationCtx.showNotification({
@@ -66,11 +73,13 @@ const Comments: React.FC<Props> = (props) => {
           throw new Error(data.message || 'Something went wrong!');
         }
       } catch (error) {
-        notificationCtx.showNotification({
-          title: 'Error!',
-          message: error.message || 'Error saving comment',
-          status: 'error',
-        });
+        if (error instanceof Error) {
+          notificationCtx.showNotification({
+            title: 'Error!',
+            message: error.message || 'Error saving comment',
+            status: 'error',
+          });
+        }
       }
     };
     notificationCtx.showNotification({

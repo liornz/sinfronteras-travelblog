@@ -8,9 +8,39 @@
   "scope": "/",
   "start_url": "/",
   "icons": [
-        {
+    {
       "src": "images/icons/maskable_icon.png",
-      "sizes": "192x192",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/maskable_icon_x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/maskable_icon_x72.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/maskable_icon_x96.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/maskable_icon_x128.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/maskable_icon_x192.png",
+      "sizes": "48x48",
       "type": "image/png",
       "purpose": "any maskable"
     },

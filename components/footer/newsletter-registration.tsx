@@ -63,11 +63,11 @@ const Newsletter: React.FC = () => {
         }
       } catch (error) {
         if (error instanceof Error) {
-                  notificationCtx.showNotification({
-          title: 'Error!',
-          message: error.message || 'Error registering for newsletter',
-          status: 'error',
-        });
+          notificationCtx.showNotification({
+            title: 'Error!',
+            message: error.message || 'Error registering for newsletter',
+            status: 'error',
+          });
         }
       }
     };

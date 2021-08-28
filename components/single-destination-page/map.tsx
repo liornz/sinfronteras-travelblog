@@ -68,7 +68,7 @@ const { location, width, height, zoom, minWidth, minHeight, google_api } = props
       className={styles.map_area}
       id="map"
     >
-      Enter Address above and Press the Button to see Location on the Map!
+      Google Maps cannot be displayed - we apologize for the inconvinience!
     </div>
   );
 };

@@ -31,30 +31,30 @@ class MyDocument extends Document {
           <link
             rel="apple-touch-icon"
             sizes="152x152"
-            href="images/icons/touch-icon-ipad.png"
+            href="/images/icons/touch-icon-ipad.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="images/icons/touch-icon-iphone-retina.png"
+            href="/images/icons/touch-icon-iphone-retina.png"
           />
           <link
             rel="apple-touch-icon"
             sizes="167x167"
-            href="images/icons/touch-icon-ipad-retina.png"
+            href="/images/icons/touch-icon-ipad-retina.png"
           />
 
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="images/icons/favicon-32x32.png"
+            href="/images/icons/favicon-32x32.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="images/icons/favicon-16x16.png"
+            href="/images/icons/favicon-16x16.png"
           />
           <link rel="manifest" href="/manifest.json" />
           {/* <link

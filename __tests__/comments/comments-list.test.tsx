@@ -1,7 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import { commentData } from '../lib/types';
+/**
+ * @jest-environment jsdom
+ */
 
-import CommentsList from '../components/comments/comments-list';
+import { render, screen } from '@testing-library/react';
+import { commentData } from '../../lib/types';
+
+import CommentsList from '../../components/comments/comments-list';
 
 describe('<CommentsList />', () => {
   test('renders a spinner when loading prop is true', () => {
@@ -52,7 +56,7 @@ describe('<CommentsList />', () => {
     render(<CommentsList comments={comments} isLoading={false} />);
     const spinner = screen.queryByRole('timer');
     const listItems = screen.queryAllByRole('listitem');
-    const title = screen.getByRole('heading', {level: 6});
+    const title = screen.getByRole('note');
     expect(spinner).toBeNull();
     expect(listItems).toHaveLength(2);
     expect(title.textContent).toMatch('Comments');

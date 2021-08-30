@@ -98,7 +98,7 @@ const NewComment: React.FC<Props> = (props) => {
         ></textarea>
       </div>
       {isInvalid ? (
-        <p className={styles.err}>{invalidInputMsg}</p>
+        <p className={styles.err} role="alert">{invalidInputMsg}</p>
       ) : (
         <p style={{ color: '#9c9c9c' }}>.</p>
       )}

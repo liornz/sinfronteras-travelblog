@@ -19,7 +19,7 @@ const CommentsList: React.FC<Props> = (props) => {
     if (comments.length === 0) {
       return null;
     } else return (
-      <p className={styles.title}>
+      <p className={styles.title} role="note">
         {locale === 'en-US' ? 'Comments' : 'Commentarios'}
       </p>
     );

@@ -1,6 +1,10 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { render, screen } from '@testing-library/react';
 
-import Comments from '../components/comments/comments';
+import Comments from '../../components/comments/comments';
 
 describe('<Comments />', () => {
   test('renders a list of comments', async () => {

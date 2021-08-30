@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
           ></textarea>
         </div>
         {isInvalid ? (
-          <p className={styles.error}>
+          <p className={styles.error} role="alert">
             {locale === 'en-US'
               ? 'Please enter a valid email address, name and message!'
               : 'Por favor, introduzca una dirección de correo electrónico válida, nombre y mensaje!'}

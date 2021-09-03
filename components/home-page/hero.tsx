@@ -8,7 +8,6 @@ interface Props {}
 const Hero: React.FC<Props> = (props) => {
   const {} = props;
   const router = useRouter();
-  const locale = router.locale;
   const { t } = useTranslation('common');
 
   const aboutText = (

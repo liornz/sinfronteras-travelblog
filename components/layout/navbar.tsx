@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './navbar.module.scss';
+import { useTranslation } from 'next-i18next';
 
 interface Props {
   show: boolean;
@@ -17,6 +18,7 @@ const getStyles = (show: boolean) => {
 const Navbar: React.FC<Props> = (props) => {
   const router = useRouter();
   const locale = router.locale;
+  const { t } = useTranslation('nav');
 
   const { show, toggle } = props;
   const { navClass } = getStyles(show);
@@ -32,7 +34,7 @@ const Navbar: React.FC<Props> = (props) => {
                   router.pathname === '/destinations' ? 'rgb(240,150,37)' : '',
               }}
             >
-              {locale === 'en-US' ? 'DESTINATIONS' : 'DESTINOS'}
+              {t('destinations')}
               <div className={styles.underline}></div>
             </a>
           </Link>
@@ -44,7 +46,7 @@ const Navbar: React.FC<Props> = (props) => {
                 color: router.pathname === '/shop' ? 'rgb(240,150,37)' : '',
               }}
             >
-              {locale === 'en-US' ? 'SHOP' : 'TIENDA'}
+              {t('shop')}
               <div className={styles.underline}></div>
             </a>
           </Link>
@@ -56,7 +58,7 @@ const Navbar: React.FC<Props> = (props) => {
                 color: router.pathname === '/contact' ? 'rgb(240,150,37)' : '',
               }}
             >
-              {locale === 'en-US' ? 'CONTACT' : 'CONTACTO'}
+              {t('contact')}
               <div className={styles.underline}></div>
             </a>
           </Link>
@@ -69,7 +71,7 @@ const Navbar: React.FC<Props> = (props) => {
             }}
             locale={locale === 'en-US' ? 'es-AR' : 'en-US'}
           >
-            {locale === 'en-US' ? 'ESP' : 'ENG'}
+            {t('lang')}
           </Link>
         </li>
       </ul>

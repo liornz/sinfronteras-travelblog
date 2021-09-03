@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect, useContext } from 'react';
-import { useRouter } from 'next/router';
 import NotificationContext from '../../context/notification-context';
 import validateUserInput from '../../lib/validate-user-input';
 import styles from './contact.module.scss';
 import { enteredMessageData } from '../../lib/types';
+import { useTranslation } from 'next-i18next';
 
 const Contact: React.FC = () => {
   const [isInvalid, setIsInvalid] = useState(false);
@@ -11,9 +11,8 @@ const Contact: React.FC = () => {
   const emailInputRef = useRef<HTMLInputElement>();
   const nameInputRef = useRef<HTMLInputElement>();
   const messageInputRef = useRef<HTMLTextAreaElement>();
+  const { t } = useTranslation('contact');
 
-  const router = useRouter();
-  const locale = router.locale;
   const notificationCtx = useContext(NotificationContext);
 
   useEffect(() => {
@@ -85,13 +84,11 @@ const Contact: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1>{locale === 'en-US' ? 'Contact Me' : 'Contactame'}</h1>
+      <h1>{t('title')}</h1>
       <form className={styles.form} onSubmit={submitMessageHandler}>
         <div className={styles.row}>
           <div className={styles.control}>
-            <label htmlFor="email">
-              {locale === 'en-US' ? 'Your Email' : 'Tu Correo Electronico'}
-            </label>
+            <label htmlFor="email">{t('email')}</label>
             <input
               type="email"
               id="email"
@@ -99,9 +96,7 @@ const Contact: React.FC = () => {
             />
           </div>
           <div className={styles.control}>
-            <label htmlFor="name">
-              {locale === 'en-US' ? 'Your Name' : 'Tu Nombre'}
-            </label>
+            <label htmlFor="name">{t('name')}</label>
             <input
               type="text"
               id="name"
@@ -110,9 +105,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
         <div className={styles.control}>
-          <label htmlFor="message">
-            {locale === 'en-US' ? 'Your Message' : 'Tu Mensaje'}
-          </label>
+          <label htmlFor="message">{t('message')}</label>
           <textarea
             name="message"
             id="message"
@@ -122,16 +115,12 @@ const Contact: React.FC = () => {
         </div>
         {isInvalid ? (
           <p className={styles.error} role="alert">
-            {locale === 'en-US'
-              ? 'Please enter a valid email address, name and message!'
-              : 'Por favor, introduzca una dirección de correo electrónico válida, nombre y mensaje!'}
+            {t('validate')}
           </p>
         ) : (
           <p style={{ color: '#9c9c9c' }}>.</p>
         )}
-        <button className={styles.button}>
-          {locale === 'en-US' ? 'Submit' : 'Enviar'}
-        </button>
+        <button className={styles.button}>{t('button')}</button>
       </form>
     </div>
   );

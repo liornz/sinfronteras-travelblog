@@ -1,10 +1,11 @@
 import { useState, useContext, useEffect, useCallback } from 'react';
-import { useRouter } from 'next/router';
 import NewComment from './new-comment';
 import CommentList from './comments-list';
 import NotificationContext from '../../context/notification-context';
 import styles from './comments.module.scss';
 import { commentData, enteredCommentData } from '../../lib/types';
+import { useTranslation } from 'next-i18next';
+
 
 interface Props {
   destinationSlug: string;
@@ -16,7 +17,7 @@ const Comments: React.FC<Props> = (props) => {
   const [comments, setComments] = useState<commentData[]>([]);
   const [isLoadingComments, setIsLoadingComments] = useState(false);
   const notificationCtx = useContext(NotificationContext);
-  const locale = useRouter().locale;
+   const { t } = useTranslation('comments');
 
   const getComments = useCallback(async () => {
     setIsLoadingComments(true);
@@ -95,9 +96,7 @@ const Comments: React.FC<Props> = (props) => {
     <div className={styles.container}>
       <div className={styles.comments}>
         <h3 className={styles.title}>
-          {locale === 'en-US'
-            ? 'Share Your Opinion and Thoughts'
-            : 'Comparte tu opinión y pensamientos'}
+          {t('title')}
         </h3>
         <NewComment onAddComment={addCommentHandler} />
         <CommentList comments={comments} isLoading={isLoadingComments} />

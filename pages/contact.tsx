@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import React from 'react';
 import Contact from '../components/contact-page/contact';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetStaticProps } from 'next';
 interface Props {}
 
 const ContactPage: React.FC<Props> = (props) => {
@@ -20,3 +22,12 @@ const ContactPage: React.FC<Props> = (props) => {
 };
 
 export default ContactPage;
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const locale = context.locale!;
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['contact', 'footer', 'nav'])),
+    },
+  };
+};

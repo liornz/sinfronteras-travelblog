@@ -1,8 +1,9 @@
 import { Fragment } from 'react';
-import { useRouter } from 'next/router';
 import Spinner from '../../components/ui/spinner';
 import { commentData } from '../../lib/types';
 import styles from './comments-list.module.scss';
+import { useTranslation } from 'next-i18next';
+
 
 interface Props {
   comments: commentData[];
@@ -11,7 +12,7 @@ interface Props {
 
 const CommentsList: React.FC<Props> = (props) => {
   const { comments, isLoading } = props;
-  const locale = useRouter().locale;
+   const { t } = useTranslation('comments');
   function title() {
     if (isLoading) {
       return <Spinner />;
@@ -20,7 +21,7 @@ const CommentsList: React.FC<Props> = (props) => {
       return null;
     } else return (
       <p className={styles.title} role="note">
-        {locale === 'en-US' ? 'Comments' : 'Commentarios'}
+        {t('list-title')}
       </p>
     );
   }

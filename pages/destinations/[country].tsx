@@ -1,6 +1,8 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
 import React from 'react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import AllDestinations from '../../components/destinations/all-destinations';
 import {
   getCountryFileData,
@@ -34,16 +36,12 @@ const DestinationsPerCountry: React.FC<Props> = (props) => {
 export default DestinationsPerCountry;
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const locale = context.locale;
+  const locale = context.locale!;
   const countrySlug = context.params!.country;
   const destinations = getDestinationsPerCountry(
     countrySlug as string,
     locale as string
   );
-  const extDestinations = destinations.map(destination => ({
-    ...destination,
-    
-  }));
   const countryFileData = getCountryFileData(
     countrySlug as string,
     locale as string
@@ -53,6 +51,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       destinations: destinations,
       country: countryFileData,
+      ...(await serverSideTranslations(locale, ['common', 'footer', 'nav'])),
     },
   };
 };

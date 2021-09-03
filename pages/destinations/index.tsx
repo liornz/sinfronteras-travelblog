@@ -4,6 +4,8 @@ import { country } from '../../lib/types';
 import { getAllCountriesData } from '../../lib/data-utils';
 import React from 'react';
 import Head from 'next/head';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 
 interface Props {
   countries: country[]
@@ -33,7 +35,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      countries: countries
-    }
-  }
+      countries: countries,
+      ...(await serverSideTranslations(locale, ['common', 'footer', 'nav'])),
+    },
+  };
 }

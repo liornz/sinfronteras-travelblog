@@ -2,6 +2,8 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
 import { getCountryFileNames, getFileData, getFileNamesPerCountry } from '../../lib/data-utils';
 import React, { Fragment } from 'react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import SelectedVideo from '../../components/single-destination-page/selected-video';
 import SiteInfo from '../../components/single-destination-page/site-info';
 import Comments from '../../components/comments/comments';
@@ -56,6 +58,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       fileData: data,
+      ...(await serverSideTranslations(locale, [ 'destination', 'footer', 'nav', 'comments'])),
     },
   };
 };

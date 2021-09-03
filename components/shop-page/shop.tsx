@@ -1,15 +1,16 @@
 import styles from './shop.module.scss';
+import { useTranslation } from 'next-i18next';
 
-interface Props {
-
-}
+interface Props {}
 
 const Shop: React.FC<Props> = (props) => {
-const {  } = props;
+  const {} = props;
+  const { t } = useTranslation('shop');
+
   return (
     <div className={styles.container}>
-      <h1>Shop Page - under construction</h1>
-      <h2>Cool stuff coming here very soon...</h2>
+      <h1>{t('title')}</h1>
+      <h2>{t('sub')}</h2>
     </div>
   );
 };

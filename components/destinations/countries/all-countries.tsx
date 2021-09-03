@@ -1,22 +1,21 @@
-import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import CountriesGrid from './countries-grid';
 import styles from './all-countries.module.scss';
 import { country } from '../../../lib/types';
 
 interface Props {
-  countries: country[]
+  countries: country[];
 }
 
 const AllCountries: React.FC<Props> = (props) => {
-const { countries } = props;
-const locale = useRouter().locale;
+  const { countries } = props;
+  const { t } = useTranslation('common');
+
   return (
     <div>
       <div className={styles.container}>
         <h1 className="header">
-          {locale === 'en-US'
-            ? 'SELECT YOUR DESTINATION'
-            : 'SELECCIONE SU DESTINO'}
+          {t('select')}
         </h1>
         <div className="header-underline"></div>
         <div className={styles.divider}></div>

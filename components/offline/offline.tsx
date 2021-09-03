@@ -1,15 +1,16 @@
 import styles from './offline.module.scss';
+import { useTranslation } from 'next-i18next';
 
-interface Props {
-
-}
+interface Props {}
 
 const Offline: React.FC<Props> = (props) => {
-const {  } = props;
+  const {} = props;
+  const { t } = useTranslation('offline');
+
   return (
     <div className="center">
-      <h2>We are very sorry, this page cannot be viewed at this time.</h2>
-      <p>Please check your network connection and try again!</p>
+      <h2>{t('title')}</h2>
+      <p>{t('sub')}</p>
     </div>
   );
 };

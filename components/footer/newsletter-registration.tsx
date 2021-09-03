@@ -1,13 +1,13 @@
 import React, { useRef, useState, useContext, useEffect } from 'react';
 import NotificationContext from '../../context/notification-context';
 import styles from './newsletter-registration.module.scss';
-import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 
 const Newsletter: React.FC = () => {
   const [emailIsValid, setEmailIsValid] = useState(true);
   const notificationCtx = useContext(NotificationContext);
-  const router = useRouter();
-  const locale = router.locale;
+  const { t } = useTranslation('footer');
+
   const emailInputRef = useRef<HTMLInputElement>();
 
   useEffect(() => {
@@ -80,35 +80,22 @@ const Newsletter: React.FC = () => {
     emailInputRef.current!.value = '';
   }
 
-  const emailInvalidMsg =
-    locale === 'en-US'
-      ? 'Please Fill in a Valid Email!'
-      : '¡Por favor, complete un correo electrónico válido!';
+  const emailInvalidMsg = t('validate');
 
   return (
     <div className={styles.container}>
       <p>
-        <strong>
-          {locale === 'en-US'
-            ? 'SUBSCRIBE TO THE NEWSLETTER'
-            : 'SUSCRÍBETE AL BOLETÍN INFORMATIVO'}
-        </strong>
+        <strong>{t('newsletter-main')}</strong>
       </p>
-      <p>
-        {locale === 'en-US'
-          ? 'Join our community to receive useful information and tips'
-          : 'Unete a esta comunidad para recibir información y consejos útiles'}
-      </p>
+      <p>{t('newsletter-sub')}</p>
       <form onSubmit={registrationHandler}>
         <input
           type="email"
           id="user-email"
           ref={emailInputRef as React.LegacyRef<HTMLInputElement>}
-          placeholder={
-            locale === 'en-US' ? 'Email Address' : 'Correo Electrónico'
-          }
+          placeholder={t('placeholder')}
         />
-        <button>{locale === 'en-US' ? 'JOIN' : 'JUNTAR'}</button>
+        <button>{t('button')}</button>
       </form>
       {!emailIsValid && <p>{emailInvalidMsg}</p>}
     </div>

@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../../public/images/logo/logo_sinfronteras-417x150.png';
-import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import styles from './extended-logo.module.scss';
 
 const ExtendedLogo: React.FC = () => {
-  const router = useRouter();
-  const locale = router.locale;
+  const { t } = useTranslation('footer');
+
   return (
     <div className={styles.container}>
       <div className={styles.image}>
@@ -16,17 +16,13 @@ const ExtendedLogo: React.FC = () => {
           </a>
         </Link>
       </div>
-      <h1>
-        {locale === 'en-US' ? 'Your Travel Channel' : 'Tu Canal de Viajes'}
-      </h1>
+      <h1>{t('logo-subtitle')}</h1>
       <a href="mailto:info@sinfronteras-travelblog.com">
         <p className={styles.email}>info@sinfronteras-travelblog.com</p>
       </a>
       <p>©2021 SINFRONTERAS</p>
       <p>
-        {locale === 'en-US'
-          ? 'ALL RIGHTS RESERVED.'
-          : 'TODOS LOS DERECHOS RESERVADOS'}
+        {t('rights')}
       </p>
     </div>
   );

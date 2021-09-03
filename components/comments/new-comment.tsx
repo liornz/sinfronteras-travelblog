@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import { enteredCommentData } from '../../lib/types';
 import validateUserInput from '../../lib/validate-user-input';
 import styles from './new-comment.module.scss';
+import { useTranslation } from 'next-i18next';
 
 interface Props {
   onAddComment: (comment: enteredCommentData) => void;
@@ -13,11 +13,9 @@ const NewComment: React.FC<Props> = (props) => {
   const emailInputRef = useRef<HTMLInputElement>();
   const nameInputRef = useRef<HTMLInputElement>();
   const commentInputRef = useRef<HTMLTextAreaElement>();
+  const { t } = useTranslation('comments');
 
   const { onAddComment } = props;
-  
-  const router = useRouter();
-  const locale = router.locale;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -29,10 +27,7 @@ const NewComment: React.FC<Props> = (props) => {
   }, [isInvalid]);
 
   const invalidInputMsg =
-    locale === 'en-US'
-      ? 'Please enter valid inputs!'
-      : '¡Ingrese entradas válidas!';
-
+    t('validate');
 
   function submitCommentHandler(event: React.FormEvent) {
     event.preventDefault();
@@ -67,7 +62,7 @@ const NewComment: React.FC<Props> = (props) => {
       <div className={styles.row}>
         <div className={styles.control}>
           <label htmlFor="email">
-            {locale === 'en-US' ? 'Your Email' : 'Tu Correo Electronico'}
+            {t('email')}
           </label>
           <input
             type="email"
@@ -77,7 +72,7 @@ const NewComment: React.FC<Props> = (props) => {
         </div>
         <div className={styles.control}>
           <label htmlFor="name">
-            {locale === 'en-US' ? 'Your Name' : 'Tu Nombre'}
+            {t('name')}
           </label>
           <input
             type="text"
@@ -87,23 +82,25 @@ const NewComment: React.FC<Props> = (props) => {
         </div>
       </div>
       <div className={styles.control}>
-        <label htmlFor="message">
-          {locale === 'en-US' ? 'Your Message' : 'Tu Mensaje'}
+        <label htmlFor="comment">
+          {t('comment')}
         </label>
         <textarea
-          name="message"
-          id="message"
+          name="comment"
+          id="comment"
           rows={5}
           ref={commentInputRef as React.LegacyRef<HTMLTextAreaElement>}
         ></textarea>
       </div>
       {isInvalid ? (
-        <p className={styles.err} role="alert">{invalidInputMsg}</p>
+        <p className={styles.err} role="alert">
+          {invalidInputMsg}
+        </p>
       ) : (
         <p style={{ color: '#9c9c9c' }}>.</p>
       )}
       <button className={styles.button}>
-        {locale === 'en-US' ? 'Submit' : 'Enviar'}
+        {t('button')}
       </button>
     </form>
   );

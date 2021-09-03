@@ -6,6 +6,7 @@ import FeaturedDestinations from '../components/destinations/featured-destinatio
 import AllCountries from '../components/destinations/countries/all-countries';
 import { getAllCountriesData, getFeaturedDestinations } from '../lib/data-utils';
 import { country, post } from '../lib/types';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface Props {
   featuredPosts: post[];
@@ -28,14 +29,15 @@ const HomePage: React.FC<Props> = (props) => {
 export default HomePage;
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const locale = context.locale;
+  const locale = context.locale!;
   const featuredPosts = getFeaturedDestinations(locale || 'en-US');
-    const countries = getAllCountriesData(locale!);
+    const countries = getAllCountriesData(locale);
 
   return {
     props: {
       featuredPosts: featuredPosts,
-      countries: countries
+      countries: countries,
+      ...(await serverSideTranslations(locale, ['common', 'footer', 'nav'])),
     },
   };
 };

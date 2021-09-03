@@ -1,6 +1,6 @@
 import MarkDown from 'react-markdown';
-import { useRouter } from 'next/router';
 import styles from './destination-text.module.scss';
+import { useTranslation } from 'next-i18next';
 
 interface Props {
   text: string;
@@ -8,12 +8,11 @@ interface Props {
 
 const DestinationText: React.FC<Props> = (props) => {
   const { text } = props;
-  const router = useRouter();
-  const locale = router.locale;
+  const { t } = useTranslation('destination');
 
   return (
     <div className={styles.text}>
-      <h3>{locale === 'en-US' ? 'About this video' : 'Sobre este video'}</h3>
+      <h3>{t('title')}</h3>
       <MarkDown>{text}</MarkDown>
     </div>
   );

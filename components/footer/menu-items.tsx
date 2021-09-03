@@ -1,10 +1,13 @@
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
+
 import Link from 'next/link';
 import styles from './menu-items.module.scss';
 
 const MenuItems: React.FC = () => {
   const router = useRouter();
-  const locale = router.locale;
+  const { t } = useTranslation('nav');
+
   return (
     <div className={styles.container}>
       <Link href="/destinations">
@@ -13,7 +16,7 @@ const MenuItems: React.FC = () => {
             color: router.pathname === '/destinations' ? 'rgb(240,150,37)' : '',
           }}
         >
-          {locale === 'en-US' ? 'DESTINATIONS' : 'DESTINOS'}
+          {t('destinations')}
         </a>
       </Link>
       <Link href="/shop">
@@ -22,7 +25,7 @@ const MenuItems: React.FC = () => {
             color: router.pathname === '/shop' ? 'rgb(240,150,37)' : '',
           }}
         >
-          {locale === 'en-US' ? 'SHOP' : 'TIENDA'}
+          {t('shop')}
         </a>
       </Link>
       <Link href="/contact">
@@ -31,7 +34,7 @@ const MenuItems: React.FC = () => {
             color: router.pathname === '/contact' ? 'rgb(240,150,37)' : '',
           }}
         >
-          {locale === 'en-US' ? 'CONTACT' : 'CONTACTO'}
+          {t('contact')}
         </a>
       </Link>
     </div>

@@ -2,12 +2,9 @@ import Offline from '../components/offline/offline';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
 
-interface Props {
 
-}
+const OfflinePage: React.FC = () => {
 
-const OfflinePage: React.FC<Props> = (props) => {
-const {  } = props;
   return (
     <Offline />
   );

@@ -13,7 +13,7 @@ interface Context {
 }
 
 const NotificationContext = React.createContext<Context>({
-  notification: null, // { title, message, status }
+  notification: null,
   showNotification: function (notificationData: notification) {},
   hideNotification: function () {},
 });

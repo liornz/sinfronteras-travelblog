@@ -52,7 +52,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params!.slug as string[];
    const country = slug[0];
    const fileName = slug[1];
-  const locale = context.locale as string;
+  const locale = context.locale! as string;
   const data = getFileData(country, locale, fileName);
 
   return {

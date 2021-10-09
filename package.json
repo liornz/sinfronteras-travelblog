@@ -16,6 +16,7 @@
     "@types/googlemaps": "^3.43.3",
     "@types/mongodb": "^4.0.6",
     "@types/nodemailer-sendgrid": "^1.0.0",
+    "@types/react-transition-group": "^4.4.3",
     "gray-matter": "^4.0.3",
     "jest-watch-typeahead": "^0.6.4",
     "mongodb": "^4.1.1",
@@ -26,6 +27,7 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-markdown": "^7.0.1",
+    "react-transition-group": "^4.4.2",
     "react-youtube": "^7.13.1",
     "sass": "^1.39.0"
   },

@@ -15,13 +15,33 @@
 }
 
 .nav_opened {
-  opacity: 1;
-  transform: translateY(0);
+  animation: open_nav 0.5s ease-out forwards;
 }
 
 .nav_closed {
-  opacity: 0;
-  transform: translateY(-150%);
+  animation: close_nav 0.5s ease-out forwards;
+}
+
+@keyframes open_nav {
+  0% {
+    opacity: 0;
+    transform: translateY(-150%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes close_nav {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-150%);
+  }
 }
 
 .navigation ul {
@@ -71,4 +91,3 @@ a:hover .underline {
   background-color: variables.$color-sinfronteras;
   width: 100%;
 }
-

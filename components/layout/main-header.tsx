@@ -3,6 +3,7 @@ import Logo from './logo';
 import Navbar from './navbar';
 import styles from './main-header.module.scss';
 import MenuToggler from './menuToggler';
+import { CSSTransition } from 'react-transition-group';
 
 interface Props {}
 
@@ -33,14 +34,14 @@ const MainHeader: React.FC<Props> = (props) => {
           <Logo toggle={showMobileMenu ? toggleMobileMenu : undefined} />
           <MenuToggler show={showMobileMenu} toggle={toggleMobileMenu} />
         </div>
-        {showMobileMenu ? (<Navbar show toggle={toggleMobileMenu} />) : null}
+        <Navbar show={showMobileMenu} toggle={toggleMobileMenu} isMobile={isMobile} />
       </div>
     </header>
   ) : (
     <header>
       <div className={styles.header_desktop}>
         <Logo />
-        <Navbar show />
+        <Navbar show isMobile={false} />
       </div>
     </header>
   );

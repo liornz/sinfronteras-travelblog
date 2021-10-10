@@ -5,17 +5,11 @@ import { useTranslation } from 'next-i18next';
 import { CSSTransition } from 'react-transition-group';
 
 interface Props {
-  show: boolean;
+  show: boolean | undefined;
   toggle?: () => void;
   isMobile: boolean;
 }
 
-// const getStyles = (show: boolean) => {
-//   const navClass = [styles.navigation];
-//   show ? navClass.push(styles.nav_opened) : navClass.push(styles.nav_closed);
-//   const navClassString = navClass.join(' ');
-//   return { navClass: navClassString };
-// };
 
 const Navbar: React.FC<Props> = (props) => {
   const router = useRouter();
@@ -23,7 +17,6 @@ const Navbar: React.FC<Props> = (props) => {
   const { t } = useTranslation('nav');
 
   const { show, toggle, isMobile } = props;
-  // const { navClass } = getStyles(show);
 
   const navList = (
     <ul>
@@ -79,18 +72,19 @@ const Navbar: React.FC<Props> = (props) => {
   );
 
   const output = !isMobile ? (
-    <nav className={styles.navigation}>{navList}</nav>
-  ) : (
-    <CSSTransition 
-    in={show} 
-    timeout={500} 
-    classNames={{
-      enterActive: styles.nav_opened,
-      exitActive: styles.nav_closed
-    }} 
-    mountOnEnter 
-    unmountOnExit >
-      <nav className={styles.navigation}>{navList}</nav>
+    <nav className={styles.navigation_desktop}>{navList}</nav>
+  ) : show === undefined ? null : (
+    <CSSTransition
+      in={show}
+      timeout={500}
+      classNames={{
+        enterActive: styles.nav_opened,
+        exitActive: styles.nav_closed,
+      }}
+      mountOnEnter
+      unmountOnExit
+    >
+      <nav className={styles.navigation_mobile}>{navList}</nav>
     </CSSTransition>
   );
 

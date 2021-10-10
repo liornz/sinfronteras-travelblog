@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   background-color: black;
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  // transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   position: absolute;
   width: 100%;
   @media (min-width: variables.$mobile-nav-size) {
@@ -12,6 +12,20 @@
     width: auto;
     transition: none;
   }
+}
+
+.navigation_desktop {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.navigation_mobile {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  position: absolute;
+  width: 100%;
 }
 
 .nav_opened {
@@ -44,7 +58,9 @@
   }
 }
 
-.navigation ul {
+.navigation ul,
+.navigation_desktop ul,
+.navigation_mobile ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,7 +75,9 @@
   }
 }
 
-.navigation li {
+.navigation li,
+.navigation_desktop li,
+.navigation_mobile li {
   list-style: none;
   margin: auto;
   width: fit-content;
@@ -70,7 +88,9 @@
   }
 }
 
-.navigation a {
+.navigation a,
+.navigation_desktop a,
+.navigation_mobile a {
   text-decoration: none;
   color: rgb(221, 221, 221);
   font-size: 0.9rem;

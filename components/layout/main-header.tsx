@@ -3,12 +3,11 @@ import Logo from './logo';
 import Navbar from './navbar';
 import styles from './main-header.module.scss';
 import MenuToggler from './menuToggler';
-import { CSSTransition } from 'react-transition-group';
 
 interface Props {}
 
 const MainHeader: React.FC<Props> = (props) => {
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState<boolean | undefined>(undefined);
   const [isMobile, setIsMobile] = useState(false);
   const {} = props;
   const breakpoint = 600;
@@ -24,7 +23,7 @@ const MainHeader: React.FC<Props> = (props) => {
   }, [breakpoint]);
 
   function toggleMobileMenu() {
-    setShowMobileMenu((prevState) => !prevState);
+    setShowMobileMenu((prevState) => !prevState ? true: false);
   }
 
   const output = isMobile ? (

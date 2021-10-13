@@ -1,19 +1,5 @@
 @use '../../styles/variables';
 
-.navigation {
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  // transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  position: absolute;
-  width: 100%;
-  @media (min-width: variables.$mobile-nav-size) {
-    position: static;
-    width: auto;
-    transition: none;
-  }
-}
-
 .navigation_desktop {
   margin: 0;
   padding: 0;
@@ -58,7 +44,6 @@
   }
 }
 
-.navigation ul,
 .navigation_desktop ul,
 .navigation_mobile ul {
   display: flex;
@@ -75,7 +60,6 @@
   }
 }
 
-.navigation li,
 .navigation_desktop li,
 .navigation_mobile li {
   list-style: none;
@@ -88,7 +72,6 @@
   }
 }
 
-.navigation a,
 .navigation_desktop a,
 .navigation_mobile a {
   text-decoration: none;

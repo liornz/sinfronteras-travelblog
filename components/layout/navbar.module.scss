@@ -1,30 +1,51 @@
 @use '../../styles/variables';
 
-.navigation {
+.navigation_desktop {
   margin: 0;
   padding: 0;
   background-color: black;
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.navigation_mobile {
+  margin: 0;
+  padding: 0;
+  background-color: black;
   position: absolute;
   width: 100%;
-  @media (min-width: variables.$mobile-nav-size) {
-    position: static;
-    width: auto;
-    transition: none;
-  }
 }
 
 .nav_opened {
-  opacity: 1;
-  transform: translateY(0);
+  animation: open_nav 0.5s ease-out forwards;
 }
 
 .nav_closed {
-  opacity: 0;
-  transform: translateY(-150%);
+  animation: close_nav 0.5s ease-out forwards;
 }
 
-.navigation ul {
+@keyframes open_nav {
+  0% {
+    opacity: 0;
+    transform: translateY(-150%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes close_nav {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-150%);
+  }
+}
+
+.navigation_desktop ul,
+.navigation_mobile ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,7 +60,8 @@
   }
 }
 
-.navigation li {
+.navigation_desktop li,
+.navigation_mobile li {
   list-style: none;
   margin: auto;
   width: fit-content;
@@ -50,7 +72,8 @@
   }
 }
 
-.navigation a {
+.navigation_desktop a,
+.navigation_mobile a {
   text-decoration: none;
   color: rgb(221, 221, 221);
   font-size: 0.9rem;
@@ -71,4 +94,3 @@ a:hover .underline {
   background-color: variables.$color-sinfronteras;
   width: 100%;
 }
-

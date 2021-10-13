@@ -2,5 +2,8 @@
   "extends": "next",
   "env": {
     "jest": true
+  },
+  "rules": {
+    "@next/next/no-document-import-in-page": "off"
   }
 }

@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next';
 import { CSSTransition } from 'react-transition-group';
 
 interface Props {
-  show: boolean | undefined;
+  show: boolean;
   toggle?: () => void;
   isMobile: boolean;
 }
@@ -73,7 +73,7 @@ const Navbar: React.FC<Props> = (props) => {
 
   const output = !isMobile ? (
     <nav className={styles.navigation_desktop}>{navList}</nav>
-  ) : show === undefined ? null : (
+  ) : (
     <CSSTransition
       in={show}
       timeout={500}

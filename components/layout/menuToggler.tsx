@@ -37,7 +37,7 @@ const MenuToggler: React.FC<Props> = (props) => {
   const { toggle, show } = props;
   const { classes1, classes3, style2 } = getStyles(show);
   return (
-    <div className={styles.menu_toggler} onClick={toggle}>
+    <div role="button" className={styles.menu_toggler} onClick={toggle}>
       <div className={classes1}></div>
       <div className={styles.second_line} style={style2}></div>
       <div className={classes3}></div>

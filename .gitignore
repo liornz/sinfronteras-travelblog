@@ -39,5 +39,5 @@ yarn-error.log*
 **/public/sw.js.map
 **/public/worker-*.js
 **/public/workbox-*.js.map
-**/public/fallback-development.js
+**/public/fallback-*.js
 

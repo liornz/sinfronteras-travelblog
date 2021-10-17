@@ -1,0 +1,28 @@
+@use '../../styles/variables';
+
+.section {
+  text-align: center;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  height: 50vh;
+}
+
+.title {
+  font-size: xx-large;
+  margin: 0.5rem 0;
+}
+
+.sub {
+  font-size: large;
+  margin: 0.5rem 0 2rem;
+}
+
+.button {
+  padding: 0.5rem 2rem;
+  color: white;
+  background-color: variables.$color-sinfronteras;
+}

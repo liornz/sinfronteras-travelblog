@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import VideoCard from '../video-elements/video-card';
 import styles from './hero.module.scss';
 import { useTranslation } from 'next-i18next';
@@ -7,7 +6,6 @@ interface Props {}
 
 const Hero: React.FC<Props> = (props) => {
   const {} = props;
-  const router = useRouter();
   const { t } = useTranslation('common');
 
   const aboutText = (

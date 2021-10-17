@@ -17,13 +17,11 @@ const ExtendedLogo: React.FC = () => {
         </Link>
       </div>
       <h1>{t('logo-subtitle')}</h1>
-      <a href="mailto:info@sinfronteras-travelblog.com">
-        <p className={styles.email}>info@sinfronteras-travelblog.com</p>
+      <a href="mailto:travelblogsinfronteras@gmail.com">
+        <p className={styles.email}>travelblogsinfronteras@gmail.com</p>
       </a>
       <p>©2021 SINFRONTERAS</p>
-      <p>
-        {t('rights')}
-      </p>
+      <p>{t('rights')}</p>
     </div>
   );
 };

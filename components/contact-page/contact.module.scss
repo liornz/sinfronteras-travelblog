@@ -1,6 +1,11 @@
 @use '../../styles/variables';
 
 .container {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   h1 {
     text-align: center;
     color: rgb(110, 110, 110);

@@ -1,12 +1,18 @@
 import { FaFacebookSquare } from 'react-icons/fa';
 import { SiInstagram } from 'react-icons/si';
 import { FaYoutubeSquare } from 'react-icons/fa';
+import Image from 'next/image';
+import victorAlaluf from '../../public/images/logo/victoralaluf.png';
 import styles from './social-media.module.scss';
 
 const SocialMedia: React.FC = () => {
   return (
     <div className={styles.container}>
-      <a id="facebook" className={styles.item} href="https://www.facebook.com/victor.alaluf">
+      <a
+        id="facebook"
+        className={styles.item}
+        href="https://www.facebook.com/victor.alaluf"
+      >
         <FaFacebookSquare color="#4267B2" size="1.5rem" />
         <p className={styles.social_text}>FACEBOOK</p>
       </a>
@@ -25,6 +31,16 @@ const SocialMedia: React.FC = () => {
       >
         <FaYoutubeSquare color="#FF0000" size="1.5rem" />
         <p className={styles.social_text}>YOUTUBE</p>
+      </a>
+      <a
+        id="victoralaluf"
+        className={styles.item}
+        href="https://victoralaluf.com"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image src={victorAlaluf} alt="Victor Alaluf Art Logo" width={25} height={25} />
+        <p className={styles.social_text}>VICTOR ALALUF</p>
       </a>
     </div>
   );

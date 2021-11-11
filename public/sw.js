@@ -1,1 +1,136 @@
-if(!self.define){const e=e=>{"require"!==e&&(e+=".js");let s=Promise.resolve();return a[e]||(s=new Promise((async s=>{if("document"in self){const a=document.createElement("script");a.src=e,document.head.appendChild(a),a.onload=s}else importScripts(e),s()}))),s.then((()=>{if(!a[e])throw new Error(`Module ${e} didn’t register its module`);return a[e]}))},s=(s,a)=>{Promise.all(s.map(e)).then((e=>a(1===e.length?e[0]:e)))},a={require:Promise.resolve(s)};self.define=(s,i,r)=>{a[s]||(a[s]=Promise.resolve().then((()=>{let a={};const n={uri:location.origin+s.slice(1)};return Promise.all(i.map((s=>{switch(s){case"exports":return a;case"module":return n;default:return e(s)}}))).then((e=>{const s=r(...e);return a.default||(a.default=s),a}))})))}}define("./sw.js",["./workbox-6185e0cf"],(function(e){"use strict";importScripts("fallback-ooroybXR286hFfgxa8UQL.js"),self.skipWaiting(),e.clientsClaim(),e.precacheAndRoute([{url:"/_next//static/media/logo_sinfronteras-417x150.29ec1971.png",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/server/middleware-manifest.json",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/528-89c81b9ee448eaf5.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/651.cd440d205ca10b23.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/framework-0f8b31729833af61.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/main-2261c96fb41566dd.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/pages/404-d7edbd570a1afecc.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/pages/_app-996971e9dc5f3b2e.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/pages/_error-ddb7477254ab31d2.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/pages/_offline-f984d6a13e3822a8.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/pages/contact-14cba22c674120bf.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/pages/destinations-f6c0214809b9c411.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/pages/destinations/%5B...slug%5D-90ec22dcd270fbde.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/pages/destinations/%5Bcountry%5D-1499ef18f9236de8.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/pages/index-e968b88372a14344.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/pages/shop-6359638f3565f898.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/pages/sitemap.xml-27b735bd15182889.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/polyfills-a40ef1678bae11e696dba45124eadd70.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/chunks/webpack-c8baf3bb99eff60a.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/css/0123bc3547641ead.css",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/css/121f98ba0fcceb1b.css",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/css/1d1f7ebb6976d992.css",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/css/20a81894fda1db3f.css",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/css/32d5134c00c3f75b.css",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/css/410f5ec7210b168f.css",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/css/82d52bd20181ca06.css",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/css/f75145a9b808e30d.css",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/ooroybXR286hFfgxa8UQL/_buildManifest.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/ooroybXR286hFfgxa8UQL/_middlewareManifest.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_next/static/ooroybXR286hFfgxa8UQL/_ssgManifest.js",revision:"ooroybXR286hFfgxa8UQL"},{url:"/_offline",revision:"ooroybXR286hFfgxa8UQL"},{url:"/favicon.ico",revision:"c085baabee98218db95261c22a8957d8"},{url:"/google0caf3b4e7fa117a8.html",revision:"a8cc7a828f9579d578cec8521e427495"},{url:"/images/background/image4.jpg",revision:"f719848b433845e36c3a1df93dbc238a"},{url:"/images/background/mapa-verde-small.jpg",revision:"28ee16db103e68458eb9d1c005b28e63"},{url:"/images/countries/cambodia/cambodia.jpg",revision:"e436837fd3bd9b8fdefa5c1a2b43a3ad"},{url:"/images/countries/cambodia/flag.png",revision:"dc5ef02633a4dbad2d76cc867e630838"},{url:"/images/countries/myanmar/flag.jpg",revision:"3286cf49d1a463eb0d6f2e77da66f3f5"},{url:"/images/countries/myanmar/myanmar.jpg",revision:"7b79ed855ca32b370901867f86044fd7"},{url:"/images/countries/thailand/flag.png",revision:"bf3f7c1bebd36cd239411140f11114c0"},{url:"/images/countries/thailand/thailand.jpg",revision:"e97bceb8dfd575139ce7c2b65f41f048"},{url:"/images/icons/android-chrome-192x192.png",revision:"50de619f69cb9e639e515f11de7e4636"},{url:"/images/icons/apple-touch-icon.png",revision:"490c55ceaeebbf98142fb3d2c8deeedc"},{url:"/images/icons/favicon-16x16.png",revision:"a6d6390796d0429a1746f2c47207d54e"},{url:"/images/icons/favicon-32x32.png",revision:"76b53168e68079cd94e04b5167ebd737"},{url:"/images/icons/maskable_icon.png",revision:"41075b59ae9f3e09e628c9b954b0c83c"},{url:"/images/icons/maskable_icon_x128.png",revision:"736eafac60a40143b66aa5d6f57552f1"},{url:"/images/icons/maskable_icon_x192.png",revision:"cd37e1f0be4f9fab370809baca9caee5"},{url:"/images/icons/maskable_icon_x48.png",revision:"3bf04a14a8757b1ea1287a0a3961b033"},{url:"/images/icons/maskable_icon_x72.png",revision:"cb11958acb46789b97a2c3d4428951d8"},{url:"/images/icons/maskable_icon_x96.png",revision:"fa41885841f672d2a7e08c5a72bb1a88"},{url:"/images/icons/sinfronteras-128x128.png",revision:"8b63ff89d29e1fc7e6ea2d4142e39d3d"},{url:"/images/icons/sinfronteras-144x144.png",revision:"490c55ceaeebbf98142fb3d2c8deeedc"},{url:"/images/icons/sinfronteras-152x152.png",revision:"312b1a4021c9623bdddae0749f4249f0"},{url:"/images/icons/sinfronteras-16x16.png",revision:"a6d6390796d0429a1746f2c47207d54e"},{url:"/images/icons/sinfronteras-192x192.png",revision:"50de619f69cb9e639e515f11de7e4636"},{url:"/images/icons/sinfronteras-32x32.png",revision:"76b53168e68079cd94e04b5167ebd737"},{url:"/images/icons/sinfronteras-384x384.png",revision:"b5cf3101d27dea7e5813e8dce8915da7"},{url:"/images/icons/sinfronteras-512x512.png",revision:"2e8c22603466135978b18b57ff5068dd"},{url:"/images/icons/sinfronteras-72x72.png",revision:"993f1b34fcceb292a8e64bc88eebf4ae"},{url:"/images/icons/sinfronteras-96x96.png",revision:"d09304ea3b2708b577e79d1b79cd9ae1"},{url:"/images/icons/touch-icon-ipad-retina.png",revision:"39967303da25f7ef6ab808f4f2e6bc60"},{url:"/images/icons/touch-icon-ipad.png",revision:"312b1a4021c9623bdddae0749f4249f0"},{url:"/images/icons/touch-icon-iphone-retina.png",revision:"cfe764982aedbc880bd26a67d50d9b04"},{url:"/images/icons/touch-icon-iphone.png",revision:"490c55ceaeebbf98142fb3d2c8deeedc"},{url:"/images/logo/logo_sinfronteras-417x150.png",revision:"a94f7fa2b9a430dee51145830dc4815a"},{url:"/images/logo/logo_sinfronteras-600x216.png",revision:"60ca0ceb1999fd645fb802d259c2c0e7"},{url:"/images/posters/portada-100-suscriptores.jpg",revision:"dd8bdf7ba7259a6df470c54ec0099596"},{url:"/images/posters/portada-angkor.jpg",revision:"37544ceff4c5912e9ec4d2eb175cd4e3"},{url:"/images/posters/portada-ayutthaya.jpg",revision:"4a6fa4b86d604862418b9cf846be0d87"},{url:"/images/posters/portada-bagan.jpg",revision:"060114cb99109bea48605d678049b3c7"},{url:"/images/posters/portada-bangkok.jpg",revision:"edd964b4771d24d1be61d475fb9b8480"},{url:"/images/posters/portada-chiang-mai.jpg",revision:"4982c34d5fca578124334163bf5ad2e1"},{url:"/images/posters/portada-enp.jpg",revision:"486b58962d646f53aad1dbefc6cb0f64"},{url:"/images/posters/portada-hpa-an.jpg",revision:"cef281c895f93fcbb1ccb6891fba1dae"},{url:"/images/posters/portada-hsipaw.jpg",revision:"acd0e12774627c45f6ce8b52432bd4f3"},{url:"/images/posters/portada-kyaiktiyo.jpg",revision:"aedc9ecbc7f3ce6b5c88b04b87a8d972"},{url:"/images/posters/portada-la-vida-es-un-viaje.jpg",revision:"4bfb7eafe24e7b3b00b584d3b5fe886b"},{url:"/images/posters/portada-lago-inle.jpg",revision:"603daf29bf14533d070178b8398d1096"},{url:"/images/posters/portada-mandalay.jpg",revision:"1a9dae30b1d7241dacd04e918c98aebf"},{url:"/images/posters/portada-myanmar.jpg",revision:"60f4ae54379f5757780d7cbf5e200e08"},{url:"/images/posters/portada-sukhothai.jpg",revision:"6c0c9662d493bbcb076b436bc1f72c7d"},{url:"/images/posters/portada-udon-thani.jpg",revision:"8caee9a8b556faaf169bfa82788c44c2"},{url:"/images/posters/portada-yangon-dia1.jpg",revision:"9c3ca28c61c92b0fd94e5a9491e52bfb"},{url:"/images/posters/portada-yangon-dia2.jpg",revision:"223c407101e06ed5b306535c3e279e04"},{url:"/images/posters/portada-yangon-dia3.jpg",revision:"5702ea09a3edd5161fed90fdc531aef0"},{url:"/images/slides/image1.jpg",revision:"5b8c2d657e2286cfc444d9fa04046f2a"},{url:"/images/slides/image2.jpg",revision:"33e1f183eacdf4bcca25ed18d414bbdc"},{url:"/images/slides/image3.jpg",revision:"7cac351889c89c6284b36a0307429d2f"},{url:"/locales/en-US/comments.json",revision:"1a670d98e1c0bf65c46d45106faf3ed0"},{url:"/locales/en-US/common.json",revision:"6312d1b6cc585bf5800256a8dbf08c63"},{url:"/locales/en-US/contact.json",revision:"6188b493f2d5efbd15d615ab7a2aec46"},{url:"/locales/en-US/destination.json",revision:"6217fb645992fb15fe35a6ab748f3dee"},{url:"/locales/en-US/error.json",revision:"4967c41ca7514f5924ed11776018cf9b"},{url:"/locales/en-US/footer.json",revision:"e4c98bcfbbe190ed1a5a79a157de6d27"},{url:"/locales/en-US/nav.json",revision:"ed283439dde21846c2c10ec81e480040"},{url:"/locales/en-US/offline.json",revision:"32a5cd06117ba8f8f0d6d38b43586530"},{url:"/locales/en-US/shop.json",revision:"9845a60d9c17af0fb3a60a3a63b619e1"},{url:"/locales/es-AR/comments.json",revision:"3d2d41e5e957a20e66a6d52fa2999e3f"},{url:"/locales/es-AR/common.json",revision:"37d778a9b1b1a0334fedc6d66948fe3c"},{url:"/locales/es-AR/contact.json",revision:"2c140c2f0f503859c9cd1a628d4bbadd"},{url:"/locales/es-AR/destination.json",revision:"d00e1b0ed57007929949619ca08fb9e1"},{url:"/locales/es-AR/error.json",revision:"bb6116d8da99993fe513eb8119b5d555"},{url:"/locales/es-AR/footer.json",revision:"1fa463f055412746bbf3aef97bbc3d65"},{url:"/locales/es-AR/nav.json",revision:"ead831b34d86f697f154b905d54cc1fb"},{url:"/locales/es-AR/offline.json",revision:"5b9a44bdb45b55024f8526f85b491355"},{url:"/locales/es-AR/shop.json",revision:"7847e0d2dac3cfd35aaa3ed9edf80666"},{url:"/manifest.json",revision:"3fb92c27822bb9cdacd05a4bb9dd61e0"},{url:"/vercel.svg",revision:"4b4f1876502eb6721764637fe5c41702"},{url:"/videos/sinfronteras-intro-hd.mp4",revision:"0dc1571d7bee1bb099850b54fedf2abd"},{url:"/videos/sinfronteras-intro-hd.webm",revision:"496a8081b44e368d574bb8f531f66aa5"}],{ignoreURLParametersMatching:[]}),e.cleanupOutdatedCaches(),e.registerRoute("/",new e.NetworkFirst({cacheName:"start-url",plugins:[{cacheWillUpdate:async({request:e,response:s,event:a,state:i})=>s&&"opaqueredirect"===s.type?new Response(s.body,{status:200,statusText:"OK",headers:s.headers}):s},{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute(/^https:\/\/fonts\.(?:gstatic)\.com\/.*/i,new e.CacheFirst({cacheName:"google-fonts-webfonts",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:31536e3}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute(/^https:\/\/fonts\.(?:googleapis)\.com\/.*/i,new e.StaleWhileRevalidate({cacheName:"google-fonts-stylesheets",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:604800}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute(/\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,new e.StaleWhileRevalidate({cacheName:"static-font-assets",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:604800}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute(/\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,new e.StaleWhileRevalidate({cacheName:"static-image-assets",plugins:[new e.ExpirationPlugin({maxEntries:64,maxAgeSeconds:86400}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute(/\/_next\/image\?url=.+$/i,new e.StaleWhileRevalidate({cacheName:"next-image",plugins:[new e.ExpirationPlugin({maxEntries:64,maxAgeSeconds:86400}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute(/\.(?:mp3|wav|ogg)$/i,new e.CacheFirst({cacheName:"static-audio-assets",plugins:[new e.RangeRequestsPlugin,new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute(/\.(?:mp4)$/i,new e.CacheFirst({cacheName:"static-video-assets",plugins:[new e.RangeRequestsPlugin,new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute(/\.(?:js)$/i,new e.StaleWhileRevalidate({cacheName:"static-js-assets",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute(/\.(?:css|less|scss)$/i,new e.StaleWhileRevalidate({cacheName:"static-style-assets",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute(/\/_next\/data\/.+\/.+\.json$/i,new e.StaleWhileRevalidate({cacheName:"next-data",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute(/\.(?:json|xml|csv)$/i,new e.NetworkFirst({cacheName:"static-data-assets",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute((({url:e})=>{if(!(self.origin===e.origin))return!1;const s=e.pathname;return!s.startsWith("/api/auth/")&&!!s.startsWith("/api/")}),new e.NetworkFirst({cacheName:"apis",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute((({url:e})=>{if(!(self.origin===e.origin))return!1;return!e.pathname.startsWith("/api/")}),new e.NetworkFirst({cacheName:"others",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute((({url:e})=>!(self.origin===e.origin)),new e.NetworkFirst({cacheName:"cross-origin",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:3600}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"GET"),e.registerRoute(/\/api\/comments\//,new e.NetworkOnly({plugins:[new e.BackgroundSyncPlugin("comments",{maxRetentionTime:31536e3}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"POST"),e.registerRoute(/\/api\/newsletter/,new e.NetworkOnly({plugins:[new e.BackgroundSyncPlugin("newsletter",{maxRetentionTime:31536e3}),{handlerDidError:async({request:e})=>self.fallback(e)}]}),"POST")}));
+/**
+ * Copyright 2018 Google Inc. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+// If the loader is already loaded, just stop.
+if (!self.define) {
+  const singleRequire = name => {
+    if (name !== 'require') {
+      name = name + '.js';
+    }
+    let promise = Promise.resolve();
+    if (!registry[name]) {
+      
+        promise = new Promise(async resolve => {
+          if ("document" in self) {
+            const script = document.createElement("script");
+            script.src = name;
+            document.head.appendChild(script);
+            script.onload = resolve;
+          } else {
+            importScripts(name);
+            resolve();
+          }
+        });
+      
+    }
+    return promise.then(() => {
+      if (!registry[name]) {
+        throw new Error(`Module ${name} didn’t register its module`);
+      }
+      return registry[name];
+    });
+  };
+
+  const require = (names, resolve) => {
+    Promise.all(names.map(singleRequire))
+      .then(modules => resolve(modules.length === 1 ? modules[0] : modules));
+  };
+  
+  const registry = {
+    require: Promise.resolve(require)
+  };
+
+  self.define = (moduleName, depsNames, factory) => {
+    if (registry[moduleName]) {
+      // Module is already loading or loaded.
+      return;
+    }
+    registry[moduleName] = Promise.resolve().then(() => {
+      let exports = {};
+      const module = {
+        uri: location.origin + moduleName.slice(1)
+      };
+      return Promise.all(
+        depsNames.map(depName => {
+          switch(depName) {
+            case "exports":
+              return exports;
+            case "module":
+              return module;
+            default:
+              return singleRequire(depName);
+          }
+        })
+      ).then(deps => {
+        const facValue = factory(...deps);
+        if(!exports.default) {
+          exports.default = facValue;
+        }
+        return exports;
+      });
+    });
+  };
+}
+define("./sw.js",['./workbox-202dc43a'], function (workbox) { 'use strict';
+
+  /**
+  * Welcome to your Workbox-powered service worker!
+  *
+  * You'll need to register this file in your web app.
+  * See https://goo.gl/nhQhGp
+  *
+  * The rest of the code is auto-generated. Please don't update this file
+  * directly; instead, make changes to your Workbox build configuration
+  * and re-run your build process.
+  * See https://goo.gl/2aRDsh
+  */
+
+  importScripts("fallback-development.js");
+  self.skipWaiting();
+  workbox.clientsClaim();
+  workbox.registerRoute("/", new workbox.NetworkFirst({
+    "cacheName": "start-url",
+    plugins: [{
+      cacheWillUpdate: async ({
+        request,
+        response,
+        event,
+        state
+      }) => {
+        if (response && response.type === 'opaqueredirect') {
+          return new Response(response.body, {
+            status: 200,
+            statusText: 'OK',
+            headers: response.headers
+          });
+        }
+
+        return response;
+      }
+    }, {
+      handlerDidError: async ({
+        request
+      }) => self.fallback(request)
+    }]
+  }), 'GET');
+  workbox.registerRoute(/.*/i, new workbox.NetworkOnly({
+    "cacheName": "dev",
+    plugins: [{
+      handlerDidError: async ({
+        request
+      }) => self.fallback(request)
+    }]
+  }), 'GET');
+
+});
+//# sourceMappingURL=sw.js.map

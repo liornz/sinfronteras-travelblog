@@ -39,7 +39,15 @@ const SocialMedia: React.FC = () => {
         target="_blank"
         rel="noreferrer"
       >
-        <Image src={victorAlaluf} alt="Victor Alaluf Art Logo" width={25} height={25} />
+        <div className={styles.image}>
+          <Image
+            src={victorAlaluf}
+            alt="Victor Alaluf Art Logo"
+            width={25}
+            height={25}
+          />
+        </div>
+
         <p className={styles.social_text}>VICTOR ALALUF</p>
       </a>
     </div>

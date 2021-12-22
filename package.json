@@ -17,6 +17,7 @@
     "@types/mongodb": "^4.0.6",
     "@types/nodemailer-sendgrid": "^1.0.0",
     "@types/react-transition-group": "^4.4.3",
+    "axios": "^0.24.0",
     "gray-matter": "^4.0.3",
     "jest-watch-typeahead": "^0.6.4",
     "mongodb": "^4.1.1",

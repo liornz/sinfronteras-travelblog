@@ -10,7 +10,6 @@ interface Props {
   isMobile: boolean;
 }
 
-
 const Navbar: React.FC<Props> = (props) => {
   const router = useRouter();
   const locale = router.locale;
@@ -65,7 +64,7 @@ const Navbar: React.FC<Props> = (props) => {
           }}
           locale={locale === 'en-US' ? 'es-AR' : 'en-US'}
         >
-          {t('lang')}
+          <a className={styles.button}>{t('lang')}</a>
         </Link>
       </li>
     </ul>

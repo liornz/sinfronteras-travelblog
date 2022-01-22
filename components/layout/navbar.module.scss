@@ -67,8 +67,8 @@
   width: fit-content;
   padding: 0.5rem 0;
   @media (min-width: 600px) {
-    margin: 0;
-    padding: 1rem;
+    margin: 0 1rem;
+    padding: 0 0rem;
   }
 }
 
@@ -92,4 +92,16 @@
 a:hover .underline {
   height: 4px;
   width: 100%;
+}
+
+.button {
+  padding: 0.2rem;
+  border: 2px solid white;
+  border-radius: 10%;
+  &:hover {
+    background-color: variables.$color-sinfronteras;
+    color: black;
+    border: 2px solid variables.$color-sinfronteras;
+    border-radius: 10%;
+  }
 }

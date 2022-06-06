@@ -11,7 +11,7 @@ location: {
   lng: 35.223611
 }
 zoom: 8
-isFeatured: true
+isFeatured: false
 ---
 
 En este episodio de Sinfronteras pasearemos por las antiguas murallas de defensa de la ciudad vieja de Jerusalén para llegar así a la conosida puerta de los leones y desde alli caminar la famosa vía dolorosa para culminar nuestro recorrido del día en el icónico Iglesia de Santo Sepulcro.

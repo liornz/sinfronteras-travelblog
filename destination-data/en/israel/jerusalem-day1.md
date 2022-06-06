@@ -11,7 +11,7 @@ location: {
   lng: 35.223611
 }
 zoom: 8
-isFeatured: true
+isFeatured: false
 ---
 
 In this episode of Sin Fronteras, we begin our tour of the Old City of Jerusalem. We will walk through the magical and colorful streets of the Muslim Quarter entering the famous Damascus Gate to reach the iconic Golden Dome.

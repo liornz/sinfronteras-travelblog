@@ -11,7 +11,7 @@ location: {
   lng: 35.223611
 }
 zoom: 8
-isFeatured: true
+isFeatured: false
 ---
 
 In this episode of Without Boundaries we will walk through the ancient walls of the Old City of Jerusalem to reach the well-known Lions' Gate and from there walk the famous Via Dolorosa to culminate our journey of the day in The iconic Church of the Holy Sepulchre.

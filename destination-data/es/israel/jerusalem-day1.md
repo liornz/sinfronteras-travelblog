@@ -11,7 +11,7 @@ location: {
   lng: 35.223611
 }
 zoom: 8
-isFeatured: true
+isFeatured: false
 ---
 
 En este episodio de Sinfronteras comensamos nuestro recorrido por la ciudad vieja de jerusalen. Recorreremos las mágicas y coloridas calles del barrio musulmán entrando por la famosa puerta de damasco para así llegar a la icónica cúpula dorada. 

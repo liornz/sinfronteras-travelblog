@@ -1,0 +1,18 @@
+.comments {
+  padding: 3rem 0;
+  margin: 0rem auto;
+  width: 90%;
+  max-width: 40rem;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  color: #6e6e6e;
+  font-weight: bold;
+}
+
+.container {
+  background-color: #E9ECEF;
+}
+/*# sourceMappingURL=comments.module.css.map */

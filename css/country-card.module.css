@@ -1,0 +1,121 @@
+.text {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: rgba(128, 128, 128, 0.4);
+  border-radius: 0 0 10px 10px;
+}
+
+.title {
+  position: relative;
+  padding-bottom: 0.5rem;
+  color: white;
+  background-color: rgba(128, 128, 128, 0.4);
+  border-radius: 0 0 10px 10px;
+  height: 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.title h1 {
+  padding: 0 0.5rem;
+  text-align: center;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+@media (max-width: 330px) {
+  .title h1 {
+    font-size: 1.2rem;
+  }
+}
+
+.subtitle {
+  height: 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.subtitle p {
+  text-align: center;
+  padding: 0 0.5rem;
+  margin: 0;
+  font-weight: 300;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 330px) {
+  .subtitle p {
+    font-size: 1rem;
+  }
+}
+
+.card {
+  margin: 0;
+  padding: 0;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.card:hover {
+  -webkit-transform: scale(0.97);
+          transform: scale(0.97);
+}
+
+.image {
+  position: relative;
+  border-radius: 10px;
+}
+
+.image img {
+  border-radius: 10px 10px 0 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 5;
+  cursor: pointer;
+  border-radius: 10px 10px 0 0;
+  -webkit-transition: all ease-out 0.5s;
+  transition: all ease-out 0.5s;
+}
+
+.overlay:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+.flag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+}
+/*# sourceMappingURL=country-card.module.css.map */

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC;EACR,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,CAAC;EACN,IAAI,EAAE,CAAC;EACP,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;EACb,gBAAgB,EAAE,kBAAiB;EACnC,OAAO,EAAE,GAAG;CACb",
+    "sources": [
+        "../components/video-elements/backdrop.module.scss"
+    ],
+    "names": [],
+    "file": "backdrop.module.css"
+}

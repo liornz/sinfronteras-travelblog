@@ -1,0 +1,19 @@
+.Video {
+  position: fixed;
+  top: 30vh;
+  left: 3vw;
+  height: 51vw;
+  width: 90vw;
+  /* max-width: 640px; */
+  z-index: 1000;
+}
+
+@media (min-width: 992px) {
+  .Video {
+    top: 22vh;
+    left: 18vw;
+    height: 34vw;
+    width: 60vw;
+  }
+}
+/*# sourceMappingURL=video-display.module.css.map */

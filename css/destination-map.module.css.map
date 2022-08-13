@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACH,IAAI,EAAE,CAAC;EACP,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,cAAc;EACtB,UAAU,EAAE,oBAAoB;EAChC,gBAAgB,EAAE,KAAK;EACvB,MAAM,EAAE,MAAM;CAIf;;AAHC,MAAM,EAAE,SAAS,EAAE,KAAK;EAV1B,AAAA,IAAI,CAAC;IAWD,MAAM,EAAE,UAAU;GAErB",
+    "sources": [
+        "../components/single-destination-page/destination-map.module.scss"
+    ],
+    "names": [],
+    "file": "destination-map.module.css"
+}

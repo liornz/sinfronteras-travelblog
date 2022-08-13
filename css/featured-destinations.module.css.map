@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,gBAAgB,EAAE,OAAO;CAC1B;;AAED,AAAA,QAAQ,CAAC;EACP,MAAM,EAAE,IAAI;EACZ,gBAAgB,EAAE,OAAO;CAC1B",
+    "sources": [
+        "../components/destinations/featured-destinations.module.scss"
+    ],
+    "names": [],
+    "file": "featured-destinations.module.css"
+}

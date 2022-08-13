@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,IAAI,EAAE,CAAC;EACP,MAAM,EAAE,cAAc;EACtB,UAAU,EAAE,oBAAoB;EAChC,OAAO,EAAE,IAAI;EACb,gBAAgB,EAAE,KAAK;EACvB,MAAM,EAAE,UAAU;EAClB,UAAU,EAAE,KAAK;CAIlB;;AAHC,MAAM,EAAE,SAAS,EAAE,KAAK;EAR1B,AAAA,KAAK,CAAC;IASF,MAAM,EAAE,UAAU;GAErB;;;AAED,AAAA,KAAK,CAAC,CAAC,CAAC;EACN,WAAW,EAAE,GAAG;EAChB,SAAS,EAAE,OAAO;EAClB,KAAK,EAAE,kBAAkB;CAC1B;;AAED,AAAA,KAAK,CAAC,EAAE,CAAC;EACN,KAAK,EAAE,IAAkB;CAC3B",
+    "sources": [
+        "../components/single-destination-page/destination-text.module.scss"
+    ],
+    "names": [],
+    "file": "destination-text.module.css"
+}

@@ -1,0 +1,19 @@
+.logo {
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 101;
+}
+
+.logo a {
+  padding-top: 0.2rem;
+  width: 10rem;
+}
+/*# sourceMappingURL=logo.module.css.map */

@@ -1,0 +1,76 @@
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  color: white;
+  margin-top: 1rem;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5rem 0;
+}
+
+.item p {
+  margin: 0 1rem;
+  -webkit-text-decoration: underline solid transparent;
+          text-decoration: underline solid transparent;
+  -webkit-transition: -webkit-text-decoration 0.3s ease-out;
+  transition: -webkit-text-decoration 0.3s ease-out;
+  transition: text-decoration 0.3s ease-out;
+  transition: text-decoration 0.3s ease-out, -webkit-text-decoration 0.3s ease-out;
+}
+
+.item p:hover {
+  -webkit-text-decoration: underline solid white;
+          text-decoration: underline solid white;
+}
+
+.social_text {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .social_text {
+    display: block;
+  }
+}
+
+.container svg {
+  margin: 0 1rem;
+}
+
+@media (min-width: 1000px) {
+  .container svg {
+    margin: 0;
+  }
+}
+
+.image {
+  margin: 0 1rem;
+}
+
+@media (min-width: 1000px) {
+  .image {
+    margin: 0;
+  }
+}
+/*# sourceMappingURL=social-media.module.css.map */

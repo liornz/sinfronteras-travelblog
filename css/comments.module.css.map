@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC;EACR,OAAO,EAAE,MAAM;EACf,MAAM,EAAE,SAAS;EACjB,KAAK,EAAE,GAAG;EACV,SAAS,EAAE,KAAK;EAChB,UAAU,EAAE,MAAM;CACnB;;AAED,AAAA,MAAM,CAAC;EACL,MAAM,EAAE,CAAC;EACT,KAAK,EAAE,OAAkB;EACzB,WAAW,EAAE,IAAI;CAClB;;AAED,AAAA,UAAU,CAAC;EACT,gBAAgB,EAAE,OAAO;CAC1B",
+    "sources": [
+        "../components/comments/comments.module.scss"
+    ],
+    "names": [],
+    "file": "comments.module.css"
+}

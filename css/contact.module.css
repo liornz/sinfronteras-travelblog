@@ -1,0 +1,96 @@
+@use '../../styles/variables';
+.container {
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container h1 {
+  text-align: center;
+  color: #6e6e6e;
+}
+
+.form {
+  margin: 2rem auto;
+  width: 50%;
+  min-width: 18rem;
+  border-radius: 6px;
+  background-color: #cacaca;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.control {
+  margin-bottom: 0.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 10rem;
+}
+
+.control label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #6e6e6e;
+  text-align: left;
+}
+
+.control input,
+.control textarea {
+  font: inherit;
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+  background-color: #dfdfdf;
+}
+
+.form .button {
+  font: inherit;
+  display: block;
+  margin: 0 auto;
+  background-color: #bebebe;
+  font-weight: bold;
+  border-radius: 5px;
+  color: #727272;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #585858;
+  outline: none;
+  cursor: pointer;
+}
+
+.form .button:hover {
+  background-color: #b4b4b4;
+}
+
+.form p {
+  margin: 0.2rem;
+}
+
+.error {
+  text-align: center;
+  color: #9a2c2c;
+}
+/*# sourceMappingURL=contact.module.css.map */

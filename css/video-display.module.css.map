@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAC;EACL,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,IAAI;EACT,IAAI,EAAE,GAAG;EACT,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;EACX,uBAAuB;EACvB,OAAO,EAAE,IAAI;CAOd;;AANC,MAAM,EAAE,SAAS,EAAE,KAAK;EAR1B,AAAA,MAAM,CAAC;IASH,GAAG,EAAE,IAAI;IACT,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,IAAI;IACZ,KAAK,EAAE,IAAI;GAEd",
+    "sources": [
+        "../components/video-elements/video-display.module.scss"
+    ],
+    "names": [],
+    "file": "video-display.module.css"
+}

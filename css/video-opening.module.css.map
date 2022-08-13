@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAC;EACf,gBAAgB,EAAE,KAAK;CACxB",
+    "sources": [
+        "../components/home-page/video-opening.module.scss"
+    ],
+    "names": [],
+    "file": "video-opening.module.css"
+}

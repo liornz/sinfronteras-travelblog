@@ -14,4 +14,4 @@ zoom: 8
 isFeatured: false
 ---
 
-In this episode of SinFronteras, we visit the holiest places on the shores of the Sea of Galilee. We begin by visiting the city of Nazareth, the cradle of Christianity to then descend from the height of Mount Arbel to visit the iconic places on the shores of the Sea of Galilee also known as Kineret.
+En este episodio de SinFronteras nos despedimos de Tierra Santa, visitando las ruinas de Beit Shean (scythopolis), la ciudad portuaria de Haifa, Akko y admiramos la belleza natural de las grutas de Rosh Hanikra.

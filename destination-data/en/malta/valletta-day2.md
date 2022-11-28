@@ -1,6 +1,6 @@
 ---
 title: 'Valletta - Day 2'
-subtitle: 'Malta - and its cultural treasures'
+subtitle: 'Malta - and its Cultural Treasures'
 country: 'Malta'
 region: 'Europe'
 image: 'portada-valeta-dia2.jpg'

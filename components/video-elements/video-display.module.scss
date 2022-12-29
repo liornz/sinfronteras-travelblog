@@ -1,14 +1,14 @@
 .Video {
   position: fixed;
   top: 30vh;
-  left: 3vw;
+  left: 5vw;
   height: 51vw;
   width: 90vw;
   /* max-width: 640px; */
   z-index: 1000;
   @media (min-width: 992px) {
     top: 22vh;
-    left: 18vw;
+    left: 20vw;
     height: 34vw;
     width: 60vw;
   }

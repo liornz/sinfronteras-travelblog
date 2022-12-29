@@ -1,5 +1,5 @@
-import React from "react";
-import YouTube from "react-youtube";
+import React, { useEffect, useState } from "react";
+import YouTube, { YouTubeProps } from "react-youtube";
 import styles from "./video-display.module.scss";
 import Backdrop from "./backdrop";
 
@@ -11,9 +11,20 @@ interface Props {
 
 const VideoDisplay: React.FC<Props> = (props) => {
   const { show, toggle, youtubeId } = props;
-  const opts = {
-    height: "720",
-    width: "1280",
+  const [width, setWidth] = useState(1280);
+  const [height, setHeight] = useState(720);
+  useEffect(() => {
+    if (window.innerWidth <= 600) {
+      setWidth((window.innerWidth * 90) / 100);
+      setHeight((window.innerWidth * 45) / 100);
+    } else {
+      setWidth((window.innerWidth * 60) / 100);
+      setHeight((window.innerWidth * 30) / 100);
+    }
+  }, []);
+  const opts: YouTubeProps["opts"] = {
+    height,
+    width,
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,

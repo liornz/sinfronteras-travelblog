@@ -1,11 +1,19 @@
-import { Fragment, useContext } from 'react';
-import MainHeader from './main-header';
-import Notification from '../ui/notification';
-import NotificationContext from '../../context/notification-context';
-import styles from './layout.module.scss';
-import Footer from '../footer/footer';
+import { Fragment, useContext } from "react";
+import MainHeader from "./main-header";
+import Notification from "../ui/notification";
+import NotificationContext from "../../context/notification-context";
+import styles from "./layout.module.scss";
+import Footer from "../footer/footer";
+import { Lato } from "@next/font/google";
 
-interface Props {}
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
+type Props = {
+  children?: React.ReactNode;
+};
 
 const Layout: React.FC<Props> = (props) => {
   const {} = props;
@@ -14,7 +22,9 @@ const Layout: React.FC<Props> = (props) => {
   return (
     <Fragment>
       <MainHeader />
-      <main className={styles.main}>{props.children}</main>
+      <main className={styles.main + " " + lato.className}>
+        {props.children}
+      </main>
       <Footer />
       {activeNotification && (
         <Notification

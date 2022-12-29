@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 type notification = {
   title: string;
   message: string;
-  status: 'success' | 'error' | 'pending';
+  status: "success" | "error" | "pending";
 };
 
 interface Context {
@@ -18,17 +18,19 @@ const NotificationContext = React.createContext<Context>({
   hideNotification: function () {},
 });
 
-export const NotificationContextProvider: React.FC = (props) => {
-  const [
-    activeNotification,
-    setActiveNotification,
-  ] = useState<notification | null>(null);
+type Props = {
+  children?: React.ReactNode;
+};
+
+export const NotificationContextProvider: React.FC<Props> = (props) => {
+  const [activeNotification, setActiveNotification] =
+    useState<notification | null>(null);
 
   useEffect(() => {
     if (
       activeNotification &&
-      (activeNotification.status === 'success' ||
-        activeNotification.status === 'error')
+      (activeNotification.status === "success" ||
+        activeNotification.status === "error")
     ) {
       const timer = setTimeout(() => {
         setActiveNotification(null);

@@ -20,40 +20,40 @@ const Navbar: React.FC<Props> = (props) => {
   const navList = (
     <ul>
       <li onClick={toggle}>
-        <Link href="/destinations">
-          <a
-            style={{
-              color:
-                router.pathname === '/destinations' ? 'rgb(240,150,37)' : '',
-            }}
-          >
-            {t('destinations')}
-            <div className={styles.underline}></div>
-          </a>
+        <Link
+          href="/destinations"
+          style={{
+            color:
+              router.pathname === '/destinations' ? 'rgb(240,150,37)' : '',
+          }}>
+
+          {t('destinations')}
+          <div className={styles.underline}></div>
+
         </Link>
       </li>
       <li onClick={toggle}>
-        <Link href="/shop">
-          <a
-            style={{
-              color: router.pathname === '/shop' ? 'rgb(240,150,37)' : '',
-            }}
-          >
-            {t('shop')}
-            <div className={styles.underline}></div>
-          </a>
+        <Link
+          href="/shop"
+          style={{
+            color: router.pathname === '/shop' ? 'rgb(240,150,37)' : '',
+          }}>
+
+          {t('shop')}
+          <div className={styles.underline}></div>
+
         </Link>
       </li>
       <li onClick={toggle}>
-        <Link href="/contact">
-          <a
-            style={{
-              color: router.pathname === '/contact' ? 'rgb(240,150,37)' : '',
-            }}
-          >
-            {t('contact')}
-            <div className={styles.underline}></div>
-          </a>
+        <Link
+          href="/contact"
+          style={{
+            color: router.pathname === '/contact' ? 'rgb(240,150,37)' : '',
+          }}>
+
+          {t('contact')}
+          <div className={styles.underline}></div>
+
         </Link>
       </li>
       <li onClick={toggle}>
@@ -63,8 +63,8 @@ const Navbar: React.FC<Props> = (props) => {
             query: router.query,
           }}
           locale={locale === 'en-US' ? 'es-AR' : 'en-US'}
-        >
-          <a className={styles.button}>{t('lang')}</a>
+          className={styles.button}>
+          {t('lang')}
         </Link>
       </li>
     </ul>

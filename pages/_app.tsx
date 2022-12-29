@@ -1,14 +1,14 @@
-import React from 'react';
-import Head from 'next/head';
-import { AppProps } from 'next/app';
-import Layout from '../components/layout/layout';
-import { NotificationContextProvider } from '../context/notification-context';
-import '../styles/globals.scss';
-import { appWithTranslation } from 'next-i18next';
+import React from "react";
+import Head from "next/head";
+import { AppProps } from "next/app";
+import Layout from "../components/layout/layout";
+import { NotificationContextProvider } from "../context/notification-context";
+import "../styles/globals.scss";
+import { appWithTranslation } from "next-i18next";
 
-export const siteTitle = 'Sin Fronteras - Video Travel Blog';
+export const siteTitle = "Sin Fronteras - Video Travel Blog";
 const siteDescription =
-  'An Inspiring Video Travel Blog. I would like to inspire you and share with you my passion for culture and people from all over the world';
+  "An Inspiring Video Travel Blog. I would like to inspire you and share with you my passion for culture and people from all over the world";
 
 function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
   const generalHead = (

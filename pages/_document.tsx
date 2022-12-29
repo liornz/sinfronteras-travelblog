@@ -1,14 +1,10 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
         <Head>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap"
-          />
           <meta name="application-name" content="Sin Fronteras" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
@@ -27,7 +23,10 @@ class MyDocument extends Document {
           <meta name="msapplication-tap-highlight" content="no" />
           <meta name="theme-color" content="#000000" />
 
-          <link rel="apple-touch-icon" href="images/icons/touch-icon-iphone.png" />
+          <link
+            rel="apple-touch-icon"
+            href="images/icons/touch-icon-iphone.png"
+          />
           <link
             rel="apple-touch-icon"
             sizes="152x152"

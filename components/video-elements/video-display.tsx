@@ -1,7 +1,7 @@
-import React from 'react';
-import YouTube, { Options } from 'react-youtube';
-import styles from './video-display.module.scss';
-import Backdrop from './backdrop';
+import React from "react";
+import YouTube from "react-youtube";
+import styles from "./video-display.module.scss";
+import Backdrop from "./backdrop";
 
 interface Props {
   show: boolean;
@@ -9,19 +9,18 @@ interface Props {
   youtubeId: string;
 }
 
-
 const VideoDisplay: React.FC<Props> = (props) => {
   const { show, toggle, youtubeId } = props;
-  const opts: Options = {
-    height: '720',
-    width: '1280',
+  const opts = {
+    height: "720",
+    width: "1280",
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
     },
   };
 
-  const _onReady = (event: { target: { playVideo: () => void} }) => {
+  const _onReady = (event: { target: { playVideo: () => void } }) => {
     // access to player in all event handlers via event.target
     event.target.playVideo();
   };

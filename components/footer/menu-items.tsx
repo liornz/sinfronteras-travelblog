@@ -10,32 +10,32 @@ const MenuItems: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <Link href="/destinations">
-        <a
-          style={{
-            color: router.pathname === '/destinations' ? 'rgb(240,150,37)' : '',
-          }}
-        >
-          {t('destinations')}
-        </a>
+      <Link
+        href="/destinations"
+        style={{
+          color: router.pathname === '/destinations' ? 'rgb(240,150,37)' : '',
+        }}>
+
+        {t('destinations')}
+
       </Link>
-      <Link href="/shop">
-        <a
-          style={{
-            color: router.pathname === '/shop' ? 'rgb(240,150,37)' : '',
-          }}
-        >
-          {t('shop')}
-        </a>
+      <Link
+        href="/shop"
+        style={{
+          color: router.pathname === '/shop' ? 'rgb(240,150,37)' : '',
+        }}>
+
+        {t('shop')}
+
       </Link>
-      <Link href="/contact">
-        <a
-          style={{
-            color: router.pathname === '/contact' ? 'rgb(240,150,37)' : '',
-          }}
-        >
-          {t('contact')}
-        </a>
+      <Link
+        href="/contact"
+        style={{
+          color: router.pathname === '/contact' ? 'rgb(240,150,37)' : '',
+        }}>
+
+        {t('contact')}
+
       </Link>
     </div>
   );

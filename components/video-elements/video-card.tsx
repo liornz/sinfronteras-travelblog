@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
-import VideoDisplay from './video-display';
-import styles from './video-card.module.scss';
-import { FaPlay } from 'react-icons/fa';
+import React, { useState } from "react";
+import Image from "next/image";
+import VideoDisplay from "./video-display";
+import styles from "./video-card.module.scss";
+import { FaPlay } from "react-icons/fa";
 
 interface Props {
   youtubeId: string;
@@ -37,17 +37,18 @@ const VideoCard: React.FC<Props> = (props) => {
     <>
       <div className={styles.VideoCard}>
         <div className={styles.CardContainer}>
-          <Image 
-            src={imagePath} 
-            alt={imgAlt} 
-            width={1644} 
-            height={925} 
-            layout='responsive' 
+          <Image
+            src={imagePath}
+            alt={imgAlt}
+            fill
+            style={{ objectFit: "cover" }}
+            sizes="(max-width: 745px) 100vw,
+            50vw"
             placeholder="blur"
             blurDataURL={imageBlur}
           />
           <div onClick={videoDisplayHandler} className={styles.Overlay}>
-            <FaPlay color='white' size='3rem' />
+            <FaPlay color="white" size="3rem" />
           </div>
         </div>
         {textSection}

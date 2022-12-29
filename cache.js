@@ -1,12 +1,12 @@
-'use strict'
+"use strict";
 
 // Workbox RuntimeCaching config: https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-build#.RuntimeCachingEntry
 module.exports = [
   {
     urlPattern: /^https:\/\/fonts\.(?:gstatic)\.com\/.*/i,
-    handler: 'CacheFirst',
+    handler: "CacheFirst",
     options: {
-      cacheName: 'google-fonts-webfonts',
+      cacheName: "google-fonts-webfonts",
       expiration: {
         maxEntries: 4,
         maxAgeSeconds: 365 * 24 * 60 * 60, // 365 days
@@ -15,9 +15,9 @@ module.exports = [
   },
   {
     urlPattern: /^https:\/\/fonts\.(?:googleapis)\.com\/.*/i,
-    handler: 'StaleWhileRevalidate',
+    handler: "StaleWhileRevalidate",
     options: {
-      cacheName: 'google-fonts-stylesheets',
+      cacheName: "google-fonts-stylesheets",
       expiration: {
         maxEntries: 4,
         maxAgeSeconds: 7 * 24 * 60 * 60, // 7 days
@@ -26,9 +26,9 @@ module.exports = [
   },
   {
     urlPattern: /\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,
-    handler: 'StaleWhileRevalidate',
+    handler: "StaleWhileRevalidate",
     options: {
-      cacheName: 'static-font-assets',
+      cacheName: "static-font-assets",
       expiration: {
         maxEntries: 4,
         maxAgeSeconds: 7 * 24 * 60 * 60, // 7 days
@@ -37,9 +37,9 @@ module.exports = [
   },
   {
     urlPattern: /\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,
-    handler: 'StaleWhileRevalidate',
+    handler: "StaleWhileRevalidate",
     options: {
-      cacheName: 'static-image-assets',
+      cacheName: "static-image-assets",
       expiration: {
         maxEntries: 64,
         maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -48,9 +48,9 @@ module.exports = [
   },
   {
     urlPattern: /\/_next\/image\?url=.+$/i,
-    handler: 'StaleWhileRevalidate',
+    handler: "StaleWhileRevalidate",
     options: {
-      cacheName: 'next-image',
+      cacheName: "next-image",
       expiration: {
         maxEntries: 64,
         maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -59,10 +59,10 @@ module.exports = [
   },
   {
     urlPattern: /\.(?:mp3|wav|ogg)$/i,
-    handler: 'CacheFirst',
+    handler: "CacheFirst",
     options: {
       rangeRequests: true,
-      cacheName: 'static-audio-assets',
+      cacheName: "static-audio-assets",
       expiration: {
         maxEntries: 32,
         maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -71,10 +71,10 @@ module.exports = [
   },
   {
     urlPattern: /\.(?:mp4)$/i,
-    handler: 'CacheFirst',
+    handler: "CacheFirst",
     options: {
       rangeRequests: true,
-      cacheName: 'static-video-assets',
+      cacheName: "static-video-assets",
       expiration: {
         maxEntries: 32,
         maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -83,9 +83,9 @@ module.exports = [
   },
   {
     urlPattern: /\.(?:js)$/i,
-    handler: 'StaleWhileRevalidate',
+    handler: "StaleWhileRevalidate",
     options: {
-      cacheName: 'static-js-assets',
+      cacheName: "static-js-assets",
       expiration: {
         maxEntries: 32,
         maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -94,9 +94,9 @@ module.exports = [
   },
   {
     urlPattern: /\.(?:css|less|scss)$/i,
-    handler: 'StaleWhileRevalidate',
+    handler: "StaleWhileRevalidate",
     options: {
-      cacheName: 'static-style-assets',
+      cacheName: "static-style-assets",
       expiration: {
         maxEntries: 32,
         maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -105,9 +105,9 @@ module.exports = [
   },
   {
     urlPattern: /\/_next\/data\/.+\/.+\.json$/i,
-    handler: 'StaleWhileRevalidate',
+    handler: "StaleWhileRevalidate",
     options: {
-      cacheName: 'next-data',
+      cacheName: "next-data",
       expiration: {
         maxEntries: 32,
         maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -116,9 +116,9 @@ module.exports = [
   },
   {
     urlPattern: /\.(?:json|xml|csv)$/i,
-    handler: 'NetworkFirst',
+    handler: "NetworkFirst",
     options: {
-      cacheName: 'static-data-assets',
+      cacheName: "static-data-assets",
       expiration: {
         maxEntries: 32,
         maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -133,14 +133,14 @@ module.exports = [
       // Exclude /api/auth/callback/* to fix OAuth workflow in Safari without impact other environment
       // Above route is default for next-auth, you may need to change it if your OAuth workflow has a different callback route
       // Issue: https://github.com/shadowwalker/next-pwa/issues/131#issuecomment-821894809
-      if (pathname.startsWith('/api/auth/')) return false;
-      if (pathname.startsWith('/api/')) return true;
+      if (pathname.startsWith("/api/auth/")) return false;
+      if (pathname.startsWith("/api/")) return true;
       return false;
     },
-    handler: 'NetworkFirst',
-    method: 'GET',
+    handler: "NetworkFirst",
+    method: "GET",
     options: {
-      cacheName: 'apis',
+      cacheName: "apis",
       expiration: {
         maxEntries: 16,
         maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -153,12 +153,12 @@ module.exports = [
       const isSameOrigin = self.origin === url.origin;
       if (!isSameOrigin) return false;
       const pathname = url.pathname;
-      if (pathname.startsWith('/api/')) return false;
+      if (pathname.startsWith("/api/")) return false;
       return true;
     },
-    handler: 'NetworkFirst',
+    handler: "NetworkFirst",
     options: {
-      cacheName: 'others',
+      cacheName: "others",
       expiration: {
         maxEntries: 32,
         maxAgeSeconds: 24 * 60 * 60, // 24 hours
@@ -171,9 +171,9 @@ module.exports = [
       const isSameOrigin = self.origin === url.origin;
       return !isSameOrigin;
     },
-    handler: 'NetworkFirst',
+    handler: "NetworkFirst",
     options: {
-      cacheName: 'cross-origin',
+      cacheName: "cross-origin",
       expiration: {
         maxEntries: 32,
         maxAgeSeconds: 60 * 60, // 1 hour
@@ -183,11 +183,11 @@ module.exports = [
   },
   {
     urlPattern: /\/api\/comments\//,
-    handler: 'NetworkOnly',
-    method: 'POST',
+    handler: "NetworkOnly",
+    method: "POST",
     options: {
       backgroundSync: {
-        name: 'comments',
+        name: "comments",
         options: {
           maxRetentionTime: 365 * 24 * 60 * 60, // 365 days,
         },
@@ -196,11 +196,11 @@ module.exports = [
   },
   {
     urlPattern: /\/api\/newsletter/,
-    handler: 'NetworkOnly',
-    method: 'POST',
+    handler: "NetworkOnly",
+    method: "POST",
     options: {
       backgroundSync: {
-        name: 'newsletter',
+        name: "newsletter",
         options: {
           maxRetentionTime: 365 * 24 * 60 * 60, // 365 days,
         },

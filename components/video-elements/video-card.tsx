@@ -9,6 +9,8 @@ interface Props {
   imagePath: string;
   imageBlur: string;
   imgAlt: string;
+  width: number;
+  height: number;
   text?: {
     title: string;
     subtitle: string;
@@ -16,7 +18,8 @@ interface Props {
 }
 
 const VideoCard: React.FC<Props> = (props) => {
-  const { youtubeId, imagePath, imgAlt, text, imageBlur } = props;
+  const { youtubeId, imagePath, imgAlt, text, imageBlur, width, height } =
+    props;
   const [videoDisplayOn, setVideoDisplayOn] = useState(false);
   const videoDisplayHandler = () => {
     setVideoDisplayOn((currState) => !currState);
@@ -40,8 +43,9 @@ const VideoCard: React.FC<Props> = (props) => {
           <Image
             src={imagePath}
             alt={imgAlt}
-            fill
-            style={{ objectFit: "cover" }}
+            width={width}
+            height={height}
+            style={{ width: "100%", height: "auto" }}
             sizes="(max-width: 745px) 100vw,
             50vw"
             placeholder="blur"

@@ -1,4 +1,4 @@
-@use '../../styles/variables';
+@use "../../styles/variables";
 
 .container {
   display: flex;
@@ -28,5 +28,4 @@
 .image {
   margin-left: -1rem;
   margin-top: -0.3rem;
-  width: 12rem;
 }

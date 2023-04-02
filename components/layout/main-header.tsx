@@ -57,10 +57,6 @@ const MainHeader: React.FC<Props> = (props) => {
     </header>
   );
 
-  // if (typeof window === "undefined") {
-  //   output = <div></div>;
-  // }
-
   return output;
 };
 

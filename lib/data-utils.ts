@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { postMetaData, countryMetaData } from './types';
+import { postMetaData, countryMetaData, post } from './types';
 
 const enContryDataDirectory = path.join(process.cwd(), 'countries-data', 'en');
 const esCountryDataDirectory = path.join(process.cwd(), 'countries-data', 'es');
@@ -54,27 +54,13 @@ export function getAllCountriesData(locale: string) {
 }
 
 export function buildCountryDirectory(country: string, locale: string) {
-  const enDataDirectory = path.join(
-    process.cwd(),
-    'destination-data',
-    'en',
-    country
-  );
-  const esDataDirectory = path.join(
-    process.cwd(),
-    'destination-data',
-    'es',
-    country
-  );
+  const enDataDirectory = path.join(process.cwd(), 'destination-data', 'en', country);
+  const esDataDirectory = path.join(process.cwd(), 'destination-data', 'es', country);
   const directory = locale === 'en-US' ? enDataDirectory : esDataDirectory;
   return directory;
 }
 
-export function getFileData(
-  country: string,
-  locale: string,
-  fileIdentifier: string
-) {
+export function getFileData(country: string, locale: string, fileIdentifier: string) {
   const directory = buildCountryDirectory(country, locale);
   const fileSlug = fileIdentifier.replace(/\.md$/, '');
   const filePath = path.join(directory, `${fileSlug}.md`);
@@ -91,7 +77,6 @@ export function getFileData(
 }
 
 export function getFileNamesPerCountry(country: string, locale: string) {
-
   const directory = buildCountryDirectory(country, locale);
 
   const fileNames = fs.readdirSync(directory);
@@ -99,11 +84,10 @@ export function getFileNamesPerCountry(country: string, locale: string) {
 }
 
 export function getDestinationsPerCountry(country: string, locale: string) {
-
   const directory = buildCountryDirectory(country, locale);
 
   const fileNames = fs.readdirSync(directory);
-  const filesData = fileNames.map(file => {
+  const filesData = fileNames.map((file) => {
     return getFileData(country, locale, file);
   });
   return filesData;
@@ -111,14 +95,12 @@ export function getDestinationsPerCountry(country: string, locale: string) {
 
 export function getFeaturedDestinations(locale: string) {
   const countryFileNames = getCountryFileNames(locale);
-   const countrySlugs = countryFileNames.map((fileName) =>
-     fileName.replace(/\.md$/, '')
-   );
-   let allDestinationData: postMetaData[] = [];
+  const countrySlugs = countryFileNames.map((fileName) => fileName.replace(/\.md$/, ''));
+  let allDestinationData: post[] = [];
   for (const country of countrySlugs) {
     const destinations = getDestinationsPerCountry(country, locale);
     allDestinationData = allDestinationData.concat(destinations);
   }
-  const featuredDestinations = allDestinationData.filter(destination => destination.isFeatured === true);
+  const featuredDestinations = allDestinationData.filter((destination) => destination.isFeatured === true);
   return featuredDestinations;
 }

@@ -10,9 +10,9 @@ interface Props {
 
 const NewComment: React.FC<Props> = (props) => {
   const [isInvalid, setIsInvalid] = useState(false);
-  const emailInputRef = useRef<HTMLInputElement>();
-  const nameInputRef = useRef<HTMLInputElement>();
-  const commentInputRef = useRef<HTMLTextAreaElement>();
+  const emailInputRef = useRef<HTMLInputElement>(undefined);
+  const nameInputRef = useRef<HTMLInputElement>(undefined);
+  const commentInputRef = useRef<HTMLTextAreaElement>(undefined);
   const { t } = useTranslation('comments');
 
   const { onAddComment } = props;
@@ -58,7 +58,7 @@ const NewComment: React.FC<Props> = (props) => {
   }
 
   return (
-    <form className={styles.form} onSubmit={submitCommentHandler}>
+    (<form className={styles.form} onSubmit={submitCommentHandler}>
       <div className={styles.row}>
         <div className={styles.control}>
           <label htmlFor="email">
@@ -67,7 +67,7 @@ const NewComment: React.FC<Props> = (props) => {
           <input
             type="email"
             id="email"
-            ref={emailInputRef as React.LegacyRef<HTMLInputElement>}
+            ref={emailInputRef as React.Ref<HTMLInputElement>}
           />
         </div>
         <div className={styles.control}>
@@ -77,7 +77,7 @@ const NewComment: React.FC<Props> = (props) => {
           <input
             type="text"
             id="name"
-            ref={nameInputRef as React.LegacyRef<HTMLInputElement>}
+            ref={nameInputRef as React.Ref<HTMLInputElement>}
           />
         </div>
       </div>
@@ -89,7 +89,7 @@ const NewComment: React.FC<Props> = (props) => {
           name="comment"
           id="comment"
           rows={5}
-          ref={commentInputRef as React.LegacyRef<HTMLTextAreaElement>}
+          ref={commentInputRef as React.Ref<HTMLTextAreaElement>}
         ></textarea>
       </div>
       {isInvalid ? (
@@ -102,7 +102,7 @@ const NewComment: React.FC<Props> = (props) => {
       <button className={styles.button}>
         {t('button')}
       </button>
-    </form>
+    </form>)
   );
 };
 

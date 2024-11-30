@@ -8,7 +8,7 @@ const Newsletter: React.FC = () => {
   const notificationCtx = useContext(NotificationContext);
   const { t } = useTranslation("footer");
 
-  const emailInputRef = useRef<HTMLInputElement>();
+  const emailInputRef = useRef<HTMLInputElement>(undefined);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -83,7 +83,7 @@ const Newsletter: React.FC = () => {
   const emailInvalidMsg = t("validate");
 
   return (
-    <div className={styles.container}>
+    (<div className={styles.container}>
       <p>
         <strong>{t("newsletter-main")}</strong>
       </p>
@@ -92,13 +92,13 @@ const Newsletter: React.FC = () => {
         <input
           type="email"
           id="user-email"
-          ref={emailInputRef as React.LegacyRef<HTMLInputElement>}
+          ref={emailInputRef as React.Ref<HTMLInputElement>}
           placeholder={t("placeholder") as string}
         />
         <button>{t("button")}</button>
       </form>
       {!emailIsValid && <p>{emailInvalidMsg}</p>}
-    </div>
+    </div>)
   );
 };
 

@@ -8,9 +8,9 @@ import { useTranslation } from 'next-i18next';
 const Contact: React.FC = () => {
   const [isInvalid, setIsInvalid] = useState(false);
 
-  const emailInputRef = useRef<HTMLInputElement>();
-  const nameInputRef = useRef<HTMLInputElement>();
-  const messageInputRef = useRef<HTMLTextAreaElement>();
+  const emailInputRef = useRef<HTMLInputElement>(undefined);
+  const nameInputRef = useRef<HTMLInputElement>(undefined);
+  const messageInputRef = useRef<HTMLTextAreaElement>(undefined);
   const { t } = useTranslation('contact');
 
   const notificationCtx = useContext(NotificationContext);
@@ -83,7 +83,7 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <div className={styles.container}>
+    (<div className={styles.container}>
       <h1>{t('title')}</h1>
       <form className={styles.form} onSubmit={submitMessageHandler}>
         <div className={styles.row}>
@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
             <input
               type="email"
               id="email"
-              ref={emailInputRef as React.LegacyRef<HTMLInputElement>}
+              ref={emailInputRef as React.Ref<HTMLInputElement>}
             />
           </div>
           <div className={styles.control}>
@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
             <input
               type="text"
               id="name"
-              ref={nameInputRef as React.LegacyRef<HTMLInputElement>}
+              ref={nameInputRef as React.Ref<HTMLInputElement>}
             />
           </div>
         </div>
@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
             name="message"
             id="message"
             rows={5}
-            ref={messageInputRef as React.LegacyRef<HTMLTextAreaElement>}
+            ref={messageInputRef as React.Ref<HTMLTextAreaElement>}
           ></textarea>
         </div>
         {isInvalid ? (
@@ -122,7 +122,7 @@ const Contact: React.FC = () => {
         )}
         <button className={styles.button}>{t('button')}</button>
       </form>
-    </div>
+    </div>)
   );
 };
 

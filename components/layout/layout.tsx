@@ -4,7 +4,7 @@ import Notification from "../ui/notification";
 import NotificationContext from "../../context/notification-context";
 import styles from "./layout.module.scss";
 import Footer from "../footer/footer";
-import { Lato } from "@next/font/google";
+import { Lato } from "next/font/google";
 
 const lato = Lato({
   subsets: ["latin"],

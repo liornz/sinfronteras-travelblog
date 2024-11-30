@@ -3,7 +3,7 @@ import Logo from "./logo";
 import Navbar from "./navbar";
 import styles from "./main-header.module.scss";
 import MenuToggler from "./menuToggler";
-import { Lato } from "@next/font/google";
+import { Lato } from "next/font/google";
 
 const lato = Lato({
   subsets: ["latin"],

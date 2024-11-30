@@ -3,7 +3,7 @@ import MenuItems from "./menu-items";
 import SocialMedia from "./social-media";
 import Newsletter from "./newsletter-registration";
 import styles from "./footer.module.scss";
-import { Lato } from "@next/font/google";
+import { Lato } from "next/font/google";
 
 const lato = Lato({
   subsets: ["latin"],
